@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 export default function EducationGrid() {
     const posts = [
         {
-            date: "January 24, 2023",
-            title: "12 Mistakes To Avoid When Buying Cannabis Online",
-            excerpt: "Buying cannabis online can be a great way to get your hands on the products you need without leaving the comfort of your home.",
-            image: "https://via.placeholder.com/600x400?text=Education+1"
+            date: "January 24, 2026",
+            title: "How to Identify Pure Kachi Ghani Mustard Oil",
+            excerpt: "Learn the simple home tests to check the purity of your mustard oil and ensure your family's health.",
+            image: "https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            date: "January 20, 2023",
-            title: "How To Store Your Products and Keep it Fresh and Potent?",
-            excerpt: "Packaging has advanced dramatically in recent years, making it easier to maintain the quality of your medicinal products.",
-            image: "https://via.placeholder.com/600x400?text=Education+2"
+            date: "January 20, 2026",
+            title: "Best Practices for Storing Edible Oils",
+            excerpt: "Proper storage is key to maintaining the nutritional value and freshness of your oils for longer.",
+            image: "https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            date: "January 19, 2023",
-            title: "The Ultimate Guide to Checking Quality – 10 Industry Leading Tips",
-            excerpt: "Quality is a term used to describe products that meet specific standards of excellence. It is essential to understand what it means.",
-            image: "https://via.placeholder.com/600x400?text=Education+3"
+            date: "January 19, 2026",
+            title: "Understanding FSSAI Standards for Edible Oils",
+            excerpt: "What does the FSSAI mark mean? A guide to understanding food safety standards in India.",
+            image: "https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
     ];
 
@@ -31,7 +31,7 @@ export default function EducationGrid() {
                     viewport={{ once: true }}
                     className="flex flex-col sm:flex-row justify-between items-center mb-12 gap-4"
                 >
-                    <h2 className="text-3xl font-black uppercase text-primary-dark tracking-tighter">WEED EDUCATION</h2>
+                    <h2 className="text-3xl font-black uppercase text-primary-dark tracking-tighter">HEALTH INSIGHTS</h2>
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         href="#"

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Referral() {
     return (
-        <section className="py-14 sm:py-20 overflow-hidden">
+        <section className="py-8 sm:py-14 overflow-hidden">
             <div className="container-custom px-4">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -33,7 +33,7 @@ export default function Referral() {
                                 transition={{ delay: 0.2 }}
                                 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-4 uppercase leading-none tracking-tighter"
                             >
-                                REFER A FRIENDS
+                                REFER A BUSINESS
                             </motion.h2>
                             <motion.p
                                 initial={{ opacity: 0, x: -20 }}
@@ -42,7 +42,7 @@ export default function Referral() {
                                 transition={{ delay: 0.4 }}
                                 className="text-xl sm:text-2xl text-white font-black uppercase tracking-widest"
                             >
-                                And get <span className="text-secondary underline decoration-primary-light">$30!</span>
+                                And get <span className="text-secondary underline decoration-primary-light">Discount!</span>
                             </motion.p>
                         </div>
 

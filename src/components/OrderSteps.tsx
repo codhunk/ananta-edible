@@ -5,42 +5,42 @@ const steps = [
     {
         icon: <ClipboardList size={40} />,
         title: "REGISTER",
-        description: "Sign up for an account with us. This is quick and simple. We don’t require any more details from you than the bare minimum."
+        description: "Create an account for bulk or retail orders. It's quick, simple, and helps you track your shipments."
     },
     {
         icon: <ShoppingBag size={40} />,
-        title: "SHOP",
-        description: "Decide on what you want to purchase. We stock a wide range of edibles, flowers, concentrates and mushrooms."
+        title: "SELECT OILS",
+        description: "Browse our premium range of Kachi Ghani Mustard Oil, Soybean Oil, and Sunflower Oil."
     },
     {
         icon: <Wallet size={40} />,
-        title: "MAKE PAYMENT",
-        description: "Pay securely. Our site boasts sturdy protection certificates to keep your card details and related data safe."
+        title: "SECURE PAYMENT",
+        description: "Pay securely via net banking, UPI, or cards. We ensure 100% safe transactions for all orders."
     },
     {
         icon: <ShieldCheck size={40} />,
-        title: "RELAX",
-        description: "Your product will be packaged discretely and shipped. We will provide you with a tracking number for every step."
+        title: "FAST DELIVERY",
+        description: "Your order is hygienically packed and dispatched immediately. Track your oil all the way to your doorstep."
     }
 ];
 
 export default function OrderSteps() {
     return (
-        <section className="py-16 bg-[#01140D] text-white overflow-hidden">
+        <section className="py-8 sm:py-14 bg-[#01140D] text-white overflow-hidden">
             <div className="container-custom px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="max-w-4xl mx-auto text-center mb-16 sm:mb-20"
+                    className="max-w-4xl mx-auto text-center mb-12 sm:mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 uppercase leading-tight tracking-tighter">HOW TO ORDER <br /> <span className="text-primary-light">MAIL ORDER ANANTA</span></h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 uppercase leading-tight tracking-tighter">HOW TO ORDER <br /> <span className="text-primary-light">PURE ANANTA OILS</span></h2>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto px-4 font-bold uppercase tracking-widest text-xs sm:text-sm">
-                        Buying organic products online is easy and secure with our streamlined process.
+                        Ordering pure, healthy oils online is simple and secure.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-12 sm:gap-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-8 sm:gap-y-12">
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
@@ -89,7 +89,7 @@ export default function OrderSteps() {
                         whileTap={{ scale: 0.95 }}
                         className="btn-primary !bg-primary-light !px-12 !py-4 shadow-2xl shadow-primary-light/20 !text-xs !font-black uppercase tracking-[0.2em]"
                     >
-                        Choose your Weed
+                        Choose Healthy Oils
                     </motion.button>
                 </motion.div>
             </div>

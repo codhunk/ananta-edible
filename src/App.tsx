@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ProductPage from './pages/ProductPage';
 import ShopPage from './pages/ShopPage';
 import BlogPage from './pages/BlogPage';
+import BulkOrderPage from './pages/BulkOrderPage';
 import EdiblesPage from './pages/EdiblesPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/bulk-orders" element={<BulkOrderPage />} />
             <Route path="/edibles" element={<EdiblesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />

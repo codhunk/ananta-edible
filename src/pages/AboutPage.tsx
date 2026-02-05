@@ -1,6 +1,7 @@
 import { motion, useInView, animate } from 'framer-motion';
 import { Linkedin, Twitter, Mail, ExternalLink, Quote } from 'lucide-react';
 import Footer from '../components/Footer';
+import CertificationLogos from '../components/CertificationLogos';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { useEffect, useRef } from 'react';
 
@@ -68,7 +69,7 @@ export default function AboutPage() {
                         transition={{ delay: 0.2 }}
                         className="text-4xl sm:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-tight"
                     >
-                        Our Vision.<br />Our Promise.
+                        Purity in Every Drop.<br />Health in Every Meal.
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -105,7 +106,7 @@ export default function AboutPage() {
                                     />
                                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-8">
                                         <p className="text-white font-black text-2xl uppercase tracking-tighter">Rajesh Kumar</p>
-                                        <p className="text-primary-light font-bold text-sm uppercase tracking-widest mt-1">Founder & CEO</p>
+                                        <p className="text-primary-light font-bold text-sm uppercase tracking-widest mt-1">Founder & Managing Director</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -130,10 +131,10 @@ export default function AboutPage() {
                                 <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-serif italic relative pl-12">
                                     <Quote className="absolute left-0 top-0 text-primary-light/20 w-8 h-8 transform -scale-x-100" />
                                     <p>
-                                        "At Ananta, we envisioned more than just a brand; we wanted to create a movement. A movement back to nature, back to wellness, and back to authenticity. In a world full of noise and artificiality, silence and purity are rare luxuries."
+                                        "At Ananta, we hold the conviction that good health begins in the kitchen. For over two decades, our mission has been simple: to provide Indian families with edible oils that are as pure as nature intended."
                                     </p>
                                     <p>
-                                        "Our journey wasn't about finding the easiest path, but the right one. Every product we craft carries a promise – a promise of uncompromised quality, ethical sourcing, and a genuine passion for your well-being. We don't just sell products; we share a piece of our philosophy with you."
+                                        "We have invested in state-of-the-art cold press technology and rigorous quality control processes to ensure that every drop of oil retains its natural aroma, flavor, and nutritional value. We don't just manufacture oil; we bottle health and trust."
                                     </p>
                                 </div>
 
@@ -145,7 +146,7 @@ export default function AboutPage() {
                                     />
                                     <div>
                                         <p className="font-bold text-primary-dark text-lg">Rajesh Kumar</p>
-                                        <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Director, Ananta Group</p>
+                                        <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Managing Director</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -158,10 +159,10 @@ export default function AboutPage() {
                     <div className="container-custom px-4">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                             {[
-                                { number: 15, suffix: "+", label: "Years Experience" },
-                                { number: 50, suffix: "k+", label: "Happy Customers" },
-                                { number: 100, suffix: "%", label: "Organic Certified" },
-                                { number: 24, suffix: "/7", label: "Expert Support" }
+                                { number: 25, suffix: "+", label: "Years of Excellence" },
+                                { number: 50, suffix: "k+", label: "Metric Tons Supplied" },
+                                { number: 100, suffix: "%", label: "FSSAI Certified" },
+                                { number: 500, suffix: "+", label: "Distributors" }
                             ].map((stat, i) => (
                                 <motion.div
                                     key={i}
@@ -204,26 +205,26 @@ export default function AboutPage() {
                             {[
                                 {
                                     name: "Sarah Jenkins",
-                                    role: "Head of Product",
-                                    quote: "Innovation meets tradition in every formula we create.",
+                                    role: "Quality Assurance Head",
+                                    quote: "Every batch is tested for consistency and purity standards.",
                                     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
                                 },
                                 {
                                     name: "David Chen",
-                                    role: "Lead Agronomist",
-                                    quote: "Quality soil creates quality life. That's my belief.",
+                                    role: "Production Manager",
+                                    quote: "Efficient extraction processes ensure maximum nutrition retention.",
                                     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
                                 },
                                 {
                                     name: "Elena Rodriguez",
-                                    role: "Customer Success",
-                                    quote: "Your wellness journey is personal, and we honor that.",
+                                    role: "Supply Chain Manager",
+                                    quote: "Ensuring our products reach distributors on time, every time.",
                                     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop"
                                 },
                                 {
                                     name: "Michael Ross",
-                                    role: "Operations Director",
-                                    quote: "Efficiency ensures purity reaches you faster.",
+                                    role: "Plant Operations",
+                                    quote: "Safety and hygiene are our top priorities in the factory.",
                                     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
                                 },
                             ].map((member, i) => (
@@ -269,6 +270,8 @@ export default function AboutPage() {
                     </div>
                 </section>
 
+
+                <CertificationLogos />
                 <NewsletterBanner />
             </main>
 

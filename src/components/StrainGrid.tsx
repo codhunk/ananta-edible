@@ -3,21 +3,21 @@ import { motion } from 'framer-motion';
 export default function StrainGrid() {
     const strains = [
         {
-            title: "Indica",
-            description: "Commonly taken by those who want total relaxation. Reduces stress and takes fatigue away. Suggested for night use and trouble sleeping.",
-            linkText: "Shop Indica",
+            title: "Cold Pressed",
+            description: "Extracted at low temperatures to retain natural aroma, flavor, and essential nutrients. Best for traditional Indian cooking.",
+            linkText: "Shop Cold Pressed",
             link: "#"
         },
         {
-            title: "Sativa",
-            description: "Known for increasing creativity, enhancing focus and lessening anxiety. Mind-centered high, recommended for daytime use.",
-            linkText: "Shop Sativa",
+            title: "Refined",
+            description: "Processed to be light, odorless, and suitable for high-heat cooking like deep frying. Versatile for all cuisines.",
+            linkText: "Shop Refined",
             link: "#"
         },
         {
-            title: "Hybrids",
-            description: "Combines head-focused high effects with bodily relaxation. Ideal for soothing fatigue while clearing the mind for focus.",
-            linkText: "Shop Hybrids",
+            title: "Fortified",
+            description: "Enriched with Vitamins A & D to support immunity and overall health. A healthy choice for the whole family.",
+            linkText: "Shop Fortified",
             link: "#"
         }
     ];

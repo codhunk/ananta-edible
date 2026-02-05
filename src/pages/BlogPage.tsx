@@ -26,63 +26,63 @@ const itemVariants = {
 const blogPosts = [
     {
         id: 1,
-        title: "The Ultimate Guide to Cannabis Edibles",
-        excerpt: "Everything you need to know about dosing, types, and effects of cannabis-infused treats for beginners and experts alike.",
+        title: "How to Identify Pure Kachi Ghani Mustard Oil",
+        excerpt: "Learn the simple home tests to check the purity of your mustard oil and ensure your family's health with authentic products.",
         date: "February 2, 2026",
-        author: "Sarah Jenkins",
+        author: "Rajesh Kumar",
         readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1575503802870-45de6a6217c8?q=80&w=2070&auto=format&fit=crop",
-        category: "Education"
+        image: "https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=600",
+        category: "Quality Guide"
     },
     {
         id: 2,
-        title: "Understanding Terpenes: The Nose Knows",
-        excerpt: "Dive deep into the aromatic compounds that give cannabis its distinctive smells and therapeutic properties.",
+        title: "Understanding FSSAI Standards for Edible Oils",
+        excerpt: "What does the FSSAI mark mean? A comprehensive guide to understanding food safety standards in India.",
         date: "January 28, 2026",
-        author: "Dr. Alex Wong",
+        author: "Dr. Priya Sharma",
         readTime: "8 min read",
-        image: "https://images.unsplash.com/photo-1603909223429-69bb7101f420?q=80&w=2070&auto=format&fit=crop",
-        category: "Science"
+        image: "https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=600",
+        category: "Food Safety"
     },
     {
         id: 3,
-        title: "5 Strains for Creativity and Focus",
-        excerpt: "Looking to boost your productivity? Here are our top 5 sativa-dominant strains to help you get in the zone.",
+        title: "5 Health Benefits of Cold-Pressed Oils",
+        excerpt: "Discover why cold-pressed oils retain more nutrients and how they can boost your family's health.",
         date: "January 15, 2026",
-        author: "Mike Ross",
+        author: "Nutritionist Meera",
         readTime: "4 min read",
-        image: "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?q=80&w=2008&auto=format&fit=crop",
-        category: "Lifestyle"
+        image: "https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600",
+        category: "Health"
     },
     {
         id: 4,
-        title: "CBD vs. THC: What's the Difference?",
-        excerpt: "A comprehensive breakdown of the two most well-known cannabinoids and how they interact with your body.",
+        title: "Refined vs. Cold-Pressed: Which Oil is Right for You?",
+        excerpt: "A comprehensive breakdown of the differences between refined and cold-pressed oils and their best uses in cooking.",
         date: "January 5, 2026",
-        author: "Sarah Jenkins",
+        author: "Chef Arjun",
         readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1613144211516-ac678885cb15?q=80&w=2070&auto=format&fit=crop",
-        category: "Education"
+        image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600",
+        category: "Cooking Tips"
     },
     {
         id: 5,
-        title: "New Sustainable Packaging Initiative",
-        excerpt: "We are proud to announce our shift towards 100% biodegradable packaging starting this March.",
+        title: "Our Journey to Sustainable Packaging",
+        excerpt: "We are proud to announce our shift towards 100% eco-friendly packaging starting this March.",
         date: "December 20, 2025",
         author: "Ananta Team",
         readTime: "3 min read",
-        image: "https://images.unsplash.com/photo-1605600659873-d808a13a4d2a?q=80&w=1974&auto=format&fit=crop",
+        image: "https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600",
         category: "Company News"
     },
     {
         id: 6,
-        title: "Cooking with Cannabis: Infused Olive Oil",
-        excerpt: "A simple, step-by-step recipe to make your own versatile cannabis-infused olive oil at home.",
+        title: "Best Practices for Storing Edible Oils",
+        excerpt: "Proper storage is key to maintaining the nutritional value and freshness of your oils for longer periods.",
         date: "December 12, 2025",
-        author: "Chef Leo",
+        author: "Storage Expert",
         readTime: "10 min read",
-        image: "https://images.unsplash.com/photo-1474979266404-7caddbed7752?q=80&w=2070&auto=format&fit=crop",
-        category: "Recipes"
+        image: "https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=600",
+        category: "Storage Tips"
     }
 ];
 
@@ -93,7 +93,7 @@ export default function BlogPage() {
             <section className="relative w-full h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-primary-dark/80 z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop"
+                    src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=1920"
                     alt="Blog Hero"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -113,7 +113,7 @@ export default function BlogPage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-base sm:text-xl text-gray-200 font-medium max-w-2xl mx-auto px-2"
                     >
-                        News, insights, and educational resources from the world of premium cannabis.
+                        Health insights, quality tips, and industry news from India's trusted edible oil manufacturer.
                     </motion.p>
                 </div>
             </section>

@@ -70,7 +70,7 @@ export default function ProductCard({
 
                 <div className="mt-auto">
                     <div className="flex gap-1 mb-4 flex-wrap">
-                        {['28g', '1/2lb', '1/4lb'].map(size => (
+                        {['1L', '5L', '15L'].map(size => (
                             <button key={size} className="text-xs px-2 py-1 border border-gray-100 rounded bg-gray-50 hover:bg-primary-light hover:text-white transition-colors uppercase font-medium">{size}</button>
                         ))}
                     </div>

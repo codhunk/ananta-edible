@@ -71,9 +71,9 @@ export default function ContactPage() {
                         className="lg:col-span-4 space-y-6 sm:space-y-8"
                     >
                         {[
-                            { icon: <MapPin size={28} />, title: "Address", content: "2715 Ash Dr. San Jose, South Dakota 83475" },
-                            { icon: <Mail size={28} />, title: "Email", content: "Help.ananta@gmail.com", secondary: "Support@ananta.com" },
-                            { icon: <Phone size={28} />, title: "Phone", content: "(704) 555-0127", secondary: "(219) 555-0114" }
+                            { icon: <MapPin size={28} />, title: "Factory Location", content: "Plot No. 123, Industrial Area, Alwar, Rajasthan, 301001" },
+                            { icon: <Mail size={28} />, title: "Inquiries", content: "sales@ananta.com", secondary: "export@ananta.com" },
+                            { icon: <Phone size={28} />, title: "Contact", content: "+91 98765 43210", secondary: "+91 144 234567" }
                         ].map((info, i) => (
                             <motion.div
                                 key={i}
@@ -107,9 +107,9 @@ export default function ContactPage() {
                             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-light/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
-                                <h2 className="text-3xl sm:text-4xl font-black text-primary-dark mb-4 uppercase tracking-tighter">Just Say <span className="text-primary-light">Hello!</span></h2>
+                                <h2 className="text-3xl sm:text-4xl font-black text-primary-dark mb-4 uppercase tracking-tighter">Partner with <span className="text-primary-light">Us</span></h2>
                                 <p className="text-gray-400 text-sm sm:text-base mb-12 sm:mb-16 leading-relaxed max-w-lg mx-auto lg:mx-0 text-center lg:text-left font-medium">
-                                    Do you have any questions or just want to say hi? We'd love to hear from you.
+                                    For bulk orders, distributorship inquiries, or general questions, please fill out the form below.
                                 </p>
 
                                 <form className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">

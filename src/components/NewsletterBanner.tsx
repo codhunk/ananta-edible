@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 export default function NewsletterBanner() {
     return (
-        <section className="py-14 bg-background relative z-10 overflow-hidden">
+        <section className="py-4 sm:py-10 bg-background relative z-10 overflow-hidden">
             <div className="container-custom px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="w-full bg-primary-dark rounded-[32px] sm:rounded-[40px] p-10 sm:p-12 lg:p-24 text-center relative overflow-hidden flex flex-col items-center shadow-2xl"
+                    className="w-full bg-primary-dark rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 lg:p-16 text-center relative overflow-hidden flex flex-col items-center shadow-2xl"
                 >
                     {/* Background Highlight */}
                     <motion.div

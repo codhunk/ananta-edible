@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 const features = [
     {
         icon: <Truck size={40} className="text-primary" />,
-        title: "Reliable Shipping",
-        description: "Green Society provides Canada Post Xpress Shipping right to your doorstep! You can also opt-in for shipping insurance. For orders over $149, shipping is free!"
+        title: "Nationwide Logistics",
+        description: "We ensure timely delivery of bulk and retail orders across India with our efficient supply chain network."
     },
     {
         icon: <ShieldCheck size={40} className="text-primary" />,
-        title: "You're Safe With Us",
-        description: "Our secure payment system accepts the most common forms of payments making the checkout process quicker! The payments we accept are debit, all major credit cards, and cryptocurrency."
+        title: "FSSAI Certified & Lab Tested",
+        description: "Every batch is rigorously tested for purity and safety. We adhere to the highest food safety standards and regulations."
     },
     {
         icon: <BadgePercent size={40} className="text-primary" />,
-        title: "Best Quality & Pricing",
-        description: "Here at Green Society, we take pride in the quality of our products and service. Our prices are set to ensure you receive your medication at a reasonable price and safely."
+        title: "Manufacturing Direct Pricing",
+        description: "Get the best market rates directly from the manufacturer. No middlemen, just pure quality at the best price."
     }
 ];
 

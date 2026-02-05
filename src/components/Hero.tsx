@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[500px] bg-primary overflow-hidden">
+        <section className="relative w-full min-h-[600px] bg-primary overflow-hidden">
             {/* Background Decor */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-primary-light/50 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -18,7 +18,7 @@ export default function Hero() {
                         transition={{ duration: 0.5 }}
                         className="text-secondary font-bold tracking-widest text-sm mb-4 uppercase"
                     >
-                        Best Seller
+                        Premium Quality Since 1995
                     </motion.p>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-white uppercase"
                     >
-                        BEST DISPENSARY TO <br /> BUY WEED ONLINE
+                        Purest Kachi Ghani <br /> Mustard & Refined Oils
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-lg text-gray-300 mb-8"
                     >
-                        Vitamins & Supplements
+                        Extracted from the finest seeds, our oils ensure perfect taste, aroma, and nutrition for your family.
                     </motion.p>
 
                     <motion.div
@@ -44,11 +44,11 @@ export default function Hero() {
                         className="flex items-center gap-8 mb-10"
                     >
                         <div className="text-xl font-semibold">
-                            Get <span className="text-secondary">25% off</span>
+                            FSSAI <span className="text-secondary">Certified</span>
                         </div>
                         <div className="h-6 w-[1px] bg-white/20"></div>
                         <div className="text-xl font-semibold">
-                            Free Shipping
+                            Bulk Supply
                         </div>
                     </motion.div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="btn-primary !px-6 !py-2.5"
                     >
-                        Shop All
+                        Explore Products
                     </motion.button>
                 </div>
 
@@ -78,7 +78,7 @@ export default function Hero() {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute top-0 right-20 w-40 h-56 bg-gray-800/80 rounded-lg shadow-2xl overflow-hidden border border-white/10"
                             >
-                                <img src="https://via.placeholder.com/200x300?text=Premium+Flower" alt="Product" className="w-full h-full object-cover" />
+                                <img src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300" alt="Product" className="w-full h-full object-cover" />
                             </motion.div>
 
                             <motion.div
@@ -86,7 +86,7 @@ export default function Hero() {
                                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                                 className="absolute bottom-10 left-20 w-36 h-48 bg-white rounded-lg shadow-2xl overflow-hidden border border-white/10"
                             >
-                                <img src="https://via.placeholder.com/200x300?text=Edibles" alt="Product" className="w-full h-full object-cover" />
+                                <img src="https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Product" className="w-full h-full object-cover" />
                             </motion.div>
 
                             <motion.div
@@ -94,7 +94,7 @@ export default function Hero() {
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                 className="absolute top-20 right-48 w-32 h-44 bg-gray-200 rounded-lg shadow-2xl overflow-hidden border border-white/10 rotate-12"
                             >
-                                <img src="https://via.placeholder.com/200x300?text=Sativa" alt="Product" className="w-full h-full object-cover" />
+                                <img src="https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Product" className="w-full h-full object-cover" />
                             </motion.div>
                         </div>
                     </div>

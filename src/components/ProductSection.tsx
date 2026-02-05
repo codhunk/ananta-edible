@@ -3,39 +3,63 @@ import ProductCard from './ProductCard';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProductSection() {
-    const [activeTab, setActiveTab] = useState('Best Sellers');
-    const tabs = ['Best Sellers', 'Bundles & Promotions', 'On Sale'];
+    const [activeTab, setActiveTab] = useState('Traditional Oils');
+    const tabs = ['Traditional Oils', 'Refined Oils', 'Bulk Packs'];
 
     const products = [
         {
-            image: "https://via.placeholder.com/400?text=Flower+1",
-            category: "Flower",
-            title: "2 Oz Deal Watermelon Zkittlez + Purple Gushers",
-            rating: 4.6,
-            reviews: 135,
-            basePrice: "$80.00 / gram",
-            tag: "Sativa 100%"
+            image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=400",
+            category: "Cold Pressed",
+            title: "Pure Kachi Ghani Mustard Oil - 1L Bottle",
+            rating: 4.8,
+            reviews: 245,
+            basePrice: "₹180 / liter",
+            tag: "Best Seller"
         },
         {
-            image: "https://via.placeholder.com/400?text=Concentrate+1",
-            category: "Concentrates",
-            title: "Mix And Match Shatter/Budder 28g (4 x 7G)",
-            rating: 4.6,
-            reviews: 135,
-            basePrice: "$200.00",
-            salePrice: "$102.00",
-            unavailable: true,
-            tag: "Indica 70%"
+            image: "https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=400",
+            category: "Refined",
+            title: "Premium Refined Sunflower Oil - 5L Can",
+            rating: 4.7,
+            reviews: 189,
+            basePrice: "₹650 / 5L",
+            tag: "Popular"
         },
         {
-            image: "https://via.placeholder.com/400?text=Flower+2",
-            category: "Flower",
-            title: "2 Oz Deal Ahi Tuna + Master Tuna",
+            image: "https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=400",
+            category: "Cold Pressed",
+            title: "Organic Groundnut Oil - 1L Bottle",
+            rating: 4.9,
+            reviews: 312,
+            basePrice: "₹220 / liter",
+            tag: "Premium"
+        },
+        {
+            image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=400",
+            category: "Refined",
+            title: "Light Soybean Oil - 15L Bulk Pack",
             rating: 4.6,
-            reviews: 135,
-            basePrice: "$200.00",
-            salePrice: "$120.00",
-            tag: "$60 ounce"
+            reviews: 156,
+            basePrice: "₹1,800 / 15L",
+            tag: "Bulk"
+        },
+        {
+            image: "https://images.pexels.com/photos/4198933/pexels-photo-4198933.jpeg?auto=compress&cs=tinysrgb&w=400",
+            category: "Fortified",
+            title: "Vitamin Enriched Rice Bran Oil - 5L",
+            rating: 4.8,
+            reviews: 203,
+            basePrice: "₹750 / 5L",
+            tag: "Health+"
+        },
+        {
+            image: "https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=400",
+            category: "Cold Pressed",
+            title: "Traditional Sesame Oil - 500ml",
+            rating: 4.7,
+            reviews: 178,
+            basePrice: "₹140 / 500ml",
+            tag: "Traditional"
         }
     ];
 
@@ -50,7 +74,7 @@ export default function ProductSection() {
                     className="text-center mb-12"
                 >
                     <h2 className="text-3xl lg:text-4xl font-black text-primary-dark uppercase tracking-tighter leading-tight">
-                        BEST DISPENSARY TO BUY <br /> WEED ONLINE IN INDIA
+                        INDIA'S MOST TRUSTED <br /> EDIBLE OIL BRAND
                     </h2>
                 </motion.div>
 
@@ -93,11 +117,11 @@ export default function ProductSection() {
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                                 className="mb-6"
                             >
-                                <img src="https://via.placeholder.com/300?text=Best+Sellers" alt="Promo" className="w-32 h-32 sm:w-40 sm:h-40 object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-2xl" />
+                                <img src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300" alt="Promo" className="w-32 h-32 sm:w-40 sm:h-40 object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-2xl" />
                             </motion.div>
                             <h3 className="text-xl sm:text-2xl font-black mb-4 uppercase tracking-tighter">Shop our <br /> <span className="text-secondary">Best Sellers</span></h3>
                             <p className="text-xs text-gray-400 mb-8 leading-relaxed font-bold uppercase tracking-widest">
-                                Premium quality selection verified by our experts.
+                                Premium quality locally sourced mustard oils.
                             </p>
                             <motion.a
                                 whileHover={{ scale: 1.05 }}

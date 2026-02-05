@@ -5,23 +5,30 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProductsOpen, setIsProductsOpen] = useState(false);
 
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
-        { name: 'Products', path: '/shop' },
-        { name: 'Flower', path: '#' },
-        { name: 'Edibles', path: '/edibles' },
-        { name: 'Promotions', path: '#' },
-        { name: 'Contact Us', path: '/contact' },
+        {
+            name: 'Products',
+            path: '#',
+            hasDropdown: true,
+            subLinks: [
+                { name: 'Mustard Oil', path: '/shop' },
+                { name: 'Refined Oil', path: '/shop' }
+            ]
+        },
+        { name: 'Bulk Orders', path: '/contact' },
         { name: 'Blog', path: '/blog' },
+        { name: 'Contact Us', path: '/contact' },
     ];
 
     return (
         <nav className="w-full bg-white fixed top-0 z-50 shadow-sm">
             {/* Top Banner */}
             <div className="w-full bg-primary-dark text-white py-2 text-center text-xs sm:text-sm font-medium px-4">
-                LIMITED OFFER: 30% OFF. Use ANANTA30 at Checkout. <span className="ml-2 bg-white/20 px-2 py-0.5 rounded whitespace-nowrap">23 : 15 : 00</span>
+                ISO 9001:2015 & FSSAI Certified Manufacturer | Bulk Supply Available <span className="ml-2 bg-white/20 px-2 py-0.5 rounded whitespace-nowrap">Call: +91-9876543210</span>
             </div>
 
             <div className="container-custom py-3 sm:py-4">
@@ -38,16 +45,56 @@ export default function Navbar() {
                     </Link>
 
                     {/* Navigation Links (Center) - Using flex-1 to take available space and center content */}
-                    <div className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8 text-[11px] font-bold text-gray-700 whitespace-nowrap">
+                    <div className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8 text-[14px] font-bold text-gray-700 whitespace-nowrap">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.path}
-                                className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1"
-                            >
-                                {link.name}
-                                {['Flower', 'Promotions'].includes(link.name) && <ChevronDown size={12} />}
-                            </Link>
+                            link.hasDropdown ? (
+                                <div
+                                    key={link.name}
+                                    className="relative group"
+                                    onMouseEnter={() => setIsProductsOpen(true)}
+                                    onMouseLeave={() => setIsProductsOpen(false)}
+                                >
+                                    <button className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1 relative pb-1">
+                                        {link.name}
+                                        <ChevronDown size={12} />
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light group-hover:w-full transition-all duration-300 ease-out"></span>
+                                    </button>
+                                    <AnimatePresence>
+                                        {isProductsOpen && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: -10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[180px] border border-gray-100"
+                                            >
+                                                {link.subLinks?.map((subLink) => (
+                                                    <Link
+                                                        key={subLink.name}
+                                                        to={subLink.path}
+                                                        className="block px-4 py-2 hover:text-primary-light transition-colors"
+                                                    >
+                                                        <span className="relative inline-block pb-1 group">
+                                                            {subLink.name}
+                                                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light group-hover:w-full transition-all duration-300 ease-out"></span>
+                                                        </span>
+                                                    </Link>
+
+                                                ))}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            ) : (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1 relative pb-1 group"
+                                >
+                                    {link.name}
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light group-hover:w-full transition-all duration-300 ease-out"></span>
+                                </Link>
+                            )
                         ))}
                     </div>
 
@@ -118,14 +165,32 @@ export default function Navbar() {
 
                             <div className="flex-grow overflow-y-auto py-6">
                                 {navLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        to={link.path}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="block px-8 py-4 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-primary-light hover:bg-gray-50 transition-all border-l-4 border-transparent hover:border-primary-light mb-1"
-                                    >
-                                        {link.name}
-                                    </Link>
+                                    link.hasDropdown ? (
+                                        <div key={link.name}>
+                                            <div className="px-8 py-4 text-sm font-bold uppercase tracking-widest text-gray-700">
+                                                {link.name}
+                                            </div>
+                                            {link.subLinks?.map((subLink) => (
+                                                <Link
+                                                    key={subLink.name}
+                                                    to={subLink.path}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="block px-12 py-3 text-sm font-medium text-gray-500 hover:text-primary-light hover:bg-gray-50 transition-all border-l-4 border-transparent hover:border-primary-light mb-1"
+                                                >
+                                                    {subLink.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            key={link.name}
+                                            to={link.path}
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="block px-8 py-4 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-primary-light hover:bg-gray-50 transition-all border-l-4 border-transparent hover:border-primary-light mb-1"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    )
                                 ))}
                             </div>
 
