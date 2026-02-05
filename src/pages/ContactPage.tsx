@@ -167,11 +167,11 @@ export default function ContactPage() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="w-full h-[350px] sm:h-[500px] bg-gray-100 relative shadow-inner"
+                className="w-full h-[350px] sm:h-[500px] bg-gray-50 relative shadow-inner p-4"
             >
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.252436856341!2d78.04182337524462!3d27.461399376324422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974876cffd801f1%3A0xf002d5d8279b21e8!2sAnanta%20Edible%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1770232947834!5m2!1sen!2sin"
-                    className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-1000"
+                    className="w-full h-full border-0 hover:scale-105 transition-all duration-1000"
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

@@ -1,7 +1,29 @@
-import { motion } from 'framer-motion';
-import { Leaf, ShieldCheck, Truck, Award, Handshake } from 'lucide-react';
+import { motion, useInView, animate } from 'framer-motion';
+import { Linkedin, Twitter, Mail, ExternalLink, Quote } from 'lucide-react';
 import Footer from '../components/Footer';
 import NewsletterBanner from '../components/NewsletterBanner';
+import { useEffect, useRef } from 'react';
+
+// Counter Component
+const Counter = ({ from = 0, to, suffix = "", duration = 2 }: { from?: number, to: number, suffix?: string, duration?: number }) => {
+    const nodeRef = useRef<HTMLSpanElement>(null);
+    const inView = useInView(nodeRef, { once: true, margin: "-20%" });
+
+    useEffect(() => {
+        if (inView) {
+            const node = nodeRef.current;
+            const controls = animate(from, to, {
+                duration: duration,
+                onUpdate(value) {
+                    if (node) node.textContent = Math.round(value) + suffix;
+                }
+            });
+            return () => controls.stop();
+        }
+    }, [from, to, suffix, duration, inView]);
+
+    return <span ref={nodeRef}>{from}{suffix}</span>;
+};
 
 export default function AboutPage() {
     const containerVariants = {
@@ -18,173 +40,158 @@ export default function AboutPage() {
     };
 
     return (
-        <div className="min-h-screen bg-white overflow-x-hidden">
-
-
-            {/* Header / Breadcrumb */}
+        <div className="min-h-screen bg-white overflow-x-hidden font-sans">
+            {/* Header / Hero */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="w-full bg-primary-dark py-12 sm:py-20 relative overflow-hidden"
+                className="w-full bg-primary-dark py-20 sm:py-32 relative overflow-hidden"
             >
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed"></div>
                 <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
-                    transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-                    className="absolute inset-0 opacity-15 pointer-events-none"
+                    transition={{ duration: 1.5 }}
+                    className="absolute inset-0 opacity-10"
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2000&auto=format&fit=crop"
-                        alt="Organic farming"
+                        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1920&auto=format&fit=crop"
+                        alt="Background"
                         className="w-full h-full object-cover"
                     />
                 </motion.div>
+
                 <div className="container-custom relative z-10 text-center px-4">
                     <motion.h1
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl sm:text-5xl font-black text-white mb-4 uppercase tracking-tighter"
+                        transition={{ delay: 0.2 }}
+                        className="text-4xl sm:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-tight"
                     >
-                        About Us
+                        Our Vision.<br />Our Promise.
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="flex justify-center items-center gap-2 text-xs sm:text-sm text-gray-400 font-black uppercase tracking-widest"
+                        transition={{ delay: 0.4 }}
+                        className="flex justify-center items-center gap-3 text-xs sm:text-sm text-gray-400 font-bold uppercase tracking-widest"
                     >
-                        <a href="/" className="hover:text-primary-light transition-colors">Home</a>
+                        <a href="/" className="hover:text-white transition-colors">Home</a>
                         <span className="text-white/20">/</span>
-                        <span className="text-white">About Us</span>
+                        <span className="text-primary-light">About Us</span>
                     </motion.div>
                 </div>
             </motion.div>
 
             <main>
-                {/* Intro Section 1: Mission */}
-                <section className="py-16 sm:py-24">
+                {/* Director's Portfolio / Message */}
+                <section className="py-20 sm:py-32 relative">
                     <div className="container-custom px-4">
-                        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
+                            {/* Director Image */}
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="w-full lg:w-1/2"
+                                className="w-full lg:w-5/12 relative group"
                             >
-                                <h2 className="text-3xl lg:text-5xl font-black text-primary-dark mb-6 uppercase leading-tight tracking-tighter">
-                                    100% Trusted <span className="text-primary-light underline decoration-primary-light/30">Organic</span> Food Store
-                                </h2>
-                                <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 font-medium">
-                                    At Ananta, we believe that nature provides everything we need for a balanced and healthy lifestyle. Our journey started with a simple goal: to make premium, high-quality organic products accessible to everyone.
-                                </p>
-                                <motion.p
-                                    whileInView={{ scale: [1, 1.02, 1] }}
-                                    className="text-gray-600 text-sm sm:text-lg leading-relaxed border-l-4 border-primary-light pl-6 py-2 bg-primary-light/5 rounded-r-2xl font-black uppercase tracking-tight"
-                                >
-                                    "Our mission is to nourish lives with pure, potent, and ethically sourced organic supplements."
-                                </motion.p>
+                                <div className="absolute top-4 -left-4 w-full h-full border-2 border-primary-light/50 rounded-tr-[80px] rounded-bl-[80px] z-0 hidden sm:block"></div>
+                                <div className="relative z-10 rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-gray-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                                        alt="Director"
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    />
+                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-8">
+                                        <p className="text-white font-black text-2xl uppercase tracking-tighter">Rajesh Kumar</p>
+                                        <p className="text-primary-light font-bold text-sm uppercase tracking-widest mt-1">Founder & CEO</p>
+                                    </div>
+                                </div>
                             </motion.div>
+
+                            {/* Director's Message */}
                             <motion.div
                                 initial={{ opacity: 0, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.8 }}
-                                className="w-full lg:w-1/2 rounded-[32px] sm:rounded-[48px] overflow-hidden shadow-2xl aspect-video lg:aspect-square relative group"
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="w-full lg:w-7/12 lg:pt-8"
                             >
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.6 }}
-                                    src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1000&auto=format&fit=crop"
-                                    alt="Healthy organic food"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-primary-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="w-16 h-[2px] bg-primary-light"></div>
+                                    <span className="text-primary-light font-black uppercase tracking-widest text-sm">Director's Message</span>
+                                </div>
+
+                                <h2 className="text-3xl sm:text-5xl font-black text-primary-dark mb-10 leading-tight">
+                                    Building a legacy of <span className="text-primary hover:text-primary-dark transition-colors duration-300">purity</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">trust</span>.
+                                </h2>
+
+                                <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-serif italic relative pl-12">
+                                    <Quote className="absolute left-0 top-0 text-primary-light/20 w-8 h-8 transform -scale-x-100" />
+                                    <p>
+                                        "At Ananta, we envisioned more than just a brand; we wanted to create a movement. A movement back to nature, back to wellness, and back to authenticity. In a world full of noise and artificiality, silence and purity are rare luxuries."
+                                    </p>
+                                    <p>
+                                        "Our journey wasn't about finding the easiest path, but the right one. Every product we craft carries a promise – a promise of uncompromised quality, ethical sourcing, and a genuine passion for your well-being. We don't just sell products; we share a piece of our philosophy with you."
+                                    </p>
+                                </div>
+
+                                <div className="mt-12 flex items-center gap-6">
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png"
+                                        alt="Signature"
+                                        className="h-12 opacity-60"
+                                    />
+                                    <div>
+                                        <p className="font-bold text-primary-dark text-lg">Rajesh Kumar</p>
+                                        <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Director, Ananta Group</p>
+                                    </div>
+                                </div>
                             </motion.div>
                         </div>
                     </div>
                 </section>
 
-                {/* Intro Section 2: Values */}
-                <section className="py-16 sm:py-24 bg-gray-50 overflow-hidden">
+                {/* Values / Stats Strip */}
+                <div className="bg-primary-dark text-white py-16 border-y border-white/5">
                     <div className="container-custom px-4">
-                        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="w-full lg:w-1/2"
-                            >
-                                <h2 className="text-3xl lg:text-5xl font-black text-primary-dark mb-6 uppercase leading-tight tracking-tighter">
-                                    Quality You Can <span className="text-primary-light">Taste</span>
-                                </h2>
-                                <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-10 font-medium">
-                                    Every product in our catalog undergoes rigorous testing. From seed to shelf, we ensure that every ingredient is pure, potent, and accurately labeled.
-                                </p>
-
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                            {[
+                                { number: 15, suffix: "+", label: "Years Experience" },
+                                { number: 50, suffix: "k+", label: "Happy Customers" },
+                                { number: 100, suffix: "%", label: "Organic Certified" },
+                                { number: 24, suffix: "/7", label: "Expert Support" }
+                            ].map((stat, i) => (
                                 <motion.div
-                                    variants={containerVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    className="grid grid-cols-2 gap-4 sm:gap-8"
+                                    transition={{ delay: i * 0.1 }}
                                 >
-                                    {[
-                                        { icon: <Leaf />, title: "100% Organic", desc: "Healthy & Fresh food" },
-                                        { icon: <Award />, title: "Customer Choice", desc: "Highly rated on Google" },
-                                        { icon: <Truck />, title: "Free Shipping", desc: "On all orders over $120" },
-                                        { icon: <Headset />, title: "24/7 Support", desc: "Always here for you" },
-                                        { icon: <ShieldCheck />, title: "Secure Pay", desc: "100% safe transactions" },
-                                        { icon: <Handshake />, title: "15Y+ Trust", desc: "Industry leading experts" },
-                                    ].map((feature, i) => (
-                                        <motion.div
-                                            key={i}
-                                            variants={itemVariants}
-                                            whileHover={{ y: -5, x: 5 }}
-                                            className="flex items-center gap-4 group"
-                                        >
-                                            <div className="w-10 h-10 sm:w-14 sm:h-14 bg-primary-light/10 rounded-2xl flex items-center justify-center text-primary-light flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                {feature.icon}
-                                            </div>
-                                            <div>
-                                                <h4 className="font-black text-primary-dark text-xs sm:text-sm uppercase tracking-tighter">{feature.title}</h4>
-                                                <p className="text-[10px] sm:text-xs text-gray-400 font-bold uppercase tracking-widest">{feature.desc}</p>
-                                            </div>
-                                        </motion.div>
-                                    ))}
+                                    <p className="text-4xl sm:text-5xl font-black text-primary-light mb-2">
+                                        <Counter to={stat.number} suffix={stat.suffix} />
+                                    </p>
+                                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
                                 </motion.div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="w-full lg:w-1/2 rounded-[32px] sm:rounded-[48px] overflow-hidden shadow-2xl aspect-video lg:aspect-square relative group"
-                            >
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.6 }}
-                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop"
-                                    alt="Farmer showing produce"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-primary-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </motion.div>
+                            ))}
                         </div>
                     </div>
-                </section>
+                </div>
 
-                {/* Team Section */}
-                <section className="py-16 sm:py-24">
-                    <div className="container-custom text-center px-4">
+                {/* Our Awesome Team */}
+                <section className="py-20 sm:py-32 bg-gray-50">
+                    <div className="container-custom px-4">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            className="text-center mb-16 sm:mb-24"
                         >
-                            <h2 className="text-3xl lg:text-5xl font-black text-primary-dark mb-4 uppercase tracking-tighter">Our Awesome Team</h2>
-                            <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto mb-12 sm:mb-20 font-medium">
-                                Meet the passionate experts behind Ananta who work tirelessly to bring you the finest organic products.
-                            </p>
+                            <span className="text-primary font-black uppercase tracking-widest text-xs mb-3 block">The Minds Behind Ananta</span>
+                            <h2 className="text-3xl sm:text-5xl font-black text-primary-dark uppercase tracking-tight">Our Awesome Team</h2>
+                            <div className="w-20 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
                         </motion.div>
 
                         <motion.div
@@ -192,37 +199,73 @@ export default function AboutPage() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10"
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
                         >
                             {[
-                                { name: "Jenny Wilson", role: "CEO & Founder", img: "https://i.pravatar.cc/300?u=jenny" },
-                                { name: "Jane Cooper", role: "Worker", img: "https://i.pravatar.cc/300?u=jane" },
-                                { name: "Cody Fisher", role: "Security Guard", img: "https://i.pravatar.cc/300?u=cody" },
-                                { name: "Robert Fox", role: "Senior Farmer", img: "https://i.pravatar.cc/300?u=robert" },
+                                {
+                                    name: "Sarah Jenkins",
+                                    role: "Head of Product",
+                                    quote: "Innovation meets tradition in every formula we create.",
+                                    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                                },
+                                {
+                                    name: "David Chen",
+                                    role: "Lead Agronomist",
+                                    quote: "Quality soil creates quality life. That's my belief.",
+                                    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
+                                },
+                                {
+                                    name: "Elena Rodriguez",
+                                    role: "Customer Success",
+                                    quote: "Your wellness journey is personal, and we honor that.",
+                                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop"
+                                },
+                                {
+                                    name: "Michael Ross",
+                                    role: "Operations Director",
+                                    quote: "Efficiency ensures purity reaches you faster.",
+                                    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
+                                },
                             ].map((member, i) => (
                                 <motion.div
                                     key={i}
                                     variants={itemVariants}
-                                    whileHover={{ y: -15 }}
-                                    className="bg-white border border-gray-100 rounded-[32px] sm:rounded-[48px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group"
+                                    className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100 flex flex-col"
                                 >
-                                    <div className="aspect-[4/5] overflow-hidden relative">
-                                        <motion.img
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ duration: 0.8 }}
+                                    <div className="aspect-square relative overflow-hidden">
+                                        <img
                                             src={member.img}
                                             alt={member.name}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="absolute inset-0 bg-primary-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
+                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Linkedin size={18} /></a>
+                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Twitter size={18} /></a>
+                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Mail size={18} /></a>
+                                        </div>
                                     </div>
-                                    <div className="p-6 sm:p-8 text-center bg-white relative z-10">
-                                        <h4 className="text-lg sm:text-2xl font-black text-primary-dark uppercase tracking-tighter group-hover:text-primary transition-colors">{member.name}</h4>
-                                        <p className="text-xs sm:text-sm text-primary-light font-black uppercase tracking-[0.2em] mt-1">{member.role}</p>
+
+                                    <div className="p-8 flex-grow flex flex-col items-center text-center relative">
+                                        <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary-light/50 to-transparent absolute top-0"></div>
+                                        <h4 className="text-xl font-black text-primary-dark mb-1">{member.name}</h4>
+                                        <p className="text-xs font-bold text-primary uppercase tracking-widest mb-6">{member.role}</p>
+
+                                        <div className="relative mt-auto">
+                                            <Quote size={16} className="text-gray-300 absolute -top-3 -left-2 transform -scale-x-100" />
+                                            <p className="text-gray-500 text-sm italic leading-relaxed px-2">
+                                                {member.quote}
+                                            </p>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}
                         </motion.div>
+
+                        <div className="text-center mt-16">
+                            <a href="/contact" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm hover:gap-4 transition-all">
+                                Join our team <ExternalLink size={16} />
+                            </a>
+                        </div>
                     </div>
                 </section>
 
@@ -234,14 +277,13 @@ export default function AboutPage() {
     );
 }
 
-// Simple internal icon component for support
-function Headset() {
-    return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 11c0-4.97 4.03-9 9-9s9 4.03 9 9v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z" />
-            <path d="M21 16v2a2 2 0 0 1-2 2h-1" />
-            <path d="M3 16v2a2 2 0 0 0 2 2h1" />
-            <path d="M11 11 v4M13 11 v4" />
-        </svg>
-    );
-}
+// function Headset() {
+//     return (
+//         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+//             <path d="M3 11c0-4.97 4.03-9 9-9s9 4.03 9 9v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z" />
+//             <path d="M21 16v2a2 2 0 0 1-2 2h-1" />
+//             <path d="M3 16v2a2 2 0 0 0 2 2h1" />
+//             <path d="M11 11 v4M13 11 v4" />
+//         </svg>
+//     );
+// }

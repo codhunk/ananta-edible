@@ -19,7 +19,7 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen bg-background font-sans text-gray-900 selection:bg-primary-light selection:text-white pb-0">
         <Navbar />
-        <div className="pt-[115px] sm:pt-[125px]">
+        <div className="pt-[148px] sm:pt-[116px]">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
