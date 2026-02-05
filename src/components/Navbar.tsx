@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ShoppingCart, ChevronDown, Menu, X } from 'lucide-react';
+import { Search, ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,10 +11,10 @@ export default function Navbar() {
         { name: 'About Us', path: '/about' },
         { name: 'Products', path: '/shop' },
         { name: 'Flower', path: '#' },
-        { name: 'Edibles', path: '#' },
+        { name: 'Edibles', path: '/edibles' },
         { name: 'Promotions', path: '#' },
         { name: 'Contact Us', path: '/contact' },
-        { name: 'Blog', path: '#' },
+        { name: 'Blog', path: '/blog' },
     ];
 
     return (
@@ -25,10 +25,10 @@ export default function Navbar() {
             </div>
 
             <div className="container-custom py-3 sm:py-4">
-                {/* Main Header Row */}
-                <div className="flex items-center justify-between gap-4 lg:gap-8">
-                    {/* Logo */}
-                    <Link to="/" className="flex-shrink-0">
+
+                <div className="flex items-center justify-between gap-8 lg:gap-16">
+                    {/* Logo (Leftside) */}
+                    <Link to="/" className="flex-shrink-0 z-20">
                         <div className="bg-secondary p-1.5 sm:p-2 rounded flex items-center gap-1">
                             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
                                 <span className="text-secondary font-bold text-xs">A</span>
@@ -37,27 +37,32 @@ export default function Navbar() {
                         </div>
                     </Link>
 
-                    {/* Search Bar - Desktop */}
-                    <div className="hidden md:flex flex-grow max-w-xl relative">
-                        <input
-                            type="text"
-                            placeholder="Search products..."
-                            className="w-full bg-gray-100 border-none rounded-full py-2 px-6 focus:ring-2 focus:ring-primary-light outline-none text-sm"
-                        />
-                        <button className="absolute right-1 top-1 w-8 h-8 bg-primary-light rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
-                            <Search size={14} />
-                        </button>
+                    {/* Navigation Links (Center) - Using flex-1 to take available space and center content */}
+                    <div className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8 text-[11px] font-bold text-gray-700 whitespace-nowrap">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1"
+                            >
+                                {link.name}
+                                {['Flower', 'Promotions'].includes(link.name) && <ChevronDown size={12} />}
+                            </Link>
+                        ))}
                     </div>
 
-                    {/* Icons & Mobile Menu Toggle */}
-                    <div className="flex items-center gap-4 sm:gap-6">
-                        <div className="hidden sm:flex items-center gap-2 cursor-pointer hover:text-primary-light transition-colors text-xs font-bold uppercase">
-                            <span>Account</span>
-                        </div>
-
-                        <div className="relative cursor-pointer">
-                            <ShoppingCart size={20} className="text-gray-700 sm:w-6 sm:h-6" />
-                            <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[8px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">0</span>
+                    {/* Right Side: Search & Mobile Toggle */}
+                    <div className="flex items-center gap-4 justify-end flex-shrink-0 z-20">
+                        {/* Search Bar - Desktop */}
+                        <div className="hidden md:flex relative w-64 xl:w-72">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="w-full bg-gray-50 border border-gray-100 rounded-full py-2.5 pl-5 pr-12 focus:ring-2 focus:ring-primary-light/20 focus:border-primary-light outline-none text-xs font-medium transition-all"
+                            />
+                            <button className="absolute right-1 top-1 w-8 h-8 bg-primary-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+                                <Search size={14} />
+                            </button>
                         </div>
 
                         {/* Mobile Menu Toggle */}
@@ -71,29 +76,15 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Search - Visible only on small screens */}
-                <div className="mt-3 md:hidden relative">
+                <div className="mt-4 md:hidden relative">
                     <input
                         type="text"
-                        placeholder="Search..."
-                        className="w-full bg-gray-100 border-none rounded-full py-2 px-6 focus:ring-2 focus:ring-primary-light outline-none text-sm"
+                        placeholder="Search products..."
+                        className="w-full bg-gray-50 border border-gray-100 rounded-full py-2.5 px-5 focus:ring-2 focus:ring-primary-light/20 outline-none text-sm"
                     />
-                    <button className="absolute right-1 top-1 w-8 h-8 bg-primary-light rounded-full flex items-center justify-center text-white">
+                    <button className="absolute right-1.5 top-1.5 w-8 h-8 bg-primary-dark rounded-full flex items-center justify-center text-white">
                         <Search size={14} />
                     </button>
-                </div>
-
-                {/* Desktop Navigation Links */}
-                <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 mt-4 text-[11px] font-bold text-gray-700">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1"
-                        >
-                            {link.name}
-                            {['Flower', 'Promotions'].includes(link.name) && <ChevronDown size={12} />}
-                        </Link>
-                    ))}
                 </div>
             </div>
 

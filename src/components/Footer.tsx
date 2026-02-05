@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -43,18 +44,34 @@ export default function Footer() {
 
                     {/* Contact & Misc */}
                     <div className="lg:col-span-4">
-                        <div className="mb-12">
-                            <h4 className="text-sm font-bold mb-8 uppercase tracking-widest">CONTACT US</h4>
-                            <p className="text-gray-500 text-sm font-medium">info@ananta.com</p>
+                        <div className="mb-8">
+                            <h4 className="text-sm font-bold mb-6 uppercase tracking-widest">CONTACT US</h4>
+                            <p className="text-gray-500 text-sm font-medium mb-4">info@ananta.com</p>
+                            <Link to="/faq" className="text-xs font-bold text-gray-500 hover:text-primary-dark transition-colors mb-6 block uppercase tracking-tight">Frequently Asked Questions</Link>
+
+                            <div className="flex gap-4">
+                                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-light hover:text-white transition-all">
+                                    <Facebook size={16} />
+                                </a>
+                                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-light hover:text-white transition-all">
+                                    <Twitter size={16} />
+                                </a>
+                                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-light hover:text-white transition-all">
+                                    <Instagram size={16} />
+                                </a>
+                                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-light hover:text-white transition-all">
+                                    <Linkedin size={16} />
+                                </a>
+                            </div>
                         </div>
 
                         <div>
-                            <h4 className="text-sm font-bold mb-8 uppercase tracking-widest">MORE</h4>
+                            <h4 className="text-sm font-bold mb-6 uppercase tracking-widest">MORE</h4>
                             <div className="grid grid-cols-2 gap-4 text-gray-500 text-xs font-bold uppercase tracking-tight">
-                                <a href="#" className="hover:text-white">Buy weed India</a>
-                                <a href="#" className="hover:text-white">Privacy Policy</a>
-                                <a href="#" className="hover:text-white">Terms & Conditions</a>
-                                <a href="#" className="hover:text-white">Out of Stock</a>
+                                <Link to="/shop" className="hover:text-white">Buy weed India</Link>
+                                <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+                                <Link to="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
+                                <span className="text-gray-700 cursor-not-allowed">Out of Stock</span>
                             </div>
                         </div>
                     </div>
@@ -63,8 +80,8 @@ export default function Footer() {
                 <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-gray-600 text-[11px] font-medium tracking-tight">© 2026 Ananta. All Rights Reserved.</p>
                     <div className="flex gap-8 text-gray-600 text-[11px] font-bold tracking-tight uppercase">
-                        <a href="#" className="hover:text-white">Privacy Policy</a>
-                        <a href="#" className="hover:text-white">Terms & Conditions</a>
+                        <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+                        <Link to="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
                     </div>
                 </div>
             </div>
