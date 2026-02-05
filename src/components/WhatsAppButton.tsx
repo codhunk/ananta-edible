@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, MessageCircle, Headphones, Package } from "lucide-react";
+import { X, Phone, MessageCircle, Package } from "lucide-react";
 
 const WhatsAppButton = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const WhatsAppButton = () => {
 
     const phoneNumber = "919358174038";
     const displayNumber = "+91 9358174038";
-    const message = "Hello, I would like to know more about Ananta  Edibles products.";
+    const message = "Hello, I would like to know more about Ananta Edibles products.";
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
         message

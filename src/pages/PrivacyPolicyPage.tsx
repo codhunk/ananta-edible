@@ -1,4 +1,4 @@
-import React from 'react';
+"use client";
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, FileText, Server, Globe } from 'lucide-react';
