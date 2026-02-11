@@ -1,80 +1,129 @@
-import { Truck, ShieldCheck, BadgePercent } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-const features = [
+const aboutIns = [
     {
-        icon: <Truck size={40} className="text-primary" />,
-        title: "Nationwide Logistics",
-        description: "We ensure timely delivery of bulk and retail orders across India with our efficient supply chain network."
+        image: '/card_img1.png', // Shipping/Truck icon
+        heading: 'Reliable Logistics',
+        description: 'Ananta provides seamless nationwide delivery right to your doorstep! We ensure every batch is handled with care for maximum freshness.',
     },
     {
-        icon: <ShieldCheck size={40} className="text-primary" />,
-        title: "FSSAI Certified & Lab Tested",
-        description: "Every batch is rigorously tested for purity and safety. We adhere to the highest food safety standards and regulations."
+        image: '/card_img2.png', // Secure/Shield icon
+        heading: 'Certified Purity',
+        description: 'Our state-of-the-art laboratory tests every batch for moisture, acidity, and chemical-free processing. You are safe with our FSSAI certified oils.',
     },
     {
-        icon: <BadgePercent size={40} className="text-primary" />,
-        title: "Manufacturing Direct Pricing",
-        description: "Get the best market rates directly from the manufacturer. No middlemen, just pure quality at the best price."
+        image: '/card_img3.png', // Quality/Trophy icon
+        heading: 'Premium Quality',
+        description: 'We take pride in our "Farm-to-Fork" model. Our prices are optimized to ensure your family receives premium, healthy nutrients at an honest value.',
     }
 ];
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.2
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { className: "transition", stiffness: 100, damping: 15 }
-    }
-};
-
 export default function FeatureGrid() {
     return (
-        <section className="py-14 bg-white overflow-hidden">
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                className="container-custom"
-            >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    {features.map((feature, index) => (
+        <div className="bg-[#F2F6F4] py-12 sm:py-16 md:py-20 overflow-hidden">
+            <div className="container-custom">
+                {/* Section Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-10 sm:mb-12 md:mb-16"
+                >
+                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-4 tracking-tight">
+                        Why Choose <span className="text-primary-light">Ananta</span>
+                    </h2>
+                    <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium">
+                        Discover what makes us the preferred choice for thousands of families across India.
+                    </p>
+                </motion.div>
+
+                {/* Cards Container */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                    {aboutIns.map((item, index) => (
                         <motion.div
                             key={index}
-                            variants={itemVariants}
-                            whileHover={{ y: -5 }}
-                            className="flex gap-6 items-start group"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: index * 0.1,
+                                type: "spring",
+                                stiffness: 100
+                            }}
+                            viewport={{ once: true }}
+                            whileHover={{
+                                y: -10,
+                                transition: { duration: 0.3 }
+                            }}
+                            className="w-full"
                         >
-                            <div className="flex-shrink-0 w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center border border-gray-100 shadow-sm relative transition-all group-hover:shadow-lg group-hover:border-primary/20">
-                                <div className="absolute inset-0 bg-primary/5 rounded-full scale-110 group-hover:bg-primary/10 transition-colors"></div>
+                            <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full p-8 sm:p-12 flex items-start gap-4 border border-white/20 backdrop-blur-sm">
+                                {/* Icon Container */}
                                 <motion.div
-                                    whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-                                    transition={{ duration: 0.5 }}
+                                    initial={{ scale: 0 }}
+                                    whileInView={{ scale: 1 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: index * 0.1 + 0.3,
+                                        type: "spring"
+                                    }}
+                                    viewport={{ once: true }}
+                                    className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 rounded-2xl flex items-center justify-center p-3 text-primary-dark"
                                 >
-                                    {feature.icon}
+                                    <img
+                                        src={item.image}
+                                        className="w-full h-full object-contain text-primary-dark"
+                                        alt={item.heading}
+                                    // style={{ filter: "hue-rotate(90deg) saturate(1.5)" }}
+                                    />
                                 </motion.div>
-                            </div>
-                            <div>
-                                <h3 className="text-xl mb-3 text-primary-dark font-black tracking-tight group-hover:text-primary transition-colors">{feature.title}</h3>
-                                <p className="text-gray-500 text-sm leading-relaxed">
-                                    {feature.description}
-                                </p>
+
+                                {/* Content */}
+                                <div className="flex-1">
+                                    <motion.h3
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
+                                        viewport={{ once: true }}
+                                        className="text-lg sm:text-xl font-black text-primary-dark mb-2 tracking-tight"
+                                    >
+                                        {item.heading}
+                                    </motion.h3>
+
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
+                                        viewport={{ once: true }}
+                                        className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium"
+                                    >
+                                        {item.description}
+                                    </motion.p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
-        </section>
+
+                {/* Decorative Elements */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="mt-12 sm:mt-16 text-center"
+                >
+                    <div className="inline-flex items-center justify-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white shadow-xl rounded-full border border-gray-100">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-primary-light rounded-full animate-pulse" />
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-secondary rounded-full animate-bounce" />
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-primary-dark rounded-full" />
+                        <span className="text-xs sm:text-sm text-primary-dark font-black tracking-widest ml-2">
+                            Trusted by 10,000+ families
+                        </span>
+                    </div>
+                </motion.div>
+            </div>
+        </div>
     );
 }

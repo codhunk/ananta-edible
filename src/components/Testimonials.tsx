@@ -26,7 +26,7 @@ export default function Testimonials() {
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-12 sm:mb-16 uppercase font-black tracking-tighter"
+                    className="text-2xl sm:text-2xl lg:text-4xl text-primary-dark mb-12 sm:mb-16 font-black tracking-tighter"
                 >
                     Customer Testimonials
                 </motion.h2>
@@ -41,16 +41,16 @@ export default function Testimonials() {
                     >
                         <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
                         <div className="relative z-10">
-                            <h3 className="text-xl font-black mb-8 leading-tight uppercase text-secondary">VOTED BEST ONLINE DISPENSARY IN INDIA</h3>
+                            <h3 className="text-xl font-black mb-8 leading-tight text-secondary">Voted best online dispensary in India</h3>
                             <div className="w-full h-px bg-white/10 mb-8"></div>
                             <div className="flex items-center gap-4 mb-2">
-                                <span className="text-3xl font-black tracking-tighter uppercase">Ananta Review</span>
+                                <span className="text-3xl font-black tracking-tighter">Ananta review</span>
                             </div>
-                            <p className="text-xs text-gray-400 uppercase tracking-[0.2em] font-black mb-4 underline decoration-primary-light underline-offset-4">Excellent</p>
+                            <p className="text-xs text-gray-400 tracking-[0.2em] font-black mb-4 underline decoration-primary-light underline-offset-4">Excellent</p>
                             <div className="flex gap-1 mb-2">
                                 {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-secondary text-secondary" />)}
                             </div>
-                            <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">| on <span className="text-white">135</span> Reviews</p>
+                            <p className="text-xs text-gray-400 font-bold tracking-widest">| on <span className="text-white">135</span> reviews</p>
                         </div>
                     </motion.div>
 
@@ -77,8 +77,8 @@ export default function Testimonials() {
                                     <div className="flex items-center gap-4 mb-6 border-b border-gray-50 pb-6">
                                         <img src={t.avatar} alt={t.author} className="w-12 h-12 rounded-full ring-4 ring-primary-light/5" />
                                         <div className="flex flex-col">
-                                            <span className="font-black text-primary-dark uppercase tracking-tight">{t.author}</span>
-                                            <span className="text-xs text-gray-300 font-bold uppercase tracking-widest">{t.date}</span>
+                                            <span className="font-black text-primary-dark tracking-tight">{t.author}</span>
+                                            <span className="text-xs text-gray-300 font-bold tracking-widest">{t.date}</span>
                                         </div>
                                     </div>
                                     <div className="flex gap-1 mb-4">

@@ -4,22 +4,22 @@ import { motion } from 'framer-motion';
 const steps = [
     {
         icon: <ClipboardList size={40} />,
-        title: "REGISTER",
+        title: "Register",
         description: "Create an account for bulk or retail orders. It's quick, simple, and helps you track your shipments."
     },
     {
         icon: <ShoppingBag size={40} />,
-        title: "SELECT OILS",
+        title: "Select oils",
         description: "Browse our premium range of Kachi Ghani Mustard Oil, Soybean Oil, and Sunflower Oil."
     },
     {
         icon: <Wallet size={40} />,
-        title: "SECURE PAYMENT",
+        title: "Secure payment",
         description: "Pay securely via net banking, UPI, or cards. We ensure 100% safe transactions for all orders."
     },
     {
         icon: <ShieldCheck size={40} />,
-        title: "FAST DELIVERY",
+        title: "Fast delivery",
         description: "Your order is hygienically packed and dispatched immediately. Track your oil all the way to your doorstep."
     }
 ];
@@ -34,8 +34,8 @@ export default function OrderSteps() {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center mb-12 sm:mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 uppercase leading-tight tracking-tighter">HOW TO ORDER <br /> <span className="text-primary-light">PURE ANANTA OILS</span></h2>
-                    <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto px-4 font-bold uppercase tracking-widest text-xs sm:text-sm">
+                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black mb-6 sm:mb-8 leading-tight tracking-tighter">How to order <br /> <span className="text-primary-light">pure Ananta oils</span></h2>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto px-4 font-bold tracking-widest text-xs sm:text-sm">
                         Ordering pure, healthy oils online is simple and secure.
                     </p>
                 </motion.div>
@@ -69,7 +69,7 @@ export default function OrderSteps() {
                                     {step.icon}
                                 </motion.div>
                             </div>
-                            <h3 className="text-xl font-black mb-4 uppercase tracking-tighter group-hover:text-primary-light transition-colors">{step.title}</h3>
+                            <h3 className="text-xl font-black mb-4 tracking-tighter group-hover:text-primary-light transition-colors">{step.title}</h3>
                             <p className="text-gray-400 text-sm leading-relaxed max-w-sm px-4">
                                 {step.description}
                             </p>
@@ -87,7 +87,7 @@ export default function OrderSteps() {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="btn-primary !bg-primary-light !px-12 !py-4 shadow-2xl shadow-primary-light/20 !text-xs !font-black uppercase tracking-[0.2em]"
+                        className="btn-primary !bg-primary-light !px-12 !py-4 shadow-2xl shadow-primary-light/20 !text-xs !font-black tracking-[0.2em]"
                     >
                         Choose Healthy Oils
                     </motion.button>

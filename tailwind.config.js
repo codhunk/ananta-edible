@@ -24,7 +24,7 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['Poppins', 'sans-serif'],
+                sans: ['Arial', 'Helvetica', 'sans-serif'],
             },
             boxShadow: {
                 'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',

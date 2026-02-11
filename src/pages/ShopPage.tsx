@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronDown, LayoutGrid, List, Filter, ArrowRight, X } from 'lucide-react';
-import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -39,7 +38,7 @@ export default function ShopPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h3 className="text-sm font-black uppercase tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Categories</h3>
+                <h3 className="text-sm font-black tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Categories</h3>
                 <div className="space-y-4">
                     {categories.map((cat, idx) => (
                         <motion.div
@@ -50,7 +49,7 @@ export default function ShopPage() {
                             whileHover={{ x: 5 }}
                             className="flex justify-between items-center group cursor-pointer"
                         >
-                            <span className="text-sm text-gray-400 font-black group-hover:text-primary-light transition-colors uppercase tracking-tight">{cat.name}</span>
+                            <span className="text-sm text-gray-400 font-black group-hover:text-primary-light transition-colors tracking-tight">{cat.name}</span>
                             <span className="text-xs font-black text-gray-300">({cat.count})</span>
                         </motion.div>
                     ))}
@@ -62,7 +61,7 @@ export default function ShopPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
             >
-                <h3 className="text-sm font-black uppercase tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Price Range</h3>
+                <h3 className="text-sm font-black tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Price range</h3>
                 <input
                     type="range"
                     min="0"
@@ -71,14 +70,14 @@ export default function ShopPage() {
                     onChange={(e) => setPriceRange(parseInt(e.target.value))}
                     className="w-full h-2 bg-gray-100 rounded-full appearance-none cursor-pointer accent-primary-light mb-4"
                 />
-                <div className="flex justify-between text-xs font-black text-gray-400 uppercase tracking-widest">
+                <div className="flex justify-between text-xs font-black text-gray-400 tracking-widest">
                     <span>$0</span>
                     <span className="text-primary-light">${priceRange}</span>
                 </div>
                 <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full btn-primary !py-3 !text-xs mt-6 !bg-primary-dark shadow-lg shadow-primary-dark/10 font-black uppercase tracking-[0.2em]"
+                    className="w-full btn-primary !py-3 !text-xs mt-6 !bg-primary-dark shadow-lg shadow-primary-dark/10 font-black tracking-[0.2em]"
                 >
                     Apply Filter
                 </motion.button>
@@ -89,7 +88,7 @@ export default function ShopPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
             >
-                <h3 className="text-sm font-black uppercase tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Status</h3>
+                <h3 className="text-sm font-black tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Status</h3>
                 <div className="space-y-4">
                     {['In Stock', 'On Sale'].map(status => (
                         <label key={status} className="flex items-center gap-4 cursor-pointer group">
@@ -101,7 +100,7 @@ export default function ShopPage() {
                                 ></motion.div>
                             </div>
                             <input type="checkbox" className="hidden peer" />
-                            <span className="font-black text-xs uppercase tracking-widest text-gray-400 group-hover:text-primary-dark transition-colors">{status}</span>
+                            <span className="font-black text-xs tracking-widest text-gray-400 group-hover:text-primary-dark transition-colors">{status}</span>
                         </label>
                     ))}
                 </div>
@@ -119,7 +118,7 @@ export default function ShopPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-gray-50 py-3 border-b border-gray-100"
             >
-                <div className="container-custom px-4 flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-primary-dark">
+                <div className="container-custom px-4 flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm font-black tracking-[0.2em] text-primary-dark">
                     <div className="flex items-center gap-2">
                         <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="w-1.5 h-1.5 bg-primary-light rounded-full"></motion.div>
                         Worldwide Shipping
@@ -151,7 +150,7 @@ export default function ShopPage() {
                             viewport={{ once: true }}
                             className="mb-10 lg:mb-16 text-center lg:text-left"
                         >
-                            <h1 className="text-4xl lg:text-5xl font-black text-primary-dark uppercase tracking-tighter mb-4 underline decoration-primary-light/20">Cannabis</h1>
+                            <h1 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark tracking-tighter mb-4 underline decoration-primary-light/20">Edible Oils</h1>
                             <p className="text-xs sm:text-base text-gray-400 leading-relaxed max-w-3xl mx-auto lg:mx-0 font-medium">
                                 Discover our premium range of organic cannabis products, meticulously curated for enthusiasts.
                             </p>
@@ -165,21 +164,21 @@ export default function ShopPage() {
                             className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-12 py-6 border-y border-gray-100"
                         >
                             <div className="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-start">
-                                <div className="text-xs sm:text-sm font-black text-gray-400 uppercase tracking-[0.2em] italic">
+                                <div className="text-xs sm:text-sm font-black text-gray-400 tracking-[0.2em] italic">
                                     Showing <span className="text-primary-dark">1-9</span> of 45 results
                                 </div>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => setIsSidebarOpen(true)}
-                                    className="lg:hidden flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] px-6 py-3 bg-primary-dark text-white rounded-full shadow-xl shadow-primary-dark/20"
+                                    className="lg:hidden flex items-center gap-2 text-xs font-black tracking-[0.2em] px-6 py-3 bg-primary-dark text-white rounded-full shadow-xl shadow-primary-dark/20"
                                 >
                                     <Filter size={14} /> Filter
                                 </motion.button>
                             </div>
 
                             <div className="flex items-center gap-4 sm:gap-8 w-full sm:w-auto justify-center sm:justify-end">
-                                <motion.div className="flex items-center gap-2 text-xs sm:text-sm font-black text-gray-400 uppercase tracking-[0.2em] cursor-pointer group">
+                                <motion.div className="flex items-center gap-2 text-xs sm:text-sm font-black text-gray-400 tracking-[0.2em] cursor-pointer group">
                                     Sort: <span className="text-primary-dark flex items-center gap-1 group-hover:text-primary-light transition-colors underline decoration-primary-light/30">Latest <ChevronDown size={14} /></span>
                                 </motion.div>
                                 <div className="hidden sm:block h-6 w-px bg-gray-100"></div>
@@ -226,10 +225,10 @@ export default function ShopPage() {
                             <div className="absolute inset-0 bg-cover opacity-10 bg-[url('https://images.unsplash.com/photo-1596545160910-c089dc7ba43a?q=80&w=2000&auto=format&fit=crop')]"></div>
                             <div className="relative z-10 w-full flex flex-col sm:flex-row justify-between items-center text-white text-center sm:text-left gap-10">
                                 <div className="max-w-md">
-                                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary mb-4 underline">Limited Recommendation</p>
-                                    <h2 className="text-2xl sm:text-4xl font-black mb-8 uppercase tracking-tighter leading-tight">Mix And Match Shatter/Budder 28g</h2>
+                                    <p className="text-[10px] font-black tracking-[0.4em] text-secondary mb-4 underline">Limited recommendation</p>
+                                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black mb-8 tracking-tighter leading-tight">Authentic Kachi Ghani Mustard Oil</h2>
                                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                                        <motion.button className="btn-primary !py-4 !px-10 !text-[10px] !bg-primary-light w-full sm:w-auto shadow-xl shadow-primary-light/20 uppercase tracking-[0.2em] font-black">Shop Now</motion.button>
+                                        <motion.button className="btn-primary !py-4 !px-10 !text-[10px] !bg-primary-light w-full sm:w-auto shadow-xl shadow-primary-light/20 tracking-[0.2em] font-black">Shop now</motion.button>
                                         <div className="flex items-center gap-3">
                                             <span className="text-gray-500 line-through text-xs font-black">$120.00</span>
                                             <span className="text-secondary text-2xl sm:text-3xl font-black">$99.00</span>
@@ -286,7 +285,7 @@ export default function ShopPage() {
                             className="fixed top-0 left-0 h-full w-[300px] bg-white z-[90] p-10 overflow-y-auto shadow-2xl"
                         >
                             <div className="flex justify-between items-center mb-12">
-                                <span className="font-black text-primary-dark uppercase tracking-[0.2em] text-xl underline decoration-primary-light/30">Filters</span>
+                                <span className="font-black text-primary-dark tracking-[0.2em] text-xl underline decoration-primary-light/30">Filters</span>
                                 <button onClick={() => setIsSidebarOpen(false)} className="text-gray-400 p-2">
                                     <X size={24} />
                                 </button>
@@ -298,7 +297,6 @@ export default function ShopPage() {
             </AnimatePresence>
 
             <NewsletterBanner />
-            <Footer />
         </div>
     );
 }

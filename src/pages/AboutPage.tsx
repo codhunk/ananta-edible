@@ -1,6 +1,5 @@
 import { motion, useInView, animate } from 'framer-motion';
 import { Linkedin, Twitter, Mail, ExternalLink, Quote } from 'lucide-react';
-import Footer from '../components/Footer';
 import CertificationLogos from '../components/CertificationLogos';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { useEffect, useRef } from 'react';
@@ -67,15 +66,15 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-4xl sm:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-tight"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-6 tracking-tight leading-tight"
                     >
-                        Purity in Every Drop.<br />Health in Every Meal.
+                        Purity in every drop.<br />Health in every meal.
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="flex justify-center items-center gap-3 text-xs sm:text-sm text-gray-400 font-bold uppercase tracking-widest"
+                        className="flex justify-center items-center gap-3 text-xs sm:text-sm text-gray-400 font-bold tracking-widest"
                     >
                         <a href="/" className="hover:text-white transition-colors">Home</a>
                         <span className="text-white/20">/</span>
@@ -86,7 +85,7 @@ export default function AboutPage() {
 
             <main>
                 {/* Director's Portfolio / Message */}
-                <section className="py-20 sm:py-32 relative">
+                <section className="py-12 sm:py-24 relative px-12">
                     <div className="container-custom px-4">
                         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
                             {/* Director Image */}
@@ -95,18 +94,18 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="w-full lg:w-5/12 relative group"
+                                className="w-full lg:w-3/12 relative group"
                             >
                                 <div className="absolute top-4 -left-4 w-full h-full border-2 border-primary-light/50 rounded-tr-[80px] rounded-bl-[80px] z-0 hidden sm:block"></div>
                                 <div className="relative z-10 rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-gray-100">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                                        src="/mayank_founder.jpeg"
                                         alt="Director"
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                        className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700"
                                     />
-                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-8">
-                                        <p className="text-white font-black text-2xl uppercase tracking-tighter">Rajesh Kumar</p>
-                                        <p className="text-primary-light font-bold text-sm uppercase tracking-widest mt-1">Founder & Managing Director</p>
+                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-10 ">
+                                        <p className="text-white font-black text-2xl tracking-tighter">Mayank Bansal</p>
+                                        <p className="text-primary-light font-bold text-sm tracking-widest mt-1">Founder & Managing Director</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -121,10 +120,10 @@ export default function AboutPage() {
                             >
                                 <div className="flex items-center gap-4 mb-8">
                                     <div className="w-16 h-[2px] bg-primary-light"></div>
-                                    <span className="text-primary-light font-black uppercase tracking-widest text-sm">Director's Message</span>
+                                    <span className="text-primary-light font-black tracking-widest text-sm">Director's message</span>
                                 </div>
 
-                                <h2 className="text-3xl sm:text-5xl font-black text-primary-dark mb-10 leading-tight">
+                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight">
                                     Building a legacy of <span className="text-primary hover:text-primary-dark transition-colors duration-300">purity</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">trust</span>.
                                 </h2>
 
@@ -139,14 +138,16 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="mt-12 flex items-center gap-6">
-                                    <img
+                                    {/* <img
                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png"
                                         alt="Signature"
                                         className="h-12 opacity-60"
                                     />
+
+                                     */}
                                     <div>
-                                        <p className="font-bold text-primary-dark text-lg">Rajesh Kumar</p>
-                                        <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Managing Director</p>
+                                        <p className="font-bold text-primary-dark text-lg">Mayank Bansal</p>
+                                        <p className="text-xs text-gray-400 font-bold tracking-widest">Founder & Managing Director</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -174,7 +175,7 @@ export default function AboutPage() {
                                     <p className="text-4xl sm:text-5xl font-black text-primary-light mb-2">
                                         <Counter to={stat.number} suffix={stat.suffix} />
                                     </p>
-                                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
+                                    <p className="text-xs sm:text-sm font-bold tracking-widest text-gray-400">{stat.label}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -190,8 +191,8 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             className="text-center mb-16 sm:mb-24"
                         >
-                            <span className="text-primary font-black uppercase tracking-widest text-xs mb-3 block">The Minds Behind Ananta</span>
-                            <h2 className="text-3xl sm:text-5xl font-black text-primary-dark uppercase tracking-tight">Our Awesome Team</h2>
+                            <span className="text-primary font-black tracking-widest text-xs mb-3 block">The minds behind Ananta</span>
+                            <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark tracking-tight">Our awesome team</h2>
                             <div className="w-20 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
                         </motion.div>
 
@@ -204,26 +205,26 @@ export default function AboutPage() {
                         >
                             {[
                                 {
-                                    name: "Sarah Jenkins",
-                                    role: "Quality Assurance Head",
+                                    name: "Ankit Bansal",
+                                    role: "MD @ Ananta Edible",
                                     quote: "Every batch is tested for consistency and purity standards.",
-                                    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                                    img: "/ankit_md.jpeg"
                                 },
                                 {
-                                    name: "David Chen",
-                                    role: "Production Manager",
+                                    name: "Sandeep Agrawal",
+                                    role: "General Manager Sales",
                                     quote: "Efficient extraction processes ensure maximum nutrition retention.",
-                                    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
+                                    img: "sales.jpeg"
                                 },
                                 {
-                                    name: "Elena Rodriguez",
-                                    role: "Supply Chain Manager",
+                                    name: "Rajesh Kumar",
+                                    role: "General Manager Supply Chain",
                                     quote: "Ensuring our products reach distributors on time, every time.",
                                     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop"
                                 },
                                 {
-                                    name: "Michael Ross",
-                                    role: "Plant Operations",
+                                    name: "Rajesh Kumar",
+                                    role: "General Manager Operations",
                                     quote: "Safety and hygiene are our top priorities in the factory.",
                                     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
                                 },
@@ -249,7 +250,7 @@ export default function AboutPage() {
                                     <div className="p-8 flex-grow flex flex-col items-center text-center relative">
                                         <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary-light/50 to-transparent absolute top-0"></div>
                                         <h4 className="text-xl font-black text-primary-dark mb-1">{member.name}</h4>
-                                        <p className="text-xs font-bold text-primary uppercase tracking-widest mb-6">{member.role}</p>
+                                        <p className="text-xs font-bold text-primary tracking-widest mb-6">{member.role}</p>
 
                                         <div className="relative mt-auto">
                                             <Quote size={16} className="text-gray-300 absolute -top-3 -left-2 transform -scale-x-100" />
@@ -263,7 +264,7 @@ export default function AboutPage() {
                         </motion.div>
 
                         <div className="text-center mt-16">
-                            <a href="/contact" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm hover:gap-4 transition-all">
+                            <a href="/contact" className="inline-flex items-center gap-2 text-primary font-bold tracking-widest text-sm hover:gap-4 transition-all">
                                 Join our team <ExternalLink size={16} />
                             </a>
                         </div>
@@ -275,7 +276,7 @@ export default function AboutPage() {
                 <NewsletterBanner />
             </main>
 
-            <Footer />
+
         </div>
     );
 }

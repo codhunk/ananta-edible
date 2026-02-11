@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Star, Plus, Minus, ShoppingCart, Share2, Heart, CheckCircle2, ChevronRight, ChevronLeft } from 'lucide-react';
-import Footer from '../components/Footer';
-import ProductCard from '../components/ProductCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import ProductCard from '../components/ProductCard';
 
 export default function ProductPage() {
     const [quantity, setQuantity] = useState(1);
@@ -19,10 +18,10 @@ export default function ProductPage() {
         tags: ["Sativa 100%", "Premium", "Best Seller"],
         description: "A premium blend of Watermelon Zkittlez and Purple Gushers, offering a unique aromatic experience and potent effects. Grown with organic practices to ensure the highest quality and purity.",
         images: [
-            "https://via.placeholder.com/600x600?text=Product+Large+1",
-            "https://via.placeholder.com/150x150?text=Thumb+2",
-            "https://via.placeholder.com/150x150?text=Thumb+3",
-            "https://via.placeholder.com/150x150?text=Thumb+4"
+            "/sudhkolhu1.jpeg",
+            "/sudhkolhu.jpeg",
+            "/sudhkolhu1.jpeg",
+            "/sudhkolhu.jpeg"
         ]
     };
 
@@ -75,7 +74,7 @@ export default function ProductPage() {
                     className="bg-gray-50 py-3 sm:py-4 border-b border-gray-100"
                 >
                     <div className="container-custom px-4">
-                        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-gray-400">
+                        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-black tracking-[0.2em] text-gray-400">
                             <a href="/" className="hover:text-primary transition-colors">Home</a>
                             <span>/</span>
                             <a href="#" className="hover:text-primary transition-colors">{product.category}</a>
@@ -162,7 +161,7 @@ export default function ProductPage() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-xs sm:text-sm font-black text-primary-light uppercase tracking-[0.4em] mb-4"
+                                className="text-xs sm:text-sm font-black text-primary-light tracking-[0.4em] mb-4"
                             >
                                 {product.category}
                             </motion.p>
@@ -170,7 +169,7 @@ export default function ProductPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
-                                className="text-3xl sm:text-5xl lg:text-7xl font-black text-primary-dark mb-6 sm:mb-8 leading-tight tracking-tighter uppercase"
+                                className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-6 sm:mb-8 leading-tight tracking-tighter"
                             >
                                 {product.title}
                             </motion.h1>
@@ -186,11 +185,11 @@ export default function ProductPage() {
                                         <Star key={i} size={14} className={i < 4 ? "fill-secondary text-secondary" : "text-gray-200"} />
                                     ))}
                                 </div>
-                                <span className="text-xs sm:text-sm font-black text-gray-400 uppercase tracking-[0.2em] whitespace-nowrap">| {product.reviews} Reviews</span>
+                                <span className="text-xs sm:text-sm font-black text-gray-400 tracking-[0.2em] whitespace-nowrap">| {product.reviews} Reviews</span>
                                 <motion.span
                                     animate={{ scale: [1, 1.05, 1] }}
                                     transition={{ repeat: Infinity, duration: 2 }}
-                                    className="text-xs py-1.5 px-4 border-2 border-green-100 text-green-600 font-black bg-green-50 rounded-full lg:ml-auto uppercase tracking-widest shadow-sm shadow-green-100"
+                                    className="text-xs py-1.5 px-4 border-2 border-green-100 text-green-600 font-black bg-green-50 rounded-full lg:ml-auto tracking-widest shadow-sm shadow-green-100"
                                 >
                                     In Stock
                                 </motion.span>
@@ -200,10 +199,10 @@ export default function ProductPage() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.7 }}
-                                className="text-4xl sm:text-6xl font-black text-primary-dark mb-10 sm:mb-12 flex items-baseline justify-center lg:justify-start gap-3"
+                                className="text-3xl sm:text-4xl font-black text-primary-dark mb-10 sm:mb-12 flex items-baseline justify-center lg:justify-start gap-3"
                             >
                                 {product.price}
-                                <span className="text-xs sm:text-sm text-gray-400 font-bold uppercase tracking-[0.3em] not-italic">/ gram</span>
+                                <span className="text-xs sm:text-sm text-gray-400 font-bold tracking-[0.3em] not-italic">/ unit</span>
                             </motion.div>
 
                             <div className="w-full h-px bg-gray-100 mb-10 lg:block hidden"></div>
@@ -214,7 +213,7 @@ export default function ProductPage() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.8 }}
-                                    className="block text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-6"
+                                    className="block text-xs font-black tracking-[0.3em] text-gray-400 mb-6"
                                 >
                                     Select Weight
                                 </motion.label>
@@ -228,7 +227,7 @@ export default function ProductPage() {
                                             whileHover={{ y: -5 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={() => setSelectedWeight(w)}
-                                            className={`px-8 sm:px-12 py-3.5 sm:py-4 rounded-2xl font-black uppercase tracking-widest border-2 transition-all text-[10px] sm:text-xs shadow-sm ${selectedWeight === w ? 'bg-primary border-primary text-white shadow-xl shadow-primary/20' : 'bg-white border-gray-100 text-gray-400 hover:border-primary-light hover:text-primary-light'}`}
+                                            className={`px-8 sm:px-12 py-3.5 sm:py-4 rounded-2xl font-black tracking-widest border-2 transition-all text-[10px] sm:text-xs shadow-sm ${selectedWeight === w ? 'bg-primary border-primary text-white shadow-xl shadow-primary/20' : 'bg-white border-gray-100 text-gray-400 hover:border-primary-light hover:text-primary-light'}`}
                                         >
                                             {w}
                                         </motion.button>
@@ -266,7 +265,7 @@ export default function ProductPage() {
                                     transition={{ delay: 1.2 }}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="w-full sm:flex-grow btn-primary !py-5 !text-xs sm:!text-sm shadow-2xl shadow-primary-light/30 flex items-center justify-center gap-4 uppercase font-black tracking-[0.3em]"
+                                    className="w-full sm:flex-grow btn-primary !py-5 !text-xs sm:!text-sm shadow-2xl shadow-primary-light/30 flex items-center justify-center gap-4 font-black tracking-[0.3em]"
                                 >
                                     <ShoppingCart size={20} />
                                     Add To Cart
@@ -289,7 +288,7 @@ export default function ProductPage() {
                                     <motion.div
                                         key={i}
                                         whileHover={{ x: 5 }}
-                                        className="flex items-center gap-3 sm:gap-4 text-[9px] sm:text-xs font-black text-gray-400 uppercase tracking-[0.2em] leading-none group"
+                                        className="flex items-center gap-3 sm:gap-4 text-[9px] sm:text-xs font-black text-gray-400 tracking-[0.2em] leading-none group"
                                     >
                                         <div className="w-8 h-8 bg-primary-light/10 rounded-xl flex items-center justify-center text-primary-light group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
                                             <CheckCircle2 size={16} />
@@ -307,12 +306,12 @@ export default function ProductPage() {
                             >
                                 <motion.div
                                     whileHover={{ y: -2 }}
-                                    className="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]"
+                                    className="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors text-[10px] font-black text-gray-400 tracking-[0.2em]"
                                 >
                                     <Share2 size={16} />
                                     Share This
                                 </motion.div>
-                                <div className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
+                                <div className="text-[10px] font-black text-gray-400 tracking-[0.2em]">
                                     SKU: <span className="text-primary-dark underline decoration-primary-light/30 ml-2">{product.sku}</span>
                                 </div>
                             </motion.div>
@@ -328,7 +327,7 @@ export default function ProductPage() {
                                 <motion.button
                                     key={tab}
                                     whileHover={{ y: -2 }}
-                                    className={`pb-6 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] transition-all relative ${i === 0 ? 'text-primary-dark' : 'text-gray-400 hover:text-primary'}`}
+                                    className={`pb-6 text-[10px] sm:text-xs font-black tracking-[0.3em] transition-all relative ${i === 0 ? 'text-primary-dark' : 'text-gray-400 hover:text-primary'}`}
                                 >
                                     {tab}
                                     {i === 0 && <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary-light rounded-full" />}
@@ -347,9 +346,9 @@ export default function ProductPage() {
                             </p>
                             <motion.div
                                 whileInView={{ scale: [1, 1.01, 1] }}
-                                className="p-8 bg-primary-dark rounded-[32px] text-white/80 font-black uppercase tracking-widest text-[10px] leading-loose shadow-2xl border border-white/5"
+                                className="p-8 bg-primary-dark rounded-[32px] text-white/80 font-black tracking-widest text-[10px] leading-loose shadow-2xl border border-white/5"
                             >
-                                "EXPERIENCE THE PERFECT BALANCE OF FLAVOR AND POTENCY WITH OUR PREMIUM ORGANIC SELECTIONS."
+                                "Experience the perfect balance of flavor and potency with our premium organic selections."
                             </motion.div>
                         </motion.div>
                     </div>
@@ -362,7 +361,7 @@ export default function ProductPage() {
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl sm:text-5xl font-black text-primary-dark mb-12 sm:mb-20 uppercase tracking-tighter text-center lg:text-left"
+                            className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-12 sm:mb-20 tracking-tighter text-center lg:text-left"
                         >
                             Related <span className="text-primary-light">Products</span>
                         </motion.h2>
@@ -374,8 +373,6 @@ export default function ProductPage() {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </div>
     );
 }

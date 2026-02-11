@@ -36,12 +36,14 @@ export default function Navbar() {
                 <div className="flex items-center justify-between gap-8 lg:gap-16">
                     {/* Logo (Leftside) */}
                     <Link to="/" className="flex-shrink-0 z-20">
-                        <div className="bg-secondary p-1.5 sm:p-2 rounded flex items-center gap-1">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
-                                <span className="text-secondary font-bold text-xs">A</span>
-                            </div>
-                            <span className="text-primary font-bold text-base sm:text-xl tracking-tighter">ANANTA</span>
+                        <div className="bg-secondary p-1 rounded flex items-center gap-1">
+                            <img
+                                src="/logo_trans.png"
+                                alt="Ananta Logo"
+                                className="w-auto h-auto max-w-[120px] md:max-w-[150px]"
+                            />
                         </div>
+
                     </Link>
 
                     {/* Navigation Links (Center) - Using flex-1 to take available space and center content */}
@@ -54,7 +56,7 @@ export default function Navbar() {
                                     onMouseEnter={() => setIsProductsOpen(true)}
                                     onMouseLeave={() => setIsProductsOpen(false)}
                                 >
-                                    <button className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1 relative pb-1">
+                                    <button className="hover:text-primary-light transition-colors tracking-wider flex items-center gap-1 relative pb-1">
                                         {link.name}
                                         <ChevronDown size={12} />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light group-hover:w-full transition-all duration-300 ease-out"></span>
@@ -89,7 +91,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className="hover:text-primary-light transition-colors uppercase tracking-wider flex items-center gap-1 relative pb-1 group"
+                                    className="hover:text-primary-light transition-colors tracking-wider flex items-center gap-1 relative pb-1 group"
                                 >
                                     {link.name}
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light group-hover:w-full transition-all duration-300 ease-out"></span>
@@ -101,11 +103,11 @@ export default function Navbar() {
                     {/* Right Side: Search & Mobile Toggle */}
                     <div className="flex items-center gap-4 justify-end flex-shrink-0 z-20">
                         {/* Search Bar - Desktop */}
-                        <div className="hidden md:flex relative w-64 xl:w-72">
+                        <div className="hidden md:flex relative w-56 xl:w-72">
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="w-full bg-gray-50 border border-gray-100 rounded-full py-2.5 pl-5 pr-12 focus:ring-2 focus:ring-primary-light/20 focus:border-primary-light outline-none text-xs font-medium transition-all"
+                                className="w-full bg-gray-50 border border-gray-100 rounded-full py-2.5 pl-5 pr-12 ring-2 ring-primary-light/20 border-primary-light outline-none text-xs font-medium transition-all"
                             />
                             <button className="absolute right-1 top-1 w-8 h-8 bg-primary-dark rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
                                 <Search size={14} />
@@ -157,7 +159,7 @@ export default function Navbar() {
                             className="fixed top-0 right-0 h-full w-[280px] bg-white z-[70] shadow-2xl lg:hidden flex flex-col"
                         >
                             <div className="p-6 border-b border-gray-100 flex justify-between items-center">
-                                <span className="font-black text-primary-dark tracking-tighter uppercase">Menu</span>
+                                <span className="font-black text-primary-dark tracking-tighter">Menu</span>
                                 <button onClick={() => setIsMenuOpen(false)} className="text-gray-400 hover:text-primary-dark">
                                     <X size={24} />
                                 </button>
@@ -167,7 +169,7 @@ export default function Navbar() {
                                 {navLinks.map((link) => (
                                     link.hasDropdown ? (
                                         <div key={link.name}>
-                                            <div className="px-8 py-4 text-sm font-bold uppercase tracking-widest text-gray-700">
+                                            <div className="px-8 py-4 text-sm font-bold tracking-widest text-gray-700">
                                                 {link.name}
                                             </div>
                                             {link.subLinks?.map((subLink) => (
@@ -186,7 +188,7 @@ export default function Navbar() {
                                             key={link.name}
                                             to={link.path}
                                             onClick={() => setIsMenuOpen(false)}
-                                            className="block px-8 py-4 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-primary-light hover:bg-gray-50 transition-all border-l-4 border-transparent hover:border-primary-light mb-1"
+                                            className="block px-8 py-4 text-sm font-bold tracking-widest text-gray-500 hover:text-primary-light hover:bg-gray-50 transition-all border-l-4 border-transparent hover:border-primary-light mb-1"
                                         >
                                             {link.name}
                                         </Link>
@@ -196,7 +198,7 @@ export default function Navbar() {
 
                             <div className="p-8 border-t border-gray-100 space-y-4">
                                 <button className="w-full btn-primary !py-3 !text-xs">Your Account</button>
-                                <p className="text-xs text-center text-gray-400 font-bold uppercase tracking-[0.2em]">© 2026 Ananta</p>
+                                <p className="text-xs text-center text-gray-400 font-bold tracking-[0.2em]">© 2026 Ananta</p>
                             </div>
                         </motion.div>
                     </>

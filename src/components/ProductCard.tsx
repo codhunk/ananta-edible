@@ -39,11 +39,11 @@ export default function ProductCard({
                 </motion.div>
             )}
 
-            <div className="aspect-square w-full rounded-xl bg-gray-50 flex items-center justify-center mb-4 overflow-hidden relative">
+            <div className="aspect-square w-full h-full rounded-xl bg-gray-50 flex items-center justify-center mb-4 overflow-hidden relative">
                 <motion.img
                     src={image}
                     alt={title}
-                    className="w-4/5 h-4/5 object-contain"
+                    className="w-full h-full object-contain"
                     whileHover={{ scale: 1.15 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
@@ -55,7 +55,7 @@ export default function ProductCard({
             </div>
 
             <div className="flex flex-col flex-grow">
-                <p className="text-xs uppercase font-bold text-gray-400 tracking-widest mb-1">{category}</p>
+                <p className="text-xs font-bold text-gray-400 tracking-widest mb-1">{category}</p>
                 <h4 className="text-base font-bold text-primary-dark mb-2 line-clamp-2 leading-snug h-12 group-hover:text-primary-light transition-colors">{title}</h4>
 
                 <div className="flex items-center gap-2 mb-4">
@@ -71,7 +71,7 @@ export default function ProductCard({
                 <div className="mt-auto">
                     <div className="flex gap-1 mb-4 flex-wrap">
                         {['1L', '5L', '15L'].map(size => (
-                            <button key={size} className="text-xs px-2 py-1 border border-gray-100 rounded bg-gray-50 hover:bg-primary-light hover:text-white transition-colors uppercase font-medium">{size}</button>
+                            <button key={size} className="text-xs px-2 py-1 border border-gray-100 rounded bg-gray-50 hover:bg-primary-light hover:text-white transition-colors font-medium">{size}</button>
                         ))}
                     </div>
 

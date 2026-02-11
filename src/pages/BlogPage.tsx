@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
-import Footer from '../components/Footer';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -103,7 +102,7 @@ export default function BlogPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight"
                     >
                         The Ananta Blog
                     </motion.h1>
@@ -138,7 +137,7 @@ export default function BlogPage() {
                             >
                                 {/* Image */}
                                 <div className="relative h-64 overflow-hidden">
-                                    <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-dark uppercase tracking-wider">
+                                    <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-dark tracking-wider">
                                         {post.category}
                                     </div>
                                     <img
@@ -200,7 +199,7 @@ export default function BlogPage() {
                     transition={{ duration: 0.5 }}
                     className="container-custom relative z-10 text-center"
                 >
-                    <h2 className="text-3xl sm:text-4xl font-bold mb-6">Stay Updated</h2>
+                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-bold mb-6">Stay Updated</h2>
                     <p className="text-gray-300 max-w-2xl mx-auto mb-8 text-lg">
                         Subscribe to our newsletter for the latest articles, product launches, and exclusive offers.
                     </p>
@@ -217,7 +216,6 @@ export default function BlogPage() {
                 </motion.div>
             </section>
 
-            <Footer />
         </div>
     );
 }

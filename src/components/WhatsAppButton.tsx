@@ -45,7 +45,7 @@ const WhatsAppButton = () => {
                         className="flex flex-col items-end gap-3 mb-1"
                     >
                         {/* Header / Info Label */}
-                        <div className="bg-white text-black text-[9px] md:text-xs font-bold px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-primary-dark/20 uppercase tracking-wider flex items-center gap-2">
+                        <div className="bg-white text-black text-[9px] md:text-xs font-bold px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-primary-dark/20 tracking-wider flex items-center gap-2">
                             <Package size={18} className="text-yellow-400 font-bold" />
                             For Bulk Order enquiry
                         </div>

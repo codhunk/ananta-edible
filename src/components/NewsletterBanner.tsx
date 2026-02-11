@@ -24,16 +24,16 @@ export default function NewsletterBanner() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 uppercase leading-tight tracking-tighter"
+                            className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-6 leading-tight tracking-tighter"
                         >
-                            UNLOCK <span className="text-secondary text-shadow">20% OFF</span> YOUR <br className="hidden lg:block" /> FIRST ORDER
+                            Unlock <span className="text-secondary text-shadow">20% off</span> your <br className="hidden lg:block" /> first order
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.5 }}
-                            className="text-gray-400 text-sm sm:text-lg mb-10 sm:mb-12 font-bold uppercase tracking-widest"
+                            className="text-gray-400 text-sm sm:text-lg mb-10 sm:mb-12 font-bold tracking-widest"
                         >
                             Reveal coupon code by entering your email
                         </motion.p>
@@ -57,7 +57,7 @@ export default function NewsletterBanner() {
                                 transition={{ delay: 0.7 }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-primary-light hover:bg-white hover:text-primary text-white font-black px-10 py-4 rounded-full transition-all duration-300 whitespace-nowrap uppercase tracking-[0.2em] text-xs sm:text-sm shadow-xl shadow-primary-light/20"
+                                className="bg-primary-light hover:bg-white hover:text-primary text-white font-black px-10 py-4 rounded-full transition-all duration-300 whitespace-nowrap tracking-[0.2em] text-xs sm:text-sm shadow-xl shadow-primary-light/20"
                             >
                                 Reveal coupon
                             </motion.button>

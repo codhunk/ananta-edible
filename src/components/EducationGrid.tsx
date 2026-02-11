@@ -31,11 +31,11 @@ export default function EducationGrid() {
                     viewport={{ once: true }}
                     className="flex flex-col sm:flex-row justify-between items-center mb-12 gap-4"
                 >
-                    <h2 className="text-3xl font-black uppercase text-primary-dark tracking-tighter">HEALTH INSIGHTS</h2>
+                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark tracking-tighter">Health Insights</h2>
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         href="#"
-                        className="text-primary-light font-black text-xs uppercase tracking-widest border-b-2 border-primary-light/20 hover:border-primary-light"
+                        className="text-primary-light font-black text-xs tracking-widest border-b-2 border-primary-light/20 hover:border-primary-light"
                     >
                         Show All
                     </motion.a>
@@ -62,8 +62,8 @@ export default function EducationGrid() {
                                 />
                                 <div className="absolute inset-0 bg-primary-dark/0 group-hover:bg-primary-dark/10 transition-colors pointer-events-none"></div>
                             </div>
-                            <p className="text-xs uppercase font-black text-gray-400 tracking-[0.2em] mb-3">{post.date}</p>
-                            <h3 className="text-xl font-black mb-4 text-primary-dark group-hover:text-primary-light transition-colors line-clamp-2 leading-tight h-14 uppercase tracking-tighter">
+                            <p className="text-xs font-black text-gray-400 tracking-[0.2em] mb-3">{post.date}</p>
+                            <h3 className="text-xl font-black mb-4 text-primary-dark group-hover:text-primary-light transition-colors line-clamp-2 leading-tight h-14 tracking-tighter">
                                 {post.title}
                             </h3>
                             <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow font-medium">
@@ -72,7 +72,7 @@ export default function EducationGrid() {
                             <motion.a
                                 whileHover={{ x: 5 }}
                                 href="#"
-                                className="text-primary-light font-black uppercase tracking-[0.2em] text-xs sm:text-sm border-b-2 border-primary-light/20 hover:border-primary-light inline-block w-fit"
+                                className="text-primary-light font-black tracking-[0.2em] text-xs sm:text-sm border-b-2 border-primary-light/20 hover:border-primary-light inline-block w-fit"
                             >
                                 Read More
                             </motion.a>

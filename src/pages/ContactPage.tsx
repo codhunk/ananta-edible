@@ -1,5 +1,4 @@
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
-import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 
 export default function ContactPage() {
@@ -43,7 +42,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-4xl sm:text-5xl font-black text-white mb-4 uppercase tracking-tighter"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-4 tracking-tighter"
                     >
                         Contact Us
                     </motion.h1>
@@ -51,7 +50,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="flex justify-center items-center gap-2 text-xs sm:text-sm text-gray-400 font-black uppercase tracking-[0.2em]"
+                        className="flex justify-center items-center gap-2 text-xs sm:text-sm text-gray-400 font-black tracking-[0.2em]"
                     >
                         <a href="/" className="hover:text-primary-light transition-colors">Home</a>
                         <span className="text-white/20">/</span>
@@ -84,12 +83,12 @@ export default function ContactPage() {
                                 <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                                     {info.icon}
                                 </div>
-                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-gray-300 mb-3 group-hover:text-primary transition-colors">{info.title}</h3>
-                                <p className="text-sm sm:text-base text-primary-dark leading-relaxed font-black uppercase tracking-tight italic">
+                                <h3 className="text-xs font-black tracking-[0.2em] text-gray-300 mb-3 group-hover:text-primary transition-colors">{info.title}</h3>
+                                <p className="text-sm sm:text-base text-primary-dark leading-relaxed font-black tracking-tight italic">
                                     {info.content}
                                 </p>
                                 {info.secondary && (
-                                    <p className="text-sm sm:text-base text-primary-dark leading-relaxed font-black uppercase tracking-tight mt-1">{info.secondary}</p>
+                                    <p className="text-sm sm:text-base text-primary-dark leading-relaxed font-black tracking-tight mt-1">{info.secondary}</p>
                                 )}
                             </motion.div>
                         ))}
@@ -107,14 +106,14 @@ export default function ContactPage() {
                             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-light/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
-                                <h2 className="text-3xl sm:text-4xl font-black text-primary-dark mb-4 uppercase tracking-tighter">Partner with <span className="text-primary-light">Us</span></h2>
+                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-4 tracking-tighter">Partner with <span className="text-primary-light">Us</span></h2>
                                 <p className="text-gray-400 text-sm sm:text-base mb-12 sm:mb-16 leading-relaxed max-w-lg mx-auto lg:mx-0 text-center lg:text-left font-medium">
                                     For bulk orders, distributorship inquiries, or general questions, please fill out the form below.
                                 </p>
 
                                 <form className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                     <motion.div variants={itemVariants} className="md:col-span-1">
-                                        <label className="block text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-3 px-1">Full Name</label>
+                                        <label className="block text-xs font-black tracking-[0.2em] text-gray-400 mb-3 px-1">Full Name</label>
                                         <input
                                             type="text"
                                             placeholder="Your Name"
@@ -122,7 +121,7 @@ export default function ContactPage() {
                                         />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="md:col-span-1">
-                                        <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3 px-1">Email Address</label>
+                                        <label className="block text-[10px] font-black tracking-[0.2em] text-gray-400 mb-3 px-1">Email Address</label>
                                         <input
                                             type="email"
                                             placeholder="Hello@gmail.com"
@@ -130,7 +129,7 @@ export default function ContactPage() {
                                         />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="md:col-span-2">
-                                        <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3 px-1">Subject</label>
+                                        <label className="block text-[10px] font-black tracking-[0.2em] text-gray-400 mb-3 px-1">Subject</label>
                                         <input
                                             type="text"
                                             placeholder="Subject"
@@ -138,7 +137,7 @@ export default function ContactPage() {
                                         />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="md:col-span-2">
-                                        <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3 px-1">Message</label>
+                                        <label className="block text-[10px] font-black tracking-[0.2em] text-gray-400 mb-3 px-1">Message</label>
                                         <textarea
                                             rows={5}
                                             placeholder="Your message..."
@@ -149,7 +148,7 @@ export default function ContactPage() {
                                         <motion.button
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="w-full sm:w-auto bg-primary text-white font-black px-12 py-5 rounded-full transition-all duration-300 shadow-2xl shadow-primary/20 flex items-center justify-center gap-3 group uppercase tracking-[0.2em] text-xs"
+                                            className="w-full sm:w-auto bg-primary text-white font-black px-12 py-5 rounded-full transition-all duration-300 shadow-2xl shadow-primary/20 flex items-center justify-center gap-3 group tracking-[0.2em] text-xs"
                                         >
                                             Send Message
                                             <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -178,7 +177,6 @@ export default function ContactPage() {
                 ></iframe>
             </motion.section>
 
-            <Footer />
         </div>
     );
 }

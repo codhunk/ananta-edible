@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Package, TrendingDown, Shield, Truck, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import CertificationLogos from '../components/CertificationLogos';
-import Footer from '../components/Footer';
+import NewsletterBanner from '../components/NewsletterBanner';
 
 const pricingTiers = [
     {
@@ -67,7 +67,7 @@ export default function BulkOrderPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 tracking-tight"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-6 tracking-tight"
                     >
                         Bulk Orders Made Simple
                     </motion.h1>
@@ -102,7 +102,7 @@ export default function BulkOrderPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-5xl font-black text-center mb-16 text-primary-dark"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-center mb-16 text-primary-dark"
                     >
                         Why Choose Ananta for Bulk Orders?
                     </motion.h2>
@@ -142,7 +142,7 @@ export default function BulkOrderPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-5xl font-black text-center mb-4 text-primary-dark"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-center mb-4 text-primary-dark"
                     >
                         Flexible Pricing Tiers
                     </motion.h2>
@@ -201,7 +201,7 @@ export default function BulkOrderPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-5xl font-black text-center mb-16 text-primary-dark"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-black text-center mb-16 text-primary-dark"
                     >
                         Available Products
                     </motion.h2>
@@ -243,7 +243,7 @@ export default function BulkOrderPage() {
                             viewport={{ once: true }}
                             className="text-center mb-12"
                         >
-                            <h2 className="text-4xl sm:text-5xl font-black mb-4 text-white">Request a Quote</h2>
+                            <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black mb-4 text-white">Request a Quote</h2>
                             <p className="text-white/90 text-lg">Fill out the form below and our team will get back to you within 24 hours</p>
                         </motion.div>
 
@@ -369,7 +369,7 @@ export default function BulkOrderPage() {
                 </div>
             </section>
 
-            <Footer />
+            <NewsletterBanner />
         </div>
     );
 }

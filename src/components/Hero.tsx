@@ -16,7 +16,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-secondary font-bold tracking-widest text-sm mb-4 uppercase"
+                        className="text-secondary font-bold tracking-widest text-sm mb-4"
                     >
                         Premium Quality Since 1995
                     </motion.p>
@@ -24,7 +24,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-white uppercase"
+                        className="text-2xl sm:text-2xl lg:text-4xl font-bold mb-6 leading-tight text-white"
                     >
                         Purest Kachi Ghani <br /> Mustard & Refined Oils
                     </motion.h1>

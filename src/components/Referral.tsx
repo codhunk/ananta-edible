@@ -31,7 +31,7 @@ export default function Referral() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-4 uppercase leading-none tracking-tighter"
+                                className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-2 sm:mb-4 leading-none tracking-tighter"
                             >
                                 REFER A BUSINESS
                             </motion.h2>
@@ -40,7 +40,7 @@ export default function Referral() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4 }}
-                                className="text-xl sm:text-2xl text-white font-black uppercase tracking-widest"
+                                className="text-xl sm:text-2xl text-white font-black tracking-widest"
                             >
                                 And get <span className="text-secondary underline decoration-primary-light">Discount!</span>
                             </motion.p>
@@ -53,7 +53,7 @@ export default function Referral() {
                             transition={{ delay: 0.6 }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-primary-light hover:bg-white hover:text-primary text-white font-black px-10 py-4 rounded-full transition-all duration-300 shadow-xl shadow-primary-light/20 uppercase tracking-[0.2em] text-xs sm:text-sm z-20"
+                            className="bg-primary-light hover:bg-white hover:text-primary text-white font-black px-10 py-4 rounded-full transition-all duration-300 shadow-xl shadow-primary-light/20 tracking-[0.2em] text-xs sm:text-sm z-20"
                         >
                             Refer Here
                         </motion.button>

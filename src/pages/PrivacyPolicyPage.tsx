@@ -1,5 +1,4 @@
 "use client";
-import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, FileText, Server, Globe } from 'lucide-react';
 
@@ -30,8 +29,8 @@ const PrivacyPolicyPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h1 className="text-4xl sm:text-5xl font-black text-primary-dark mb-6 tracking-tight">Privacy Policy</h1>
-                        <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Last Updated: February 2026</p>
+                        <h1 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-6 tracking-tight">Privacy Policy</h1>
+                        <p className="text-gray-500 text-sm tracking-widest font-bold">Last updated: February 2026</p>
                     </motion.div>
                 </div>
             </div>
@@ -42,7 +41,7 @@ const PrivacyPolicyPage = () => {
                     {/* Sidebar Navigation */}
                     <aside className="hidden lg:block w-64 flex-shrink-0">
                         <div className="sticky top-32 space-y-1">
-                            <p className="px-4 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Contents</p>
+                            <p className="px-4 py-2 text-xs font-bold text-gray-400 tracking-wider mb-2">Contents</p>
                             {sections.map((section) => (
                                 <button
                                     key={section.id}
@@ -145,7 +144,6 @@ const PrivacyPolicyPage = () => {
                     </motion.div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

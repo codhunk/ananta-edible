@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, LayoutGrid, List, Filter, X, SlidersHorizontal, Check } from 'lucide-react';
-import Footer from '../components/Footer';
+import { ChevronDown, LayoutGrid, List, Filter, X, SlidersHorizontal, Check, Zap, ShieldCheck, Heart } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { useState, useMemo } from 'react';
@@ -26,80 +25,80 @@ const itemVariants = {
     }
 };
 
-// Enhanced mock data with 'type' and numeric 'price' for filtering/sorting
 const oilProducts = [
     {
         id: 101,
-        image: "https://images.unsplash.com/photo-1629196911514-cfd8d628b26e?q=80&w=2000&auto=format&fit=crop",
+        image: "/sudhkolhu1.png",
         category: "Edibles",
-        type: "Oils",
-        title: "Full Spectrum CBD Oil 1000mg",
+        type: "Mustard Oil",
+        title: "Kachi Ghani Mustard Oil",
         rating: 4.9,
-        reviews: 215,
-        basePrice: "$89.99",
-        price: 89.99,
+        reviews: 2450,
+        basePrice: "185",
+        price: 185,
         tag: "Best Seller"
     },
     {
         id: 102,
-        image: "https://images.unsplash.com/photo-1623855244183-52fd8d3ce2f7?q=80&w=2076&auto=format&fit=crop",
+        image: "/sudhkolhu.png",
         category: "Edibles",
-        type: "Gummies",
-        title: "THC Infused Gummies (Sativa)",
+        type: "Refined Oil",
+        title: "Soyabean Refined Oil",
         rating: 4.8,
-        reviews: 142,
-        basePrice: "$35.00",
-        price: 35.00
+        reviews: 1840,
+        basePrice: "145",
+        price: 145
     },
     {
         id: 103,
-        image: "https://images.unsplash.com/photo-1616147424976-b33a5b06f52e?q=80&w=2000&auto=format&fit=crop",
+        image: "/sudhkolhu1.png",
         category: "Edibles",
-        type: "Tinctures",
-        title: "Sleep Aid CBN Tincture",
-        rating: 4.7,
-        reviews: 98,
-        basePrice: "$65.00",
-        salePrice: "$55.00",
-        price: 55.00,
-        tag: "On Sale"
+        type: "Mustard Oil",
+        title: "Sudh Kolhu Mustard Oil",
+        rating: 4.9,
+        reviews: 3120,
+        basePrice: "195",
+        salePrice: "175",
+        price: 175,
+        tag: "Premium"
     },
     {
         id: 104,
-        image: "https://images.unsplash.com/photo-1608681288307-e54737d7a82c?q=80&w=2000&auto=format&fit=crop",
+        image: "/sudhkolhu.png",
         category: "Edibles",
-        type: "Capsules",
-        title: "Relaxation Cannabis Capsules",
-        rating: 4.9,
-        reviews: 74,
-        basePrice: "$50.00",
-        price: 50.00
+        type: "Refined Oil",
+        title: "Rice Bran Refined Oil",
+        rating: 4.7,
+        reviews: 980,
+        basePrice: "160",
+        price: 160
     },
     {
         id: 105,
-        image: "https://images.unsplash.com/photo-1546548970-71785318a17b?q=80&w=1978&auto=format&fit=crop",
+        image: "/sudhkolhu1.png",
         category: "Edibles",
-        type: "Oils",
-        title: "Organic Hemp Seed Oil",
-        rating: 4.6,
-        reviews: 156,
-        basePrice: "$30.00",
-        price: 30.00
+        type: "Mustard Oil",
+        title: "Shudh Hara Mustard Oil",
+        rating: 4.8,
+        reviews: 1560,
+        basePrice: "170",
+        price: 170
     },
     {
         id: 106,
-        image: "https://images.unsplash.com/photo-1515023115689-589c33041697?q=80&w=2070&auto=format&fit=crop",
+        image: "/sudhkolhu.png",
         category: "Edibles",
-        type: "Gummies",
-        title: "Delta-8 THC Gummies",
-        rating: 4.5,
-        reviews: 89,
-        basePrice: "$40.00",
-        price: 40.00
+        type: "Refined Oil",
+        title: "Sunflower Refined Oil",
+        rating: 4.9,
+        reviews: 2100,
+        basePrice: "155",
+        price: 155,
+        tag: "Healthy Heart"
     }
 ];
 
-const productTypes = ["All", "Oils", "Gummies", "Tinctures", "Capsules"];
+const productTypes = ["All", "Mustard Oil", "Refined Oil"];
 const sortOptions = [
     { label: "Featured", value: "featured" },
     { label: "Price: Low to High", value: "price-asc" },
@@ -111,39 +110,32 @@ const sortOptions = [
 export default function EdiblesPage() {
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-    // Filter & Sort State
     const [selectedType, setSelectedType] = useState("All");
-    const [priceRange, setPriceRange] = useState(100);
+    const [priceRange, setPriceRange] = useState(300);
     const [sortBy, setSortBy] = useState("featured");
     const [isSortOpen, setIsSortOpen] = useState(false);
 
-    // Filter Logic
     const filteredProducts = useMemo(() => {
         let result = oilProducts.filter(p => p.price <= priceRange);
-
         if (selectedType !== "All") {
             result = result.filter(p => p.type === selectedType);
         }
-
-        // Sort Logic
         return result.sort((a, b) => {
             switch (sortBy) {
                 case 'price-asc': return a.price - b.price;
                 case 'price-desc': return b.price - a.price;
                 case 'rating': return b.rating - a.rating;
                 case 'reviews': return b.reviews - a.reviews;
-                default: return 0; // featured (id order or as is)
+                default: return 0;
             }
         });
     }, [selectedType, priceRange, sortBy]);
 
-    // Reusable Filter Sidebar Component
     const FilterSidebar = () => (
         <div className="space-y-8">
             <div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
-                    <Filter size={14} /> Product Type
+                <h3 className="text-xs font-black tracking-widest text-gray-400 mb-6 flex items-center gap-2">
+                    <Filter size={14} /> Oil Category
                 </h3>
                 <div className="space-y-3">
                     {productTypes.map(type => (
@@ -167,27 +159,27 @@ export default function EdiblesPage() {
             </div>
 
             <div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
-                    <SlidersHorizontal size={14} /> Max Price
+                <h3 className="text-xs font-black tracking-widest text-gray-400 mb-6 flex items-center gap-2">
+                    <SlidersHorizontal size={14} /> Price (₹/Ltr)
                 </h3>
                 <div className="px-1">
                     <input
                         type="range"
                         min="0"
-                        max="150"
+                        max="500"
                         value={priceRange}
                         onChange={(e) => setPriceRange(Number(e.target.value))}
-                        className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-primary-dark"
+                        className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-primary-light"
                     />
                     <div className="flex justify-between mt-4 text-xs font-bold text-gray-500">
-                        <span>$0</span>
-                        <span className="text-primary-dark bg-secondary/20 px-2 py-1 rounded">${priceRange}</span>
+                        <span>₹0</span>
+                        <span className="text-primary-light bg-primary/5 px-2 py-1 rounded">₹{priceRange}</span>
                     </div>
                 </div>
             </div>
 
             <button
-                onClick={() => { setSelectedType("All"); setPriceRange(150); setSortBy("featured"); }}
+                onClick={() => { setSelectedType("All"); setPriceRange(500); setSortBy("featured"); }}
                 className="text-xs font-bold text-gray-400 underline hover:text-primary-dark transition-colors"
             >
                 Reset Filters
@@ -201,8 +193,8 @@ export default function EdiblesPage() {
             <section className="relative w-full h-[40vh] sm:h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-primary-dark/80 z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1615485925708-cf0501635748?q=80&w=2000&auto=format&fit=crop"
-                    alt="Edibles Hero"
+                    src="https://images.pexels.com/photos/1028599/pexels-photo-1028599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Edible Oils Hero"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -212,9 +204,9 @@ export default function EdiblesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="text-secondary font-black tracking-[0.2em] uppercase mb-4 block">Premium Selection</span>
-                        <h1 className="text-4xl sm:text-6xl font-black text-white mb-6 tracking-tight">
-                            Oil Refined Edibles
+                        <span className="text-primary-light font-black tracking-[0.2em] mb-4 block">100% Purity guaranteed</span>
+                        <h1 className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-6 tracking-tight">
+                            Edible oil <span className="text-primary-light underline decoration-white/20">refined</span>
                         </h1>
                     </motion.div>
                     <motion.p
@@ -223,19 +215,39 @@ export default function EdiblesPage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-gray-200 font-medium max-w-2xl mx-auto"
                     >
-                        Discover our curative collection of high-purity cannabis oils, tinctures, and infused delights.
+                        Bringing the finest selection of cold-pressed and refined oils from India's heartlands to your kitchen.
                     </motion.p>
+                </div>
+            </section>
+
+            {/* Quality Pillars */}
+            <section className="bg-white py-12 border-b border-gray-100">
+                <div className="container-custom grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {[
+                        { title: "Cold Pressed", desc: "Nutrients preserved through traditional Kachi Ghani processing.", icon: <Zap size={24} /> },
+                        { title: "Lab Tested", desc: "Every batch undergoes 40+ rigorous quality checks for purity.", icon: <ShieldCheck size={24} /> },
+                        { title: "Heart Healthy", desc: "Low in saturated fats and enriched with Vitamin A & D.", icon: <Heart size={24} /> }
+                    ].map((pillar, i) => (
+                        <div key={i} className="flex items-center gap-6 p-6 rounded-3xl bg-gray-50 border border-gray-100/50">
+                            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary-light shadow-sm">
+                                {pillar.icon}
+                            </div>
+                            <div>
+                                <h4 className="font-black text-primary-dark text-sm tracking-tight">{pillar.title}</h4>
+                                <p className="text-xs text-gray-500 font-medium">{pillar.desc}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
             {/* Main Content */}
             <section className="py-16 bg-white min-h-[800px]">
                 <div className="container-custom">
-
                     <div className="flex flex-col lg:flex-row gap-12">
                         {/* Sidebar Desktop */}
                         <aside className="hidden lg:block w-64 flex-shrink-0">
-                            <div className="bg-gray-50/50 p-6 rounded-3xl border border-gray-100 sticky top-24">
+                            <div className="bg-gray-50/50 p-6 rounded-3xl border border-gray-100 sticky top-32">
                                 <FilterSidebar />
                             </div>
                         </aside>
@@ -244,48 +256,43 @@ export default function EdiblesPage() {
                         <div className="flex-grow">
                             {/* Toolbar */}
                             <motion.div
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
                                 className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8 pb-8 border-b border-gray-100"
                             >
                                 <div className="flex items-center gap-4 w-full sm:w-auto justify-between">
-                                    <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">
-                                        Found <span className="text-primary-dark">{filteredProducts.length}</span> Items
+                                    <p className="text-sm font-black text-gray-400 tracking-widest">
+                                        Showing <span className="text-primary-dark">{filteredProducts.length}</span> Varieties
                                     </p>
-
-                                    {/* Mobile Filter Toggle */}
                                     <button
                                         onClick={() => setIsSidebarOpen(true)}
-                                        className="lg:hidden flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-gray-100 px-4 py-2 rounded-full text-primary-dark"
+                                        className="lg:hidden flex items-center gap-2 text-xs font-black tracking-widest bg-gray-100 px-6 py-3 rounded-full text-primary-dark"
                                     >
                                         <Filter size={14} /> Filters
                                     </button>
                                 </div>
 
                                 <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-                                    {/* Sort Dropdown */}
                                     <div className="relative">
                                         <button
                                             onClick={() => setIsSortOpen(!isSortOpen)}
-                                            className="flex items-center gap-2 text-sm font-bold text-gray-500 uppercase tracking-widest hover:text-primary-dark transition-colors"
+                                            className="flex items-center gap-2 text-xs font-black text-gray-500 tracking-widest hover:text-primary-dark transition-colors"
                                         >
-                                            Sort: <span className="text-primary-dark">{sortOptions.find(o => o.value === sortBy)?.label}</span> <ChevronDown size={14} className={`transition-transform ${isSortOpen ? 'rotate-180' : ''}`} />
+                                            Sort <ChevronDown size={14} className={`transition-transform ${isSortOpen ? 'rotate-180' : ''}`} />
                                         </button>
-
                                         <AnimatePresence>
                                             {isSortOpen && (
                                                 <motion.div
                                                     initial={{ opacity: 0, y: 10 }}
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: 10 }}
-                                                    className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-30"
+                                                    className="absolute right-0 top-full mt-4 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 py-3 z-30 overflow-hidden"
                                                 >
                                                     {sortOptions.map(option => (
                                                         <button
                                                             key={option.value}
                                                             onClick={() => { setSortBy(option.value); setIsSortOpen(false); }}
-                                                            className={`w-full text-left px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-gray-50 transition-colors ${sortBy === option.value ? 'text-primary-dark bg-gray-50' : 'text-gray-500'}`}
+                                                            className={`w-full text-left px-5 py-3 text-[10px] font-black tracking-widest transition-colors ${sortBy === option.value ? 'text-primary-light bg-primary/5' : 'text-gray-400 hover:text-primary-dark hover:bg-gray-50'}`}
                                                         >
                                                             {option.label}
                                                         </button>
@@ -300,13 +307,13 @@ export default function EdiblesPage() {
                                     <div className="flex gap-2">
                                         <button
                                             onClick={() => setViewMode('grid')}
-                                            className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 hover:text-primary'}`}
+                                            className={`p-2.5 rounded-xl transition-all ${viewMode === 'grid' ? 'bg-primary-light text-white shadow-lg' : 'bg-gray-50 text-gray-400 hover:text-primary-light'}`}
                                         >
                                             <LayoutGrid size={18} />
                                         </button>
                                         <button
                                             onClick={() => setViewMode('list')}
-                                            className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 hover:text-primary'}`}
+                                            className={`p-2.5 rounded-xl transition-all ${viewMode === 'list' ? 'bg-primary-light text-white shadow-lg' : 'bg-gray-50 text-gray-400 hover:text-primary-light'}`}
                                         >
                                             <List size={18} />
                                         </button>
@@ -317,11 +324,11 @@ export default function EdiblesPage() {
                             {/* Product Grid */}
                             <AnimatePresence mode='wait'>
                                 <motion.div
-                                    key={selectedType + sortBy} // Only re-animate stagger on type or sort change, not price drag
+                                    key={selectedType + sortBy}
                                     variants={containerVariants}
                                     initial="hidden"
                                     animate="visible"
-                                    className={`grid gap-6 sm:gap-8 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}
+                                    className={`grid gap-8 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}
                                 >
                                     {filteredProducts.length > 0 ? (
                                         filteredProducts.map((product) => (
@@ -329,19 +336,18 @@ export default function EdiblesPage() {
                                                 key={product.id}
                                                 variants={itemVariants}
                                                 layout
-                                                className={viewMode === 'list' ? 'bg-gray-50 border border-gray-100 rounded-3xl p-4' : ''}
                                             >
                                                 <ProductCard {...product} />
                                             </motion.div>
                                         ))
                                     ) : (
-                                        <div className="col-span-full py-20 text-center">
-                                            <p className="text-gray-400 font-bold text-lg">No products found matching your criteria.</p>
+                                        <div className="col-span-full py-20 text-center bg-gray-50 rounded-[40px] border border-dashed border-gray-200">
+                                            <p className="text-gray-400 font-black tracking-widest text-sm mb-4">No varieties found</p>
                                             <button
-                                                onClick={() => { setSelectedType("All"); setPriceRange(150); }}
-                                                className="mt-4 text-primary-dark underline font-bold"
+                                                onClick={() => { setSelectedType("All"); setPriceRange(500); }}
+                                                className="bg-white px-8 py-3 rounded-full shadow-sm text-xs font-black tracking-widest text-primary-light border border-gray-100"
                                             >
-                                                Clear Filtering
+                                                Show All Products
                                             </button>
                                         </div>
                                     )}
@@ -361,19 +367,19 @@ export default function EdiblesPage() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsSidebarOpen(false)}
-                            className="fixed inset-0 bg-black/60 backdrop-blur-md z-[80] lg:hidden"
+                            className="fixed inset-0 bg-primary-dark/40 backdrop-blur-sm z-[200] lg:hidden"
                         />
                         <motion.div
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed top-0 left-0 h-full w-[300px] bg-white z-[90] p-8 overflow-y-auto shadow-2xl"
+                            transition={{ type: "spring", stiffness: 300, damping: 35 }}
+                            className="fixed top-0 left-0 h-full w-[320px] bg-white z-[201] p-10 overflow-y-auto shadow-[20px_0_60px_rgba(0,0,0,0.1)]"
                         >
-                            <div className="flex justify-between items-center mb-8">
-                                <span className="font-black text-primary-dark uppercase tracking-widest text-lg">Filters</span>
-                                <button onClick={() => setIsSidebarOpen(false)} className="text-gray-400 p-2 hover:text-primary-dark">
-                                    <X size={24} />
+                            <div className="flex justify-between items-center mb-10">
+                                <span className="font-black text-primary-dark tracking-widest text-xl">Refine selection</span>
+                                <button onClick={() => setIsSidebarOpen(false)} className="text-gray-300 p-2 hover:text-primary-dark transition-colors">
+                                    <X size={28} />
                                 </button>
                             </div>
                             <FilterSidebar />
@@ -383,7 +389,6 @@ export default function EdiblesPage() {
             </AnimatePresence>
 
             <NewsletterBanner />
-            <Footer />
         </div>
     );
 }

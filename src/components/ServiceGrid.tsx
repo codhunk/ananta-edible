@@ -4,39 +4,39 @@ import { motion } from 'framer-motion';
 const services = [
     {
         icon: <Headset size={32} className="text-primary" />,
-        title: "CUSTOMER SERVICE",
+        title: "Customer service",
         description: "Whether it is answering any questions you have before making a purchase, helping out with the buying process itself or taking your feedback under consideration."
     },
     {
         icon: <ShieldCheck size={32} className="text-primary" />,
-        title: "SECURITY",
+        title: "Security",
         description: "When it comes to security, we only keep what details are necessary for you to have an account with us and make an order. Use only tamper-proof and discrete packaging."
     },
     {
         icon: <Gem size={32} className="text-primary" />,
-        title: "BEST VALUE",
+        title: "Best value",
         description: "We are continually adjusting what we supply and our prices to ensure that we maintain an optimal balance of affordable and quality for our products."
     },
     {
         icon: <Truck size={32} className="text-primary" />,
-        title: "DELIVERY INSURANCE",
+        title: "Delivery insurance",
         description: "If your mail order marijuana becomes lost, stolen, or damaged during transit, we will send you a replacement completely free of charge."
     },
     {
         icon: <Award size={32} className="text-primary" />,
-        title: "HIGHEST QUALITY",
+        title: "Highest quality",
         description: "All of our cannabis products are tested to ensure that they are the highest quality possible. We work with expert suppliers to revise quality standards."
     },
     {
         icon: <Handshake size={32} className="text-primary" />,
-        title: "TRUST",
+        title: "Trust",
         description: "With over 15 years in the weed business, you can rest assured that you will be taken care of. You can guarantee that we have your best interests."
     }
 ];
 
 export default function ServiceGrid() {
     return (
-        <section className="py-16 bg-white overflow-hidden">
+        <section className="py-16 bg-[#F2F6F4] overflow-hidden">
             <div className="container-custom px-4">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -45,8 +45,8 @@ export default function ServiceGrid() {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mb-16 sm:mb-20"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 leading-tight tracking-tighter text-primary-dark uppercase">
-                        WHAT MAKES US THE <span className="text-secondary underline decoration-primary-light">#1</span> ONLINE ANANTA DISPENSARY IN INDIA?
+                    <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black mb-8 leading-tight tracking-tighter text-primary-dark">
+                        What makes us the <span className="text-secondary underline decoration-primary-light">#1</span> online Ananta dispensary in India?
                     </h2>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-2xl font-medium">
                         We prioritize quality, security, and customer satisfaction above all else. Here are the six core pillars of our service that make us stand out.
@@ -72,7 +72,7 @@ export default function ServiceGrid() {
                                     {service.icon}
                                 </motion.div>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-black mb-4 tracking-tighter text-primary-dark uppercase group-hover:text-primary-light transition-colors">{service.title}</h3>
+                            <h3 className="text-lg sm:text-xl font-black mb-4 tracking-tighter text-primary-dark group-hover:text-primary-light transition-colors">{service.title}</h3>
                             <p className="text-gray-400 text-sm leading-relaxed font-medium">
                                 {service.description}
                             </p>

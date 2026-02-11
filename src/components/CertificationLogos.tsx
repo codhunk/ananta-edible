@@ -74,7 +74,7 @@ export default function CertificationLogos() {
                     viewport={{ once: true }}
                     className="text-center mb-8 sm:mb-12"
                 >
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-2 sm:mb-3">
+                    <h3 className="text-2xl sm:text-2xl lg:text-4xl font-black text-gray-900 mb-2 sm:mb-3">
                         Certified & Compliant
                     </h3>
                     <p className="text-sm sm:text-base lg:text-lg text-gray-600">
@@ -166,8 +166,8 @@ export default function CertificationLogos() {
                                 key={idx}
                                 onClick={() => goToSlide(idx)}
                                 className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex
-                                        ? 'bg-primary-light w-8'
-                                        : 'bg-gray-300 hover:bg-gray-400'
+                                    ? 'bg-primary-light w-8'
+                                    : 'bg-gray-300 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to certification ${idx + 1}`}
                             />
