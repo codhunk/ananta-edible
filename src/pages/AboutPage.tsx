@@ -126,7 +126,7 @@ export default function AboutPage() {
                                     <span className="text-primary-light font-black tracking-widest text-sm uppercase">Director's message</span>
                                 </div>
 
-                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-left">
+                                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-left">
                                     Building a legacy of <span className="text-primary hover:text-primary-dark transition-colors duration-300">purity</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">trust</span>.
                                 </h2>
 
@@ -151,7 +151,7 @@ export default function AboutPage() {
                                     </button>
                                 </div>
 
-                                <div className="mt-12 flex items-center gap-6 justify-center lg:justify-start">
+                                <div className="mt-12 hidden lg:flex items-center gap-6 justify-center lg:justify-start">
                                     <div>
                                         <p className="font-bold text-primary-dark text-xl text-center lg:text-left">Ankit Bansal</p>
                                         <p className="text-xs text-gray-400 font-bold tracking-widest uppercase text-center lg:text-left">Founder & Managing Director</p>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </section>
                 <section className="py-4 sm:py-8 relative px-4 sm:px-8 lg:px-12">
                     <div className="container-custom px-4">
-                        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
+                        <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
 
                             {/* Director's Message */}
                             <motion.div
@@ -173,12 +173,12 @@ export default function AboutPage() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="w-full lg:w-7/12 lg:pt-8"
                             >
-                                <div className="flex items-center justify-center lg:justify-end gap-4 mb-8">
+                                <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
                                     <div className="w-16 h-[2px] bg-primary-light order-2 lg:order-1"></div>
                                     <span className="text-primary-light font-black tracking-widest text-sm uppercase order-1 lg:order-2">Director's message</span>
                                 </div>
 
-                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-right">
+                                <h2 className="text-2xl sm:text-2xl lg:text-3xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-right">
                                     Expanding horizons through <span className="text-primary hover:text-primary-dark transition-colors duration-300">innovation</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">quality</span>.
                                 </h2>
 
@@ -203,7 +203,7 @@ export default function AboutPage() {
                                     </button>
                                 </div>
 
-                                <div className="mt-12 flex items-center gap-6 justify-center lg:justify-end">
+                                <div className="mt-12 hidden lg:flex items-center gap-6 justify-center lg:justify-end">
                                     <div>
                                         <p className="font-bold text-primary-dark text-lg text-center lg:text-right">Mayank Bansal</p>
                                         <p className="text-xs text-gray-400 font-bold tracking-widest uppercase text-center lg:text-right">Founder & Managing Director</p>

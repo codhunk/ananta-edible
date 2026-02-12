@@ -129,7 +129,7 @@ export default function Navbar() {
                     <input
                         type="text"
                         placeholder="Search products..."
-                        className="w-full bg-gray-50 border border-gray-100 rounded-full py-2.5 px-5 focus:ring-2 focus:ring-primary-light/20 outline-none text-sm"
+                        className="w-full bg-gray-50 border border-secondary-light rounded-full py-2.5 px-5 ring-2 ring-primary-light/20 outline-none text-sm"
                     />
                     <button className="absolute right-1.5 top-1.5 w-8 h-8 bg-primary-dark rounded-full flex items-center justify-center text-white">
                         <Search size={14} />
@@ -204,6 +204,6 @@ export default function Navbar() {
                     </>
                 )}
             </AnimatePresence>
-        </nav>
+        </nav >
     );
 }
