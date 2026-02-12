@@ -2,7 +2,7 @@ import { motion, useInView, animate } from 'framer-motion';
 import { Linkedin, Twitter, Mail, ExternalLink, Quote } from 'lucide-react';
 import CertificationLogos from '../components/CertificationLogos';
 import NewsletterBanner from '../components/NewsletterBanner';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Counter Component
 const Counter = ({ from = 0, to, suffix = "", duration = 2 }: { from?: number, to: number, suffix?: string, duration?: number }) => {
@@ -26,6 +26,9 @@ const Counter = ({ from = 0, to, suffix = "", duration = 2 }: { from?: number, t
 };
 
 export default function AboutPage() {
+    const [isAnkitExpanded, setIsAnkitExpanded] = useState(false);
+    const [isMayankExpanded, setIsMayankExpanded] = useState(false);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -85,10 +88,128 @@ export default function AboutPage() {
 
             <main>
                 {/* Director's Portfolio / Message */}
-                <section className="py-12 sm:py-24 relative px-12">
+                <section className="py-12 sm:py-24 relative px-4 sm:px-8 lg:px-12">
                     <div className="container-custom px-4">
                         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
                             {/* Director Image */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="w-full lg:w-3/12 relative group"
+                            >
+                                <div className="absolute top-4 -left-4 w-full h-full border-2 border-primary-light/50 rounded-tr-[80px] rounded-bl-[80px] z-0 hidden sm:block"></div>
+                                <div className="relative z-10 rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-gray-100">
+                                    <img
+                                        src="/ankit_md.jpeg"
+                                        alt="Director"
+                                        className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700"
+                                    />
+                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-8 ">
+                                        <p className="text-white font-black text-xl tracking-tighter">Ankit Bansal</p>
+                                        <p className="text-primary-light font-bold text-sm tracking-widest mt-1">Founder & Managing Director</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Director's Message */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="w-full lg:w-7/12 lg:pt-8"
+                            >
+                                <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
+                                    <div className="w-16 h-[2px] bg-primary-light"></div>
+                                    <span className="text-primary-light font-black tracking-widest text-sm uppercase">Director's message</span>
+                                </div>
+
+                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-left">
+                                    Building a legacy of <span className="text-primary hover:text-primary-dark transition-colors duration-300">purity</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">trust</span>.
+                                </h2>
+
+                                <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-serif italic relative pl-12">
+                                    <Quote className="absolute left-0 top-0 text-primary-light/20 w-8 h-8 transform -scale-x-100" />
+                                    <div className={`${!isAnkitExpanded ? 'max-h-[150px] sm:max-h-none overflow-hidden sm:overflow-visible relative' : ''}`}>
+                                        <p>
+                                            "At Ananta, we hold the conviction that good health begins in the kitchen. For over two decades, our mission has been simple: to provide Indian families with edible oils that are as pure as nature intended."
+                                        </p>
+                                        <p>
+                                            "We have invested in state-of-the-art cold press technology and rigorous quality control processes to ensure that every drop of oil retains its natural aroma, flavor, and nutritional value. We don't just manufacture oil; we bottle health and trust."
+                                        </p>
+                                        {!isAnkitExpanded && (
+                                            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent sm:hidden"></div>
+                                        )}
+                                    </div>
+                                    <button
+                                        onClick={() => setIsAnkitExpanded(!isAnkitExpanded)}
+                                        className="text-primary font-bold text-sm tracking-widest hover:text-primary-dark transition-colors sm:hidden mt-2"
+                                    >
+                                        {isAnkitExpanded ? 'Read Less' : 'Read More'}
+                                    </button>
+                                </div>
+
+                                <div className="mt-12 flex items-center gap-6 justify-center lg:justify-start">
+                                    <div>
+                                        <p className="font-bold text-primary-dark text-xl text-center lg:text-left">Ankit Bansal</p>
+                                        <p className="text-xs text-gray-400 font-bold tracking-widest uppercase text-center lg:text-left">Founder & Managing Director</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+                <section className="py-4 sm:py-8 relative px-4 sm:px-8 lg:px-12">
+                    <div className="container-custom px-4">
+                        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center sm:items-start">
+
+                            {/* Director's Message */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="w-full lg:w-7/12 lg:pt-8"
+                            >
+                                <div className="flex items-center justify-center lg:justify-end gap-4 mb-8">
+                                    <div className="w-16 h-[2px] bg-primary-light order-2 lg:order-1"></div>
+                                    <span className="text-primary-light font-black tracking-widest text-sm uppercase order-1 lg:order-2">Director's message</span>
+                                </div>
+
+                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight text-center lg:text-right">
+                                    Expanding horizons through <span className="text-primary hover:text-primary-dark transition-colors duration-300">innovation</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">quality</span>.
+                                </h2>
+
+                                <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-serif italic relative pl-12">
+                                    <Quote className="absolute left-0 top-0 text-primary-light/20 w-8 h-8 transform -scale-x-100" />
+                                    <div className={`${!isMayankExpanded ? 'max-h-[150px] sm:max-h-none overflow-hidden sm:overflow-visible relative' : ''}`}>
+                                        <p>
+                                            "Our vision extends beyond being just a manufacturer. We aim to redefine the standards of hygiene and transparency in the edible oil industry, bringing global best practices to every Indian household."
+                                        </p>
+                                        <p>
+                                            "From choosing the finest seeds to delivering a leak-proof package, every step is a testament to our commitment to excellence. We believe in growth that is sustainable, ethical, and centered around consumer well-being."
+                                        </p>
+                                        {!isMayankExpanded && (
+                                            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent sm:hidden"></div>
+                                        )}
+                                    </div>
+                                    <button
+                                        onClick={() => setIsMayankExpanded(!isMayankExpanded)}
+                                        className="text-primary font-bold text-sm tracking-widest hover:text-primary-dark transition-colors sm:hidden mt-2"
+                                    >
+                                        {isMayankExpanded ? 'Read Less' : 'Read More'}
+                                    </button>
+                                </div>
+
+                                <div className="mt-12 flex items-center gap-6 justify-center lg:justify-end">
+                                    <div>
+                                        <p className="font-bold text-primary-dark text-lg text-center lg:text-right">Mayank Bansal</p>
+                                        <p className="text-xs text-gray-400 font-bold tracking-widest uppercase text-center lg:text-right">Founder & Managing Director</p>
+                                    </div>
+                                </div>
+                            </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -103,58 +224,15 @@ export default function AboutPage() {
                                         alt="Director"
                                         className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700"
                                     />
-                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-10 ">
-                                        <p className="text-white font-black text-2xl tracking-tighter">Mayank Bansal</p>
+                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-dark/90 to-transparent p-8 ">
+                                        <p className="text-white font-black text-xl tracking-tighter">Mayank Bansal</p>
                                         <p className="text-primary-light font-bold text-sm tracking-widest mt-1">Founder & Managing Director</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Director's Message */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="w-full lg:w-7/12 lg:pt-8"
-                            >
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-16 h-[2px] bg-primary-light"></div>
-                                    <span className="text-primary-light font-black tracking-widest text-sm">Director's message</span>
-                                </div>
-
-                                <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark mb-10 leading-tight">
-                                    Building a legacy of <span className="text-primary hover:text-primary-dark transition-colors duration-300">purity</span> & <span className="text-primary hover:text-primary-dark transition-colors duration-300">trust</span>.
-                                </h2>
-
-                                <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-serif italic relative pl-12">
-                                    <Quote className="absolute left-0 top-0 text-primary-light/20 w-8 h-8 transform -scale-x-100" />
-                                    <p>
-                                        "At Ananta, we hold the conviction that good health begins in the kitchen. For over two decades, our mission has been simple: to provide Indian families with edible oils that are as pure as nature intended."
-                                    </p>
-                                    <p>
-                                        "We have invested in state-of-the-art cold press technology and rigorous quality control processes to ensure that every drop of oil retains its natural aroma, flavor, and nutritional value. We don't just manufacture oil; we bottle health and trust."
-                                    </p>
-                                </div>
-
-                                <div className="mt-12 flex items-center gap-6">
-                                    {/* <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png"
-                                        alt="Signature"
-                                        className="h-12 opacity-60"
-                                    />
-
-                                     */}
-                                    <div>
-                                        <p className="font-bold text-primary-dark text-lg">Mayank Bansal</p>
-                                        <p className="text-xs text-gray-400 font-bold tracking-widest">Founder & Managing Director</p>
                                     </div>
                                 </div>
                             </motion.div>
                         </div>
                     </div>
                 </section>
-
                 {/* Values / Stats Strip */}
                 <div className="bg-primary-dark text-white py-16 border-y border-white/5">
                     <div className="container-custom px-4">

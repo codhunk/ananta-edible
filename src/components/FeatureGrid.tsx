@@ -20,7 +20,7 @@ const aboutIns = [
 
 export default function FeatureGrid() {
     return (
-        <div className="bg-[#F2F6F4] py-12 sm:py-16 md:py-20 overflow-hidden">
+        <div className="bg-[#F2F6F4] py-6 sm:py-10 md:py-12 overflow-hidden">
             <div className="container-custom">
                 {/* Section Heading */}
                 <motion.div

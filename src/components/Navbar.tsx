@@ -36,7 +36,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between gap-8 lg:gap-16">
                     {/* Logo (Leftside) */}
                     <Link to="/" className="flex-shrink-0 z-20">
-                        <div className="bg-secondary p-1 rounded flex items-center gap-1">
+                        <div className=" p-1 rounded flex items-center gap-1">
                             <img
                                 src="/logo_trans.png"
                                 alt="Ananta Logo"

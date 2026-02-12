@@ -75,7 +75,7 @@ export default function HeroCarousel() {
 
     return (
         <section
-            className="relative w-full h-[400px] sm:h-[450px] lg:h-[400px] xl:h-[450px] 2xl:h-[500px] overflow-hidden"
+            className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px] overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
