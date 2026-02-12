@@ -115,73 +115,70 @@ export default function ProductSection() {
 
 
                 {/* Carousel Container with Navigation */}
-                <div className="relative flex gap-6">
-                    {/* Fixed Promo Card */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="flex-shrink-0 w-[280px] sm:w-[320px] xl:w-[360px] 2xl:w-[400px] rounded-3xl bg-primary-dark p-8 xl:p-10 2xl:p-12 flex flex-col items-center justify-between text-center text-white relative overflow-hidden group shadow-xl"
+                <div className="relative group/carousel">
+                    <div
+                        ref={carouselRef}
+                        className="flex gap-6 overflow-x-auto scroll-smooth pb-8 scrollbar-hide px-4 -mx-4 items-stretch"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-b from-primary to-primary-dark opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-1000"></div>
-
-                        <div className="relative z-10 w-full flex flex-col items-center h-full">
-                            <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="mb-6"
-                            >
-                                <img src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300" alt="Promo" className="w-32 h-32 sm:w-40 sm:h-40 object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-2xl" />
-                            </motion.div>
-                            <h3 className="text-xl sm:text-2xl font-black mb-4 tracking-tighter">Shop our <br /> <span className="text-secondary">best sellers</span></h3>
-                            <p className="text-xs text-gray-400 mb-8 leading-relaxed font-bold tracking-widest">
-                                Premium quality locally sourced mustard oils.
-                            </p>
-                            <motion.a
-                                whileHover={{ scale: 1.05 }}
-                                href="#"
-                                className="mt-auto bg-white/10 backdrop-blur-md border border-white/20 px-8 py-2 rounded-full text-primary-light font-black tracking-[0.2em] text-xs hover:bg-white hover:text-primary transition-all shadow-lg"
-                            >
-                                View All
-                            </motion.a>
-                        </div>
-                    </motion.div>
-
-                    {/* Scrollable Products Container */}
-                    <div className="relative flex-1 overflow-hidden">
-                        <div
-                            ref={carouselRef}
-                            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
-                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        {/* Promo Card - Now inside the scrollable container */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="flex-shrink-0 w-[280px] sm:w-[320px] xl:w-[360px] 2xl:w-[400px] rounded-3xl bg-primary-dark p-8 xl:p-10 2xl:p-12 flex flex-col items-center justify-between text-center text-white relative overflow-hidden group shadow-xl"
                         >
-                            {/* Product Cards */}
-                            <AnimatePresence mode="popLayout">
-                                {products.map((product, index) => (
-                                    <div key={`${activeTab}-${index}`} className="flex-shrink-0 w-[280px] sm:w-[320px] xl:w-[360px] 2xl:w-[400px]">
-                                        <ProductCard {...product} />
-                                    </div>
-                                ))}
-                            </AnimatePresence>
-                        </div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-primary to-primary-dark opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-1000"></div>
 
-                        {/* Navigation Arrows - Positioned relative to scrollable area */}
-                        <button
-                            onClick={scrollLeft}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border-2 border-gray-200 flex items-center justify-center text-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl group hover:scale-110"
-                            aria-label="Scroll left"
-                        >
-                            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-[-2px] transition-transform" />
-                        </button>
+                            <div className="relative z-10 w-full flex flex-col items-center h-full">
+                                <motion.div
+                                    animate={{ y: [0, -10, 0] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                    className="mb-6"
+                                >
+                                    <img src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300" alt="Promo" className="w-32 h-32 sm:w-40 sm:h-40 object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-2xl" />
+                                </motion.div>
+                                <h3 className="text-xl sm:text-2xl font-black mb-4 tracking-tighter">Shop our <br /> <span className="text-secondary">best sellers</span></h3>
+                                <p className="text-xs text-gray-400 mb-8 leading-relaxed font-bold tracking-widest">
+                                    Premium quality locally sourced mustard oils.
+                                </p>
+                                <motion.a
+                                    whileHover={{ scale: 1.05 }}
+                                    href="#"
+                                    className="mt-auto bg-white/10 backdrop-blur-md border border-white/20 px-8 py-2 rounded-full text-primary-light font-black tracking-[0.2em] text-xs hover:bg-white hover:text-primary transition-all shadow-lg"
+                                >
+                                    View All
+                                </motion.a>
+                            </div>
+                        </motion.div>
 
-                        <button
-                            onClick={scrollRight}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border-2 border-gray-200 flex items-center justify-center text-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl group hover:scale-110"
-                            aria-label="Scroll right"
-                        >
-                            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-[2px] transition-transform" />
-                        </button>
+                        {/* Product Cards */}
+                        <AnimatePresence mode="popLayout">
+                            {products.map((product, index) => (
+                                <div key={`${activeTab}-${index}`} className="flex-shrink-0 w-[280px] sm:w-[320px] xl:w-[360px] 2xl:w-[400px]">
+                                    <ProductCard {...product} />
+                                </div>
+                            ))}
+                        </AnimatePresence>
                     </div>
+
+                    {/* Navigation Arrows - Adjusted for better visibility and relative to container */}
+                    <button
+                        onClick={scrollLeft}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-lg border-2 border-gray-100 flex items-center justify-center text-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl group hover:scale-110 md:flex hidden"
+                        aria-label="Scroll left"
+                    >
+                        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-[-2px] transition-transform" />
+                    </button>
+
+                    <button
+                        onClick={scrollRight}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-lg border-2 border-gray-100 flex items-center justify-center text-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl group hover:scale-110 md:flex hidden"
+                        aria-label="Scroll right"
+                    >
+                        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-[2px] transition-transform" />
+                    </button>
                 </div>
             </div>
 

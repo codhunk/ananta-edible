@@ -205,17 +205,18 @@ export default function AboutPage() {
                         >
                             {[
                                 {
-                                    name: "Ankit Bansal",
-                                    role: "MD @ Ananta Edible",
-                                    quote: "Every batch is tested for consistency and purity standards.",
-                                    img: "/ankit_md.jpeg"
-                                },
-                                {
                                     name: "Sandeep Agrawal",
                                     role: "General Manager Sales",
                                     quote: "Efficient extraction processes ensure maximum nutrition retention.",
                                     img: "sales.jpeg"
                                 },
+                                {
+                                    name: "Ankit Bansal",
+                                    role: "MD @ Ananta Edible",
+                                    quote: "Every batch is tested for consistency and purity standards.",
+                                    img: "/ankit_md.jpeg"
+                                },
+
                                 {
                                     name: "Rajesh Kumar",
                                     role: "General Manager Supply Chain",

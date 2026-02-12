@@ -22,7 +22,7 @@ const slides: Slide[] = [
     },
     {
         id: 2,
-        image: '/banner2.png',
+        image: '/banner1.png',
         heading: 'Cold-Pressed Excellence',
         subheading: 'Traditional Kachi Ghani process preserves natural nutrients and authentic flavor',
         ctaText: 'Learn More',
@@ -30,7 +30,7 @@ const slides: Slide[] = [
     },
     {
         id: 3,
-        image: '/banner3.png',
+        image: '/banner1.png',
         heading: 'Healthy Cooking Starts Here',
         subheading: 'Rich in omega-3, vitamins, and antioxidants for your family\'s wellness',
         ctaText: 'View Benefits',
@@ -38,7 +38,7 @@ const slides: Slide[] = [
     },
     {
         id: 4,
-        image: '/banner4.png',
+        image: '/banner1.png',
         heading: 'Bulk Supply Available',
         subheading: 'FSSAI Certified - Trusted by restaurants, hotels, and food businesses',
         ctaText: 'Get Quote',
