@@ -28,7 +28,7 @@ export default function Navbar() {
         <nav className="w-full bg-white fixed top-0 z-50 shadow-sm">
             {/* Top Banner */}
             <div className="w-full bg-primary-dark text-white py-2 text-center text-xs sm:text-sm font-medium px-4">
-                ISO 9001:2015 & FSSAI Certified Manufacturer | Bulk Supply Available <span className="ml-2 bg-white/20 px-2 py-0.5 rounded whitespace-nowrap">Call: +91-9876543210</span>
+                ISO 9001:2015 & FSSAI Certified Manufacturer | Bulk Supply Available <span className="ml-2 bg-white/20 px-2 py-0.5 rounded whitespace-nowrap">Call: +91-7454957272</span>
             </div>
 
             <div className="container-custom py-3 sm:py-4">

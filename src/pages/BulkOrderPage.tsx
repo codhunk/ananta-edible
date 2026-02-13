@@ -301,7 +301,7 @@ export default function BulkOrderPage() {
                                         onChange={handleChange}
                                         required
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light outline-none"
-                                        placeholder="+91 98765 43210"
+                                        placeholder="+91 74549 57272"
                                     />
                                 </div>
                                 <div>
@@ -354,7 +354,7 @@ export default function BulkOrderPage() {
                         {/* Contact Info */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                             {[
-                                { icon: <Phone size={24} />, title: "Call Us", info: "+91 98765 43210" },
+                                { icon: <Phone size={24} />, title: "Call Us", info: "+91 74549 57272" },
                                 { icon: <Mail size={24} />, title: "Email Us", info: "bulk@ananta.com" },
                                 { icon: <MapPin size={24} />, title: "Visit Us", info: "Alwar, Rajasthan" }
                             ].map((contact, idx) => (

@@ -69,19 +69,19 @@ const Footer = () => {
                                 <span className="text-primary-light mt-1">
                                     <i className="fa-solid fa-phone text-sm"></i>
                                 </span>
-                                <a href="tel:+91xxxxxxxxxx" className="text-gray-400 hover:text-white transition-colors text-sm font-medium tracking-tight">+91-xx-xxxx xxxx</a>
+                                <a href="tel:+917454957272" className="text-gray-400 hover:text-white transition-colors text-sm font-medium tracking-tight">+91-7454957272</a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-primary-light mt-1">
                                     <i className="fa-solid fa-envelope text-sm"></i>
                                 </span>
-                                <a href="mailto:info@ananta.in" className="text-gray-400 hover:text-white transition-colors text-sm font-medium tracking-tight">info@ananta.in</a>
+                                <a href="mailto:contact@anantaedible.com" className="text-gray-400 hover:text-white transition-colors text-sm font-medium tracking-tight">contact@anantaedible.com</a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-primary-light mt-1">
                                     <i className="fa-solid fa-location-dot text-sm"></i>
                                 </span>
-                                <span className="text-gray-400 text-sm font-medium leading-[1.6]">Ananta Agros Products, Agra, Uttar Pradesh, India 282001</span>
+                                <span className="text-gray-400 text-sm font-medium leading-[1.6]">Ananta Edible, Agra, Uttar Pradesh, India 282001</span>
                             </li>
                         </ul>
 
@@ -116,15 +116,15 @@ const Footer = () => {
             <div className="border-t border-white/5 bg-primary-dark shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-                        <p className="text-gray-500 text-xs font-bold tracking-widest text-center lg:text-left">&copy; {new Date().getFullYear()} Ananta Edible Oil. All Rights Reserved.</p>
+                        <p className="text-gray-500 text-xs tracking-widest text-center lg:text-left">&copy; {new Date().getFullYear()} Ananta Edible Oil. All Rights Reserved.</p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] font-black tracking-[0.2em] order-3 lg:order-2">
+                        <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-6 text-[10px] tracking-[0.2em] order-3 lg:order-2">
                             <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>
                             <Link to="/disclaimer" className="text-gray-500 hover:text-white transition-colors">Legal Disclaimer</Link>
                             <Link to="/terms-conditions" className="text-gray-500 hover:text-white transition-colors">Terms & Conditions</Link>
                         </div>
 
-                        <p className="text-gray-500 text-[10px] font-black tracking-[0.2em] text-center lg:text-right order-2 lg:order-3 flex items-center gap-2">
+                        <p className="text-gray-500 text-[10px] tracking-[0.2em] text-center lg:text-right order-2 lg:order-3 flex items-center gap-2">
                             Digital Experience by
                             <a href="https://www.webduality.in" className="text-primary-light hover:text-white transition-all duration-300 border-b border-primary-light/20 hover:border-white font-black" target="_blank" rel="noopener noreferrer">Webduality</a>
                         </p>

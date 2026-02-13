@@ -8,8 +8,8 @@ const WhatsAppButton = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showPulsing, setShowPulsing] = useState(true);
 
-    const phoneNumber = "919358174038";
-    const displayNumber = "+91 9358174038";
+    const phoneNumber = "917454957272";
+    const displayNumber = "+91 7454957272";
     const message = "Hello, I would like to know more about Ananta Edibles products.";
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(

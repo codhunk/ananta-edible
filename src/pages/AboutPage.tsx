@@ -1,19 +1,20 @@
 import { motion, useInView, animate } from 'framer-motion';
-import { Linkedin, Twitter, Mail, ExternalLink, Quote } from 'lucide-react';
+import { Linkedin, Twitter, Mail, Quote, ExternalLink, Users } from 'lucide-react';
 import CertificationLogos from '../components/CertificationLogos';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { useEffect, useRef, useState } from 'react';
 
 // Counter Component
-const Counter = ({ from = 0, to, suffix = "", duration = 2 }: { from?: number, to: number, suffix?: string, duration?: number }) => {
+const Counter = ({ from = 0, to, suffix = "", duration = 1.5 }: { from?: number, to: number, suffix?: string, duration?: number }) => {
     const nodeRef = useRef<HTMLSpanElement>(null);
-    const inView = useInView(nodeRef, { once: true, margin: "-20%" });
+    const inView = useInView(nodeRef, { once: true, margin: "-50px" });
 
     useEffect(() => {
         if (inView) {
             const node = nodeRef.current;
             const controls = animate(from, to, {
                 duration: duration,
+                ease: "easeOut",
                 onUpdate(value) {
                     if (node) node.textContent = Math.round(value) + suffix;
                 }
@@ -22,7 +23,7 @@ const Counter = ({ from = 0, to, suffix = "", duration = 2 }: { from?: number, t
         }
     }, [from, to, suffix, duration, inView]);
 
-    return <span ref={nodeRef}>{from}{suffix}</span>;
+    return <span ref={nodeRef} className="tabular-nums">{from}{suffix}</span>;
 };
 
 export default function AboutPage() {
@@ -238,7 +239,7 @@ export default function AboutPage() {
                     <div className="container-custom px-4">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                             {[
-                                { number: 25, suffix: "+", label: "Years of Excellence" },
+                                { number: 11, suffix: "+", label: "Years of Excellence" },
                                 { number: 50, suffix: "k+", label: "Metric Tons Supplied" },
                                 { number: 100, suffix: "%", label: "FSSAI Certified" },
                                 { number: 500, suffix: "+", label: "Distributors" }
@@ -261,17 +262,24 @@ export default function AboutPage() {
                 </div>
 
                 {/* Our Awesome Team */}
-                <section className="py-20 sm:py-32 bg-gray-50">
-                    <div className="container-custom px-4">
+                <section className="py-20 sm:py-32 bg-gray-50 relative overflow-hidden">
+                    {/* Professional Background Watermark */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-black text-gray-200/20 select-none pointer-events-none uppercase tracking-[0.2em] whitespace-nowrap z-0">
+                        Ananta Team
+                    </div>
+
+                    <div className="container-custom px-4 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="text-center mb-16 sm:mb-24"
                         >
-                            <span className="text-primary font-black tracking-widest text-xs mb-3 block">The minds behind Ananta</span>
-                            <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black text-primary-dark tracking-tight">Our awesome team</h2>
-                            <div className="w-20 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-black tracking-widest text-[10px] mb-4 uppercase border border-primary/20">
+                                <Users size={12} /> The minds behind Ananta
+                            </div>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary-dark tracking-tight">Our awesome team</h2>
+                            <div className="w-12 h-1.5 bg-primary mx-auto mt-8 rounded-full"></div>
                         </motion.div>
 
                         <motion.div
@@ -279,94 +287,119 @@ export default function AboutPage() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"
                         >
                             {[
                                 {
                                     name: "Sandeep Agrawal",
-                                    role: "General Manager Sales",
+                                    role: "GM Sales",
                                     quote: "Efficient extraction processes ensure maximum nutrition retention.",
-                                    img: "sales.jpeg"
+                                    img: "sales.jpeg",
+                                    socials: [
+                                        { icon: <Linkedin size={18} />, url: "https://in.linkedin.com/in/sandeep-agrawal-b2a1122a8" },
+                                        { icon: <Twitter size={18} />, url: "https://x.com/San1981Agrawal" },
+                                        { icon: <Mail size={18} />, url: "mailto:sandeepagrawal.mtr@gmail.com" }
+                                    ]
                                 },
                                 {
                                     name: "Ankit Bansal",
-                                    role: "MD @ Ananta Edible",
+                                    role: "MD @ Ananta",
                                     quote: "Every batch is tested for consistency and purity standards.",
-                                    img: "/ankit_md.jpeg"
+                                    img: "/ankit_md.jpeg",
+                                    socials: [
+                                        { icon: <Linkedin size={18} />, url: "#" },
+                                        { icon: <Twitter size={18} />, url: "#" },
+                                        { icon: <Mail size={18} />, url: "mailto:ankit@anantaedible.com" }
+                                    ]
                                 },
-
                                 {
-                                    name: "Rajesh Kumar",
-                                    role: "General Manager Supply Chain",
+                                    name: "Mahesh Raghav",
+                                    role: "Head Accountant",
                                     quote: "Ensuring our products reach distributors on time, every time.",
-                                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop"
+                                    img: "mahesh_accountant.jpeg",
+                                    socials: [
+                                        { icon: <Linkedin size={18} />, url: "#" },
+                                        { icon: <Mail size={18} />, url: "mailto:mahesh@anantaedible.com" }
+                                    ]
                                 },
                                 {
                                     name: "Rajesh Kumar",
-                                    role: "General Manager Operations",
+                                    role: "GM Operations",
                                     quote: "Safety and hygiene are our top priorities in the factory.",
-                                    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
+                                    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop",
+                                    socials: [
+                                        { icon: <Linkedin size={18} />, url: "#" },
+                                        { icon: <Mail size={18} />, url: "mailto:rajesh@anantaedible.com" }
+                                    ]
                                 },
-                            ].map((member, i) => (
+                            ].map((member) => (
                                 <motion.div
-                                    key={i}
+                                    key={member.name}
                                     variants={itemVariants}
-                                    className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100 flex flex-col"
+                                    whileHover={{
+                                        y: -12,
+                                        transition: { duration: 0.4, ease: "circOut" }
+                                    }}
+                                    className="bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group border border-gray-100/50 flex flex-col relative"
                                 >
-                                    <div className="aspect-square relative overflow-hidden">
+                                    <div className="aspect-square relative overflow-hidden bg-gray-100">
                                         <img
                                             src={member.img}
                                             alt={member.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            className="w-full h-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-primary-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
-                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Linkedin size={18} /></a>
-                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Twitter size={18} /></a>
-                                            <a href="#" className="p-3 bg-white rounded-full text-primary-dark hover:text-primary hover:scale-110 transition-all shadow-lg"><Mail size={18} /></a>
+
+                                        {/* Professional Content Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 backdrop-blur-[2px]">
+                                            <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                                <div className="flex gap-2.5 mb-5">
+                                                    {member.socials.map((social, idx) => (
+                                                        <motion.a
+                                                            key={idx}
+                                                            href={social.url}
+                                                            whileHover={{ scale: 1.15, backgroundColor: "white", color: "var(--primary-color, #f97316)" }}
+                                                            whileTap={{ scale: 0.9 }}
+                                                            className="w-10 h-10 bg-white/10 rounded-full text-white backdrop-blur-md border border-white/20 transition-all flex items-center justify-center shadow-2xl"
+                                                        >
+                                                            {social.icon}
+                                                        </motion.a>
+                                                    ))}
+                                                </div>
+                                                <p className="text-white/70 text-xs italic leading-relaxed font-serif line-clamp-2">
+                                                    "{member.quote}"
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="p-8 flex-grow flex flex-col items-center text-center relative">
-                                        <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary-light/50 to-transparent absolute top-0"></div>
-                                        <h4 className="text-xl font-black text-primary-dark mb-1">{member.name}</h4>
-                                        <p className="text-xs font-bold text-primary tracking-widest mb-6">{member.role}</p>
+                                    <div className="p-7 text-center bg-white relative z-10 flex flex-col items-center flex-grow">
+                                        <h4 className="text-xl font-black text-primary-dark mb-1.5 group-hover:text-primary transition-colors duration-300">{member.name}</h4>
+                                        <div className="px-3 py-1 bg-gray-50 rounded-full border border-gray-100 group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300">
+                                            <p className="text-[10px] font-black text-gray-400 tracking-[0.2em] uppercase group-hover:text-primary-dark">{member.role}</p>
+                                        </div>
 
-                                        <div className="relative mt-auto">
-                                            <Quote size={16} className="text-gray-300 absolute -top-3 -left-2 transform -scale-x-100" />
-                                            <p className="text-gray-500 text-sm italic leading-relaxed px-2">
-                                                {member.quote}
-                                            </p>
+                                        {/* Dynamic accent element */}
+                                        <div className="mt-auto pt-6 flex flex-col items-center">
+                                            <div className="w-8 h-1 bg-primary/20 rounded-full group-hover:w-16 group-hover:bg-primary transition-all duration-700"></div>
                                         </div>
                                     </div>
                                 </motion.div>
                             ))}
                         </motion.div>
 
-                        <div className="text-center mt-16">
+                        <div className="text-center mt-8 mb-8">
                             <a href="/contact" className="inline-flex items-center gap-2 text-primary font-bold tracking-widest text-sm hover:gap-4 transition-all">
                                 Join our team <ExternalLink size={16} />
                             </a>
                         </div>
+
                     </div>
+                    <CertificationLogos />
                 </section>
 
-
-                <CertificationLogos />
                 <NewsletterBanner />
             </main>
-
-
         </div>
     );
 }
 
-// function Headset() {
-//     return (
-//         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//             <path d="M3 11c0-4.97 4.03-9 9-9s9 4.03 9 9v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z" />
-//             <path d="M21 16v2a2 2 0 0 1-2 2h-1" />
-//             <path d="M3 16v2a2 2 0 0 0 2 2h1" />
-//             <path d="M11 11 v4M13 11 v4" />
-//         </svg>
-//     );
-// }
