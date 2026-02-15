@@ -10,58 +10,103 @@ export default function ProductSection() {
 
     const products = [
         {
-            image: "/sudhkolhu.png",
-            category: "Cold Pressed",
-            title: "Pure Kachi Ghani Mustard Oil - 1L Bottle",
+            image: "/assets/products/sudhdhya_kolhu.png",
+            category: "Traditional",
+            title: "Sudhdhya Kolhu Kachi Ghani Mustard Oil",
             rating: 4.8,
             reviews: 245,
             basePrice: "₹180 / liter",
             tag: "Best Seller"
         },
         {
-            image: "/sudhkolhu1.png",
+            image: "/assets/products/Refined_Oil_bottle.png",
             category: "Refined",
-            title: "Premium Refined Sunflower Oil - 5L Can",
+            title: "Ananta Premium Refined Oil Bottle",
             rating: 4.7,
             reviews: 189,
-            basePrice: "₹650 / 5L",
+            basePrice: "₹150 / liter",
             tag: "Popular"
         },
         {
-            image: "/sudhkolhu.png",
-            category: "Cold Pressed",
-            title: "Organic Groundnut Oil - 1L Bottle",
+            image: "/assets/products/Saaz_Gold.png",
+            category: "Premium",
+            title: "Saaz Gold Pure Mustard Oil Bottle",
             rating: 4.9,
             reviews: 312,
-            basePrice: "₹220 / liter",
+            basePrice: "₹210 / liter",
             tag: "Premium"
         },
         {
-            image: "/sudhkolhu1.png",
-            category: "Refined",
-            title: "Light Soybean Oil - 15L Bulk Pack",
+            image: "/assets/products/sarso_tin.png",
+            category: "Traditional",
+            title: "Sarso Tin Pure Mustard Oil - 15L",
             rating: 4.6,
             reviews: 156,
-            basePrice: "₹1,800 / 15L",
+            basePrice: "₹2,400 / 15L",
             tag: "Bulk"
         },
         {
-            image: "/sudhkolhu.png",
-            category: "Fortified",
-            title: "Vitamin Enriched Rice Bran Oil - 5L",
+            image: "/assets/products/Sudhdhya_kalho_Tin.png",
+            category: "Traditional",
+            title: "Sudhdhya Kalho Kachi Ghani Tin - 15L",
             rating: 4.8,
             reviews: 203,
-            basePrice: "₹750 / 5L",
+            basePrice: "₹2,450 / 15L",
             tag: "Health+"
         },
         {
-            image: "/sudhkolhu1.png",
-            category: "Cold Pressed",
-            title: "Traditional Sesame Oil - 500ml",
+            image: "/assets/products/chamanfresh.png",
+            category: "Refined",
+            title: "Chaman Fresh Refined Oil Can",
             rating: 4.7,
             reviews: 178,
-            basePrice: "₹140 / 500ml",
-            tag: "Traditional"
+            basePrice: "₹160 / liter",
+            tag: "Fresh"
+        },
+        {
+            image: "/assets/products/furious.png",
+            category: "Premium",
+            title: "Furious Premium Mustard Oil Pack",
+            rating: 4.8,
+            reviews: 142,
+            basePrice: "₹200 / liter",
+            tag: "Powerful"
+        },
+        {
+            image: "/assets/products/Golden_city_plastic_Tin.png",
+            category: "Traditional",
+            title: "Golden City Plastic Tin Mustard Oil",
+            rating: 4.6,
+            reviews: 95,
+            basePrice: "₹850 / 5L",
+            tag: "Value"
+        },
+        {
+            image: "/assets/products/Saaz_gold_Tin.png",
+            category: "Premium",
+            title: "Saaz Gold Premium Mustard Oil Tin",
+            rating: 4.9,
+            reviews: 218,
+            basePrice: "₹2,500 / 15L",
+            tag: "Royal"
+        },
+        {
+            image: "/assets/products/sasz.png",
+            category: "Traditional",
+            title: "Sasz Traditional Kachi Ghani Oil",
+            rating: 4.7,
+            reviews: 134,
+            basePrice: "₹185 / liter",
+            tag: "Heritage"
+        },
+        {
+            image: "/assets/products/Sudhdhya_kalho__Round_Bottle.png",
+            category: "Traditional",
+            title: "Sudhdhya Kalho Round Bottle Mustard Oil",
+            rating: 4.8,
+            reviews: 167,
+            basePrice: "₹190 / liter",
+            tag: "New"
         }
     ];
 

@@ -14,7 +14,7 @@ interface Slide {
 const slides: Slide[] = [
     {
         id: 1,
-        image: '/banner1.png',
+        image: '/Biriyani_image.png',
         heading: 'Premium Quality Mustard Oil',
         subheading: 'Pure, Traditional & Authentic - Extracted from the finest seeds since 1995',
         ctaText: 'Explore Products',
@@ -22,7 +22,7 @@ const slides: Slide[] = [
     },
     {
         id: 2,
-        image: '/banner1.png',
+        image: '/Chef_image.png',
         heading: 'Cold-Pressed Excellence',
         subheading: 'Traditional Kachi Ghani process preserves natural nutrients and authentic flavor',
         ctaText: 'Learn More',
@@ -30,7 +30,7 @@ const slides: Slide[] = [
     },
     {
         id: 3,
-        image: '/banner1.png',
+        image: '/Husband_wife_image.png',
         heading: 'Healthy Cooking Starts Here',
         subheading: 'Rich in omega-3, vitamins, and antioxidants for your family\'s wellness',
         ctaText: 'View Benefits',
@@ -38,7 +38,7 @@ const slides: Slide[] = [
     },
     {
         id: 4,
-        image: '/banner1.png',
+        image: '/Scientist_image.png',
         heading: 'Bulk Supply Available',
         subheading: 'FSSAI Certified - Trusted by restaurants, hotels, and food businesses',
         ctaText: 'Get Quote',
@@ -75,7 +75,7 @@ export default function HeroCarousel() {
 
     return (
         <section
-            className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px] overflow-hidden"
+            className="relative w-full h-[450px] sm:h-[500px] lg:h-[550px] xl:h-[550px] 2xl:h-[650px] overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
@@ -94,10 +94,10 @@ export default function HeroCarousel() {
                         <img
                             src={slides[currentSlide].image}
                             alt={slides[currentSlide].heading}
-                            className="w-full h-full object-fill"
+                            className="w-full h-full object-cover"
                         />
                         {/* Gradient Overlay */}
-                        <div className="absolute inset-0 "></div>
+                        <div className="absolute inset-0"></div>
                     </div>
 
                     {/* Content */}
@@ -108,7 +108,7 @@ export default function HeroCarousel() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="max-w-2xl text-white"
                         >
-                           
+
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ export default function HeroCarousel() {
                                 {slides[currentSlide].heading}
                             </motion.h1>
 
-                          
+
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}

@@ -18,10 +18,10 @@ export default function ProductPage() {
         tags: ["Sativa 100%", "Premium", "Best Seller"],
         description: "A premium blend of Watermelon Zkittlez and Purple Gushers, offering a unique aromatic experience and potent effects. Grown with organic practices to ensure the highest quality and purity.",
         images: [
-            "/sudhkolhu1.jpeg",
-            "/sudhkolhu.jpeg",
-            "/sudhkolhu1.jpeg",
-            "/sudhkolhu.jpeg"
+            "/assets/products/chamanfresh.png",
+            "/assets/products/chamanfresh.png",
+            "/assets/products/chamanfresh.png",
+            "/assets/products/chamanfresh.png"
         ]
     };
 

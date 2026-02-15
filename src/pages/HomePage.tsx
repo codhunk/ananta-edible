@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HomePage() {
     const [showAllProducts, setShowAllProducts] = useState(false);
-    const filters = ['Mustard Oil', 'Refined Oils', 'Health Packs', 'Bulk Supply', 'Shop All'];
+    const filters = ['Mustard Oil', 'Refined Oil', 'Traditional Oils', 'Bulk Packs', 'Shop All'];
 
     return (
         <div className="bg-background font-sans text-gray-900 selection:bg-primary-light selection:text-white overflow-x-hidden">
@@ -79,15 +79,15 @@ export default function HomePage() {
                         >
                             <AnimatePresence mode="popLayout">
                                 {[
-                                    "/sudhkolhu.png",
-                                    "/sudhkolhu1.png",
-                                    "/sudhkolhu.png",
-                                    "/sudhkolhu1.png",
-                                    "/sudhkolhu.png",
-                                    "/sudhkolhu1.png",
-                                    "/sudhkolhu.png",
-                                    "/sudhkolhu1.png",
-                                ].slice(0, showAllProducts ? 8 : 4).map((img, i) => (
+                                    { img: "/assets/products/sudhdhya_kolhu.png", title: "Sudhdhya Kolhu Mustard Oil", price: "₹180.00" },
+                                    { img: "/assets/products/Refined_Oil_bottle.png", title: "Ananta Refined Oil", price: "₹150.00" },
+                                    { img: "/assets/products/Saaz_Gold.png", title: "Saaz Gold Mustard Oil", price: "₹210.00" },
+                                    { img: "/assets/products/sarso_tin.png", title: "Sarso Tin Mustard Oil", price: "₹2,400.00" },
+                                    { img: "/assets/products/Sudhdhya_kalho_Tin.png", title: "Sudhdhya Kalho Tin", price: "₹2,450.00" },
+                                    { img: "/assets/products/chamanfresh.png", title: "Chaman Fresh Refined Oil", price: "₹160.00" },
+                                    { img: "/assets/products/furious.png", title: "Furious Premium Oil", price: "₹200.00" },
+                                    { img: "/assets/products/Golden_city_plastic_Tin.png", title: "Golden City Tin", price: "₹850.00" },
+                                ].slice(0, showAllProducts ? 8 : 4).map((p, i) => (
                                     <motion.div
                                         key={i}
                                         layout
@@ -100,12 +100,12 @@ export default function HomePage() {
                                         }}
                                     >
                                         <ProductCard
-                                            image={img}
+                                            image={p.img}
                                             category="Edible Oil"
-                                            title="Premium Kachi Ghani Mustard Oil - 5L"
+                                            title={p.title}
                                             rating={4.8}
                                             reviews={120}
-                                            basePrice="₹950.00"
+                                            basePrice={p.price}
                                         />
                                     </motion.div>
                                 ))}

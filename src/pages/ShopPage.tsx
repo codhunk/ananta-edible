@@ -10,25 +10,94 @@ export default function ShopPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const categories = [
-        { name: 'Flower', count: 45 },
-        { name: 'Edibles', count: 32 },
-        { name: 'Concentrates', count: 18 },
-        { name: 'Mushrooms', count: 12 },
-        { name: 'Vapes', count: 24 },
-        { name: 'CBD', count: 15 },
-        { name: 'Accessories', count: 9 }
+        { name: 'Mustard Oil', count: 45 },
+        { name: 'Refined Oil', count: 32 },
+        { name: 'Traditional Oils', count: 18 },
+        { name: 'Bulk Packs', count: 12 }
     ];
 
     const products = [
-        { image: "https://via.placeholder.com/400?text=Flower+1", category: "Flower", title: "2 Oz Deal Watermelon Zkittlez + Purple Gushers", rating: 4.6, reviews: 135, basePrice: "$80.00", tag: "Best Seller" },
-        { image: "https://via.placeholder.com/400?text=Flower+2", category: "Flower", title: "Blueberry Kush Premium Indica", rating: 4.7, reviews: 98, basePrice: "$65.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+3", category: "Flower", title: "Sour Diesel High Potency Sativa", rating: 4.5, reviews: 76, basePrice: "$70.00", salePrice: "$55.00", tag: "On Sale" },
-        { image: "https://via.placeholder.com/400?text=Flower+4", category: "Flower", title: "Pineapple Express Sativa", rating: 4.8, reviews: 156, basePrice: "$75.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+5", category: "Flower", title: "Northern Lights Indica", rating: 4.9, reviews: 210, basePrice: "$85.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+6", category: "Flower", title: "Girl Scout Cookies Hybrid", rating: 4.7, reviews: 189, basePrice: "$90.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+7", category: "Flower", title: "Jack Herer Sativa", rating: 4.6, reviews: 112, basePrice: "$70.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+8", category: "Flower", title: "OG Kush Hybrid", rating: 4.8, reviews: 245, basePrice: "$95.00" },
-        { image: "https://via.placeholder.com/400?text=Flower+9", category: "Flower", title: "White Widow Hybrid", rating: 4.5, reviews: 134, basePrice: "$80.00" }
+        {
+            image: "/assets/products/sudhdhya_kolhu.png",
+            category: "Mustard Oil",
+            title: "Sudhdhya Kolhu Kachi Ghani Mustard Oil",
+            rating: 4.8,
+            reviews: 245,
+            basePrice: "₹180 / liter",
+            tag: "Best Seller"
+        },
+        {
+            image: "/assets/products/Refined_Oil_bottle.png",
+            category: "Refined Oil",
+            title: "Ananta Premium Refined Oil Bottle",
+            rating: 4.7,
+            reviews: 189,
+            basePrice: "₹150 / liter",
+            tag: "Popular"
+        },
+        {
+            image: "/assets/products/Saaz_Gold.png",
+            category: "Mustard Oil",
+            title: "Saaz Gold Pure Mustard Oil Bottle",
+            rating: 4.9,
+            reviews: 312,
+            basePrice: "₹210 / liter",
+            tag: "Premium"
+        },
+        {
+            image: "/assets/products/sarso_tin.png",
+            category: "Traditional Oils",
+            title: "Sarso Tin Pure Mustard Oil - 15L",
+            rating: 4.6,
+            reviews: 156,
+            basePrice: "₹2,400 / 15L",
+            tag: "Bulk"
+        },
+        {
+            image: "/assets/products/Sudhdhya_kalho_Tin.png",
+            category: "Traditional Oils",
+            title: "Sudhdhya Kalho Kachi Ghani Tin - 15L",
+            rating: 4.8,
+            reviews: 203,
+            basePrice: "₹2,450 / 15L",
+            tag: "Health+"
+        },
+        {
+            image: "/assets/products/chamanfresh.png",
+            category: "Refined Oil",
+            title: "Chaman Fresh Refined Oil Can",
+            rating: 4.7,
+            reviews: 178,
+            basePrice: "₹160 / liter",
+            tag: "Fresh"
+        },
+        {
+            image: "/assets/products/furious.png",
+            category: "Mustard Oil",
+            title: "Furious Premium Mustard Oil Pack",
+            rating: 4.8,
+            reviews: 142,
+            basePrice: "₹200 / liter",
+            tag: "Powerful"
+        },
+        {
+            image: "/assets/products/Golden_city_plastic_Tin.png",
+            category: "Traditional Oils",
+            title: "Golden City Plastic Tin Mustard Oil",
+            rating: 4.6,
+            reviews: 95,
+            basePrice: "₹850 / 5L",
+            tag: "Value"
+        },
+        {
+            image: "/assets/products/Saaz_gold_Tin.png",
+            category: "Mustard Oil",
+            title: "Saaz Gold Premium Mustard Oil Tin",
+            rating: 4.9,
+            reviews: 218,
+            basePrice: "₹2,500 / 15L",
+            tag: "Royal"
+        }
     ];
 
     const FiltersComp = () => (
