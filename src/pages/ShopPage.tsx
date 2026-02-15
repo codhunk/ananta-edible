@@ -5,7 +5,6 @@ import NewsletterBanner from '../components/NewsletterBanner';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ShopPage() {
-    const [priceRange, setPriceRange] = useState(100);
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -23,7 +22,7 @@ export default function ShopPage() {
             title: "Sudhdhya Kolhu Kachi Ghani Mustard Oil",
             rating: 4.8,
             reviews: 245,
-            basePrice: "₹180 / liter",
+            basePrice: "Edible Oil",
             tag: "Best Seller"
         },
         {
@@ -32,7 +31,7 @@ export default function ShopPage() {
             title: "Ananta Premium Refined Oil Bottle",
             rating: 4.7,
             reviews: 189,
-            basePrice: "₹150 / liter",
+            basePrice: "Premium Quality",
             tag: "Popular"
         },
         {
@@ -41,7 +40,7 @@ export default function ShopPage() {
             title: "Saaz Gold Pure Mustard Oil Bottle",
             rating: 4.9,
             reviews: 312,
-            basePrice: "₹210 / liter",
+            basePrice: "Pure Quality",
             tag: "Premium"
         },
         {
@@ -50,7 +49,7 @@ export default function ShopPage() {
             title: "Sarso Tin Pure Mustard Oil - 15L",
             rating: 4.6,
             reviews: 156,
-            basePrice: "₹2,400 / 15L",
+            basePrice: "Bulk Supply",
             tag: "Bulk"
         },
         {
@@ -59,7 +58,7 @@ export default function ShopPage() {
             title: "Sudhdhya Kalho Kachi Ghani Tin - 15L",
             rating: 4.8,
             reviews: 203,
-            basePrice: "₹2,450 / 15L",
+            basePrice: "Healthy Choice",
             tag: "Health+"
         },
         {
@@ -68,7 +67,7 @@ export default function ShopPage() {
             title: "Chaman Fresh Refined Oil Can",
             rating: 4.7,
             reviews: 178,
-            basePrice: "₹160 / liter",
+            basePrice: "Fresh Quality",
             tag: "Fresh"
         },
         {
@@ -77,7 +76,7 @@ export default function ShopPage() {
             title: "Furious Premium Mustard Oil Pack",
             rating: 4.8,
             reviews: 142,
-            basePrice: "₹200 / liter",
+            basePrice: "Premium Pack",
             tag: "Powerful"
         },
         {
@@ -86,7 +85,7 @@ export default function ShopPage() {
             title: "Golden City Plastic Tin Mustard Oil",
             rating: 4.6,
             reviews: 95,
-            basePrice: "₹850 / 5L",
+            basePrice: "Value Pack",
             tag: "Value"
         },
         {
@@ -95,7 +94,7 @@ export default function ShopPage() {
             title: "Saaz Gold Premium Mustard Oil Tin",
             rating: 4.9,
             reviews: 218,
-            basePrice: "₹2,500 / 15L",
+            basePrice: "Premium Tin",
             tag: "Royal"
         }
     ];
@@ -125,32 +124,7 @@ export default function ShopPage() {
                 </div>
             </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-            >
-                <h3 className="text-sm font-black tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Price range</h3>
-                <input
-                    type="range"
-                    min="0"
-                    max="500"
-                    value={priceRange}
-                    onChange={(e) => setPriceRange(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-100 rounded-full appearance-none cursor-pointer accent-primary-light mb-4"
-                />
-                <div className="flex justify-between text-xs font-black text-gray-400 tracking-widest">
-                    <span>$0</span>
-                    <span className="text-primary-light">${priceRange}</span>
-                </div>
-                <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full btn-primary !py-3 !text-xs mt-6 !bg-primary-dark shadow-lg shadow-primary-dark/10 font-black tracking-[0.2em]"
-                >
-                    Apply Filter
-                </motion.button>
-            </motion.div>
+
 
             <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -159,7 +133,7 @@ export default function ShopPage() {
             >
                 <h3 className="text-sm font-black tracking-widest mb-6 border-b-2 border-primary/10 pb-2 text-primary-dark">Status</h3>
                 <div className="space-y-4">
-                    {['In Stock', 'On Sale'].map(status => (
+                    {['In Stock'].map(status => (
                         <label key={status} className="flex items-center gap-4 cursor-pointer group">
                             <div className="w-5 h-5 border-2 border-gray-100 rounded-lg flex items-center justify-center group-hover:border-primary-light transition-all bg-gray-50">
                                 <motion.div
@@ -190,15 +164,15 @@ export default function ShopPage() {
                 <div className="container-custom px-4 flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm font-black tracking-[0.2em] text-primary-dark">
                     <div className="flex items-center gap-2">
                         <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="w-1.5 h-1.5 bg-primary-light rounded-full"></motion.div>
-                        Worldwide Shipping
+                        Premium Quality
                     </div>
                     <div className="flex items-center gap-2">
                         <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 4, ease: "linear" }} className="w-1.5 h-1.5 bg-secondary rounded-full"></motion.div>
-                        Secure Safe Payments
+                        Locally Sourced
                     </div>
                     <div className="flex items-center gap-2 text-primary-light">
                         <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="w-1.5 h-1.5 bg-primary-light rounded-full"></motion.div>
-                        New Quality & Pricing
+                        Authentic Taste
                     </div>
                 </div>
             </motion.div>
@@ -297,11 +271,7 @@ export default function ShopPage() {
                                     <p className="text-[10px] font-black tracking-[0.4em] text-secondary mb-4 underline">Limited recommendation</p>
                                     <h2 className="text-2xl sm:text-2xl lg:text-4xl font-black mb-8 tracking-tighter leading-tight">Authentic Kachi Ghani Mustard Oil</h2>
                                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                                        <motion.button className="btn-primary !py-4 !px-10 !text-[10px] !bg-primary-light w-full sm:w-auto shadow-xl shadow-primary-light/20 tracking-[0.2em] font-black">Shop now</motion.button>
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-gray-500 line-through text-xs font-black">$120.00</span>
-                                            <span className="text-secondary text-2xl sm:text-3xl font-black">$99.00</span>
-                                        </div>
+                                        <motion.button className="btn-primary !py-4 !px-10 !text-[10px] !bg-primary-light w-full sm:w-auto shadow-xl shadow-primary-light/20 tracking-[0.2em] font-black">Learn more</motion.button>
                                     </div>
                                 </div>
                                 <motion.div

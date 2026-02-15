@@ -15,7 +15,6 @@ export default function ProductSection() {
             title: "Sudhdhya Kolhu Kachi Ghani Mustard Oil",
             rating: 4.8,
             reviews: 245,
-            basePrice: "₹180 / liter",
             tag: "Best Seller"
         },
         {
@@ -24,7 +23,6 @@ export default function ProductSection() {
             title: "Ananta Premium Refined Oil Bottle",
             rating: 4.7,
             reviews: 189,
-            basePrice: "₹150 / liter",
             tag: "Popular"
         },
         {
@@ -33,7 +31,6 @@ export default function ProductSection() {
             title: "Saaz Gold Pure Mustard Oil Bottle",
             rating: 4.9,
             reviews: 312,
-            basePrice: "₹210 / liter",
             tag: "Premium"
         },
         {
@@ -42,7 +39,6 @@ export default function ProductSection() {
             title: "Sarso Tin Pure Mustard Oil - 15L",
             rating: 4.6,
             reviews: 156,
-            basePrice: "₹2,400 / 15L",
             tag: "Bulk"
         },
         {
@@ -51,7 +47,6 @@ export default function ProductSection() {
             title: "Sudhdhya Kalho Kachi Ghani Tin - 15L",
             rating: 4.8,
             reviews: 203,
-            basePrice: "₹2,450 / 15L",
             tag: "Health+"
         },
         {
@@ -60,7 +55,6 @@ export default function ProductSection() {
             title: "Chaman Fresh Refined Oil Can",
             rating: 4.7,
             reviews: 178,
-            basePrice: "₹160 / liter",
             tag: "Fresh"
         },
         {
@@ -69,7 +63,6 @@ export default function ProductSection() {
             title: "Furious Premium Mustard Oil Pack",
             rating: 4.8,
             reviews: 142,
-            basePrice: "₹200 / liter",
             tag: "Powerful"
         },
         {
@@ -78,7 +71,6 @@ export default function ProductSection() {
             title: "Golden City Plastic Tin Mustard Oil",
             rating: 4.6,
             reviews: 95,
-            basePrice: "₹850 / 5L",
             tag: "Value"
         },
         {
@@ -87,7 +79,6 @@ export default function ProductSection() {
             title: "Saaz Gold Premium Mustard Oil Tin",
             rating: 4.9,
             reviews: 218,
-            basePrice: "₹2,500 / 15L",
             tag: "Royal"
         },
         {
@@ -96,7 +87,6 @@ export default function ProductSection() {
             title: "Sasz Traditional Kachi Ghani Oil",
             rating: 4.7,
             reviews: 134,
-            basePrice: "₹185 / liter",
             tag: "Heritage"
         },
         {
@@ -105,7 +95,6 @@ export default function ProductSection() {
             title: "Sudhdhya Kalho Round Bottle Mustard Oil",
             rating: 4.8,
             reviews: 167,
-            basePrice: "₹190 / liter",
             tag: "New"
         }
     ];
@@ -184,7 +173,7 @@ export default function ProductSection() {
                                 >
                                     <img src="https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=300" alt="Promo" className="w-32 h-32 sm:w-40 sm:h-40 object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-2xl" />
                                 </motion.div>
-                                <h3 className="text-xl sm:text-2xl font-black mb-4 tracking-tighter">Shop our <br /> <span className="text-secondary">best sellers</span></h3>
+                                <h3 className="text-xl sm:text-2xl font-black mb-4 tracking-tighter">View our <br /> <span className="text-secondary">best sellers</span></h3>
                                 <p className="text-xs text-gray-400 mb-8 leading-relaxed font-bold tracking-widest">
                                     Premium quality locally sourced mustard oils.
                                 </p>

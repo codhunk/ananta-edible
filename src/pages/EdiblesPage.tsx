@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, LayoutGrid, List, Filter, X, SlidersHorizontal, Check, Zap, ShieldCheck, Heart } from 'lucide-react';
+import { ChevronDown, LayoutGrid, List, Filter, X, Check, Zap, ShieldCheck, Heart } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import NewsletterBanner from '../components/NewsletterBanner';
 import { useState, useMemo } from 'react';
@@ -100,9 +100,6 @@ const oilProducts = [
 
 const productTypes = ["All", "Mustard Oil", "Refined Oil"];
 const sortOptions = [
-    { label: "Featured", value: "featured" },
-    { label: "Price: Low to High", value: "price-asc" },
-    { label: "Price: High to Low", value: "price-desc" },
     { label: "Top Rated", value: "rating" },
     { label: "Most Reviews", value: "reviews" }
 ];
@@ -111,25 +108,22 @@ export default function EdiblesPage() {
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [selectedType, setSelectedType] = useState("All");
-    const [priceRange, setPriceRange] = useState(300);
     const [sortBy, setSortBy] = useState("featured");
     const [isSortOpen, setIsSortOpen] = useState(false);
 
     const filteredProducts = useMemo(() => {
-        let result = oilProducts.filter(p => p.price <= priceRange);
+        let result = oilProducts;
         if (selectedType !== "All") {
             result = result.filter(p => p.type === selectedType);
         }
         return result.sort((a, b) => {
             switch (sortBy) {
-                case 'price-asc': return a.price - b.price;
-                case 'price-desc': return b.price - a.price;
                 case 'rating': return b.rating - a.rating;
                 case 'reviews': return b.reviews - a.reviews;
                 default: return 0;
             }
         });
-    }, [selectedType, priceRange, sortBy]);
+    }, [selectedType, sortBy]);
 
     const FilterSidebar = () => (
         <div className="space-y-8">
@@ -158,28 +152,10 @@ export default function EdiblesPage() {
                 </div>
             </div>
 
-            <div>
-                <h3 className="text-xs font-black tracking-widest text-gray-400 mb-6 flex items-center gap-2">
-                    <SlidersHorizontal size={14} /> Price (₹/Ltr)
-                </h3>
-                <div className="px-1">
-                    <input
-                        type="range"
-                        min="0"
-                        max="500"
-                        value={priceRange}
-                        onChange={(e) => setPriceRange(Number(e.target.value))}
-                        className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-primary-light"
-                    />
-                    <div className="flex justify-between mt-4 text-xs font-bold text-gray-500">
-                        <span>₹0</span>
-                        <span className="text-primary-light bg-primary/5 px-2 py-1 rounded">₹{priceRange}</span>
-                    </div>
-                </div>
-            </div>
+
 
             <button
-                onClick={() => { setSelectedType("All"); setPriceRange(500); setSortBy("featured"); }}
+                onClick={() => { setSelectedType("All"); setSortBy("featured"); }}
                 className="text-xs font-bold text-gray-400 underline hover:text-primary-dark transition-colors"
             >
                 Reset Filters
@@ -206,7 +182,7 @@ export default function EdiblesPage() {
                     >
                         <span className="text-primary-light font-black tracking-[0.2em] mb-4 block">100% Purity guaranteed</span>
                         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-black text-white mb-6 tracking-tight">
-                            Edible oil <span className="text-primary-light underline decoration-white/20">refined</span>
+                            Edible oil <span className="text-primary-light underline decoration-white/20">explorer</span>
                         </h1>
                     </motion.div>
                     <motion.p
@@ -344,7 +320,7 @@ export default function EdiblesPage() {
                                         <div className="col-span-full py-20 text-center bg-gray-50 rounded-[40px] border border-dashed border-gray-200">
                                             <p className="text-gray-400 font-black tracking-widest text-sm mb-4">No varieties found</p>
                                             <button
-                                                onClick={() => { setSelectedType("All"); setPriceRange(500); }}
+                                                onClick={() => { setSelectedType("All"); }}
                                                 className="bg-white px-8 py-3 rounded-full shadow-sm text-xs font-black tracking-widest text-primary-light border border-gray-100"
                                             >
                                                 Show All Products

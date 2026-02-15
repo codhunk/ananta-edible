@@ -1,64 +1,56 @@
 import { useState } from 'react';
-import { Star, Plus, Minus, ShoppingCart, Share2, Heart, CheckCircle2, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Star, Share2, CheckCircle2, ChevronRight, ChevronLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '../components/ProductCard';
 
 export default function ProductPage() {
-    const [quantity, setQuantity] = useState(1);
-    const [selectedWeight, setSelectedWeight] = useState('28g');
     const [activeImage, setActiveImage] = useState(0);
+    const [activeTab, setActiveTab] = useState('Description');
 
     const product = {
-        title: "2 Oz Deal Watermelon Zkittlez + Purple Gushers",
-        price: "$80.00",
-        rating: 4.8,
-        reviews: 135,
-        category: "Flower",
-        sku: "AN-WZ-001",
-        tags: ["Sativa 100%", "Premium", "Best Seller"],
-        description: "A premium blend of Watermelon Zkittlez and Purple Gushers, offering a unique aromatic experience and potent effects. Grown with organic practices to ensure the highest quality and purity.",
+        title: "Sudhdhya Kolhu Kachi Ghani Mustard Oil",
+        rating: 4.9,
+        reviews: 245,
+        category: "Mustard Oil",
+        sku: "ANA-SK-001",
+        tags: ["Traditional", "Cold Pressed", "Best Seller"],
+        description: "Experience the authentic taste of tradition with our Sudhdhya Kolhu Kachi Ghani Mustard Oil. Cold-pressed using traditional methods to retain its natural pungency and health benefits, this oil is perfect for a wide range of culinary applications.",
         images: [
-            "/assets/products/chamanfresh.png",
-            "/assets/products/chamanfresh.png",
-            "/assets/products/chamanfresh.png",
-            "/assets/products/chamanfresh.png"
+            "/assets/products/sudhdhya_kolhu.png",
+            "/assets/products/sudhdhya_kolhu.png",
+            "/assets/products/sudhdhya_kolhu.png",
+            "/assets/products/sudhdhya_kolhu.png"
         ]
     };
 
-    const weights = ['28g', '1/2lb', '1/4lb', '1lb'];
-
     const relatedProducts = [
         {
-            image: "https://via.placeholder.com/400?text=Related+1",
-            category: "Flower",
-            title: "Blueberry Kush Premium Indica",
+            image: "/assets/products/Refined_Oil_bottle.png",
+            category: "Refined Oil",
+            title: "Ananta Premium Refined Oil Bottle",
             rating: 4.7,
-            reviews: 98,
-            basePrice: "$65.00"
+            reviews: 189
         },
         {
-            image: "https://via.placeholder.com/400?text=Related+2",
-            category: "Edibles",
-            title: "Sour Watermelon Gummies 100mg",
+            image: "/assets/products/Saaz_Gold.png",
+            category: "Mustard Oil",
+            title: "Saaz Gold Pure Mustard Oil Bottle",
             rating: 4.9,
-            reviews: 210,
-            basePrice: "$25.00"
+            reviews: 312
         },
         {
-            image: "https://via.placeholder.com/400?text=Related+3",
-            category: "Concentrates",
-            title: "Golden Resin Diamond Extract",
+            image: "/assets/products/sarso_tin.png",
+            category: "Traditional",
+            title: "Sarso Tin Pure Mustard Oil - 15L",
             rating: 4.6,
-            reviews: 45,
-            basePrice: "$120.00"
+            reviews: 156
         },
         {
-            image: "https://via.placeholder.com/400?text=Related+4",
-            category: "Flower",
-            title: "Pineapple Express Sativa",
-            rating: 4.8,
-            reviews: 156,
-            basePrice: "$75.00"
+            image: "/assets/products/chamanfresh.png",
+            category: "Refined Oil",
+            title: "Chaman Fresh Refined Oil Can",
+            rating: 4.7,
+            reviews: 178
         }
     ];
 
@@ -93,7 +85,7 @@ export default function ProductPage() {
                             transition={{ duration: 0.8 }}
                             className="space-y-4 sm:space-y-8"
                         >
-                            <div className="aspect-square rounded-[32px] sm:rounded-[48px] bg-gray-50 border border-gray-100 overflow-hidden group relative shadow-2xl">
+                            <div className="aspect-square rounded-[32px] sm:rounded-[48px] bg-gray-50 border border-gray-100 overflow-hidden group relative">
                                 <AnimatePresence mode="wait">
                                     <motion.img
                                         key={activeImage}
@@ -103,16 +95,10 @@ export default function ProductPage() {
                                         transition={{ duration: 0.5 }}
                                         src={product.images[activeImage]}
                                         alt={product.title}
-                                        className="w-full h-full object-contain p-6 sm:p-16"
+                                        className="w-full h-full object-contain p-6 sm:p-20"
                                     />
                                 </AnimatePresence>
-                                <motion.button
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className="absolute top-6 right-6 sm:top-10 sm:right-10 w-12 h-12 bg-white shadow-2xl rounded-2xl flex items-center justify-center text-gray-300 hover:text-red-500 transition-colors z-20"
-                                >
-                                    <Heart size={24} />
-                                </motion.button>
+
 
                                 <div className="absolute inset-x-4 bottom-1/2 translate-y-1/2 flex justify-between pointer-events-none px-2 lg:px-6">
                                     <motion.button
@@ -186,91 +172,13 @@ export default function ProductPage() {
                                     ))}
                                 </div>
                                 <span className="text-xs sm:text-sm font-black text-gray-400 tracking-[0.2em] whitespace-nowrap">| {product.reviews} Reviews</span>
-                                <motion.span
-                                    animate={{ scale: [1, 1.05, 1] }}
-                                    transition={{ repeat: Infinity, duration: 2 }}
-                                    className="text-xs py-1.5 px-4 border-2 border-green-100 text-green-600 font-black bg-green-50 rounded-full lg:ml-auto tracking-widest shadow-sm shadow-green-100"
-                                >
-                                    In Stock
-                                </motion.span>
                             </motion.div>
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.7 }}
-                                className="text-3xl sm:text-4xl font-black text-primary-dark mb-10 sm:mb-12 flex items-baseline justify-center lg:justify-start gap-3"
-                            >
-                                {product.price}
-                                <span className="text-xs sm:text-sm text-gray-400 font-bold tracking-[0.3em] not-italic">/ unit</span>
-                            </motion.div>
+
 
                             <div className="w-full h-px bg-gray-100 mb-10 lg:block hidden"></div>
 
-                            {/* Weight Selector */}
-                            <div className="mb-10 sm:mb-16">
-                                <motion.label
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.8 }}
-                                    className="block text-xs font-black tracking-[0.3em] text-gray-400 mb-6"
-                                >
-                                    Select Weight
-                                </motion.label>
-                                <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
-                                    {weights.map((w, idx) => (
-                                        <motion.button
-                                            key={w}
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.9 + idx * 0.1 }}
-                                            whileHover={{ y: -5 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            onClick={() => setSelectedWeight(w)}
-                                            className={`px-8 sm:px-12 py-3.5 sm:py-4 rounded-2xl font-black tracking-widest border-2 transition-all text-[10px] sm:text-xs shadow-sm ${selectedWeight === w ? 'bg-primary border-primary text-white shadow-xl shadow-primary/20' : 'bg-white border-gray-100 text-gray-400 hover:border-primary-light hover:text-primary-light'}`}
-                                        >
-                                            {w}
-                                        </motion.button>
-                                    ))}
-                                </div>
-                            </div>
 
-                            {/* Action Buttons */}
-                            <div className="flex flex-col sm:flex-row items-center gap-6 mb-12 sm:mb-16">
-                                <motion.div
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 1.2 }}
-                                    className="flex items-center bg-gray-50 rounded-2xl border border-gray-100 p-1.5 w-full sm:w-auto justify-center shadow-inner"
-                                >
-                                    <motion.button
-                                        whileTap={{ scale: 0.8 }}
-                                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                        className="w-12 h-12 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white rounded-xl shadow-sm"
-                                    >
-                                        <Minus size={20} />
-                                    </motion.button>
-                                    <span className="w-16 text-center font-black text-xl text-primary-dark">{quantity}</span>
-                                    <motion.button
-                                        whileTap={{ scale: 0.8 }}
-                                        onClick={() => setQuantity(quantity + 1)}
-                                        className="w-12 h-12 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white rounded-xl shadow-sm"
-                                    >
-                                        <Plus size={20} />
-                                    </motion.button>
-                                </motion.div>
-                                <motion.button
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 1.2 }}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="w-full sm:flex-grow btn-primary !py-5 !text-xs sm:!text-sm shadow-2xl shadow-primary-light/30 flex items-center justify-center gap-4 font-black tracking-[0.3em]"
-                                >
-                                    <ShoppingCart size={20} />
-                                    Add To Cart
-                                </motion.button>
-                            </div>
 
                             {/* Perks */}
                             <motion.div
@@ -280,10 +188,10 @@ export default function ProductPage() {
                                 className="grid grid-cols-2 gap-y-6 sm:gap-y-8 mb-12 sm:mb-16 text-left px-4 lg:px-0"
                             >
                                 {[
-                                    { label: "Free Shipping" },
-                                    { label: "Organic Grown" },
-                                    { label: "Lab Tested" },
-                                    { label: "Premium Grade" }
+                                    { label: "100% Pure Kachi Ghani" },
+                                    { label: "No Preservatives" },
+                                    { label: "Traditional Extraction" },
+                                    { label: "High Pungency" }
                                 ].map((perk, i) => (
                                     <motion.div
                                         key={i}
@@ -323,34 +231,94 @@ export default function ProductPage() {
                 <section className="py-16 sm:py-24 bg-white overflow-hidden">
                     <div className="container-custom px-4">
                         <div className="border-b border-gray-100 mb-12 flex flex-wrap justify-center lg:justify-start gap-8 sm:gap-16">
-                            {['Description', 'Specifications', 'Reviews'].map((tab, i) => (
+                            {['Description', 'Specifications', 'Reviews'].map((tab) => (
                                 <motion.button
                                     key={tab}
                                     whileHover={{ y: -2 }}
-                                    className={`pb-6 text-[10px] sm:text-xs font-black tracking-[0.3em] transition-all relative ${i === 0 ? 'text-primary-dark' : 'text-gray-400 hover:text-primary'}`}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`pb-6 text-[10px] sm:text-xs font-black tracking-[0.3em] transition-all relative ${activeTab === tab ? 'text-primary-dark' : 'text-gray-400 hover:text-primary'}`}
                                 >
                                     {tab}
-                                    {i === 0 && <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary-light rounded-full" />}
+                                    {activeTab === tab && <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-primary-light rounded-full" />}
                                 </motion.button>
                             ))}
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="max-w-4xl mx-auto lg:mx-0"
-                        >
-                            <p className="text-sm sm:text-lg text-gray-500 leading-relaxed mb-8 text-center lg:text-left font-medium">
-                                Our Watermelon Zkittlez and Purple Gushers combo is carefully selected from the finest harvests. Each batch is curated to deliver an explosion of tropical flavors followed by a profound, long-lasting relaxation.
-                            </p>
-                            <motion.div
-                                whileInView={{ scale: [1, 1.01, 1] }}
-                                className="p-8 bg-primary-dark rounded-[32px] text-white/80 font-black tracking-widest text-[10px] leading-loose shadow-2xl border border-white/5"
-                            >
-                                "Experience the perfect balance of flavor and potency with our premium organic selections."
-                            </motion.div>
-                        </motion.div>
+                        <AnimatePresence mode="wait">
+                            {activeTab === 'Description' && (
+                                <motion.div
+                                    key="description"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    className="space-y-6"
+                                >
+                                    <p className="text-sm sm:text-lg text-gray-500 leading-tight text-center lg:text-left font-medium">
+                                        Our Sudhdhya Kolhu Kachi Ghani Mustard Oil is the gold standard of purity. Sourced from the finest mustard seeds, it undergoes a traditional cold-pressed extraction process to ensure every drop is packed with natural nutrients and that signature pungent aroma that defines authentic Indian cooking.
+                                    </p>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                                        <div className="p-8 bg-gray-50 rounded-[32px] border border-gray-100">
+                                            <h4 className="text-sm font-black text-primary-dark tracking-widest mb-4 uppercase">Health Benefits</h4>
+                                            <ul className="text-xs text-gray-500 space-y-3 font-bold tracking-wide">
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Rich in Monounsaturated Fatty Acids</li>
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Promotes Heart Health & Digestion</li>
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Natural Antimicrobial Properties</li>
+                                            </ul>
+                                        </div>
+                                        <div className="p-8 bg-gray-50 rounded-[32px] border border-gray-100">
+                                            <h4 className="text-sm font-black text-primary-dark tracking-widest mb-4 uppercase">Culinary Uses</h4>
+                                            <ul className="text-xs text-gray-500 space-y-3 font-bold tracking-wide">
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Deep Frying & Sautéing</li>
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Pickle Preparation</li>
+                                                <li className="flex items-start gap-2"><span className="text-primary-light">•</span> Marination & Salad Dressings</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {activeTab === 'Specifications' && (
+                                <motion.div
+                                    key="specifications"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    className="overflow-x-auto"
+                                >
+                                    <table className="w-full text-left border-collapse mt-4">
+                                        <tbody>
+                                            {[
+                                                ['Extraction Method', 'Traditional Cold Pressed (Kachi Ghani)'],
+                                                ['Seeds Used', 'Grade A Black Mustard Seeds'],
+                                                ['Shelf Life', '12 Months from Packaging'],
+                                                ['Net Volume', '1 Liter / 5 Liters / 15 Liters'],
+                                                ['Storage', 'Store in a cool, dry place away from sunlight']
+                                            ].map(([label, value], i) => (
+                                                <tr key={i} className="border-b border-gray-50 group hover:bg-gray-50/30 transition-colors">
+                                                    <td className="py-4 pr-10 text-[10px] sm:text-xs font-black text-gray-400 tracking-[0.3em] uppercase w-1/3 leading-tight">{label}</td>
+                                                    <td className="py-4 text-xs sm:text-sm font-black text-primary-dark tracking-wide">{value}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </motion.div>
+                            )}
+
+                            {activeTab === 'Reviews' && (
+                                <motion.div
+                                    key="reviews"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    className="text-center py-10"
+                                >
+                                    <div className="flex justify-center mb-6">
+                                        {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-secondary text-secondary" />)}
+                                    </div>
+                                    <p className="text-gray-500 font-bold tracking-widest text-xs">Customer reviews coming soon...</p>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                 </section>
 

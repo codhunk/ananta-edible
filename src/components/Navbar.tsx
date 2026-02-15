@@ -197,7 +197,7 @@ export default function Navbar() {
                             </div>
 
                             <div className="p-8 border-t border-gray-100 space-y-4">
-                                <button className="w-full btn-primary !py-3 !text-xs">Your Account</button>
+
                                 <p className="text-xs text-center text-gray-400 font-bold tracking-[0.2em]">© 2026 Ananta</p>
                             </div>
                         </motion.div>

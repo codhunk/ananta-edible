@@ -94,7 +94,7 @@ export default function HeroCarousel() {
                         <img
                             src={slides[currentSlide].image}
                             alt={slides[currentSlide].heading}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-fill"
                         />
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0"></div>
